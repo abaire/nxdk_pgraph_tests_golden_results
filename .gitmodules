@@ -1,0 +1,3 @@
+[submodule "perceptualdiff"]
+	path = perceptualdiff
+	url = https://github.com/myint/perceptualdiff.git
