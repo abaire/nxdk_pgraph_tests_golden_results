@@ -1,0 +1,39 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/**'
+      - '!.github/workflows/**'
+      - '!.github/scripts/generate_results_markdown.sh'
+      - 'README.md'
+
+jobs:
+  UpdateWiki:
+    name: Update wiki results pages
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone tree
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        path: results
+    - name: Clone wiki
+      uses: actions/checkout@v2
+      with:
+        repository: ${{github.repository}}.wiki
+        path: wiki
+    - name: Generate wiki content
+      run: |
+        ./results/.github/scripts/generate_results_markdown.sh results wiki
+    - name: Commit changes
+      run: |
+        cd wiki
+        find .
+        git config --local user.email "$GITHUB_ACTOR+github-actions@users.noreply.github.com"
+        git config --local user.name "$GITHUB_ACTOR via action"
+        git add .
+        git commit -m "Update from github action $GITHUB_RUN_NUMBER - $GITHUB_SHA"
+        git push
