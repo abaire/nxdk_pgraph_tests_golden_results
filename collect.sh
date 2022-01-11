@@ -2,7 +2,7 @@
 set -eu
 set -o pipefail
 
-readonly test_output_dir='e:\nxdk_pgraph_tests\'
+readonly test_output_dir='e:\pgraph\nxdk_pgraph_tests\'
 
 if [[ $# -gt 0 ]]; then
   xbox=$1
