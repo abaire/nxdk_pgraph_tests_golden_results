@@ -8,13 +8,10 @@ if [[ $# -gt 0 ]]; then
   xbox=$1
 else
   if [[ -z "${XBOX:-}" ]]; then
-    echo "Usage: $0 <xbox_ip_address>"
-    echo ""
-    echo "Alternatively, set the XBOX environment variable to your XBOX ip address."
-    exit 1
+    xbox="192.168.80.87"
+  else
+    xbox="${XBOX}"
   fi
-
-  xbox="${XBOX}"
 fi
 
 
