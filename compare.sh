@@ -14,21 +14,41 @@ readonly emu_dir="$1"
 readonly pdiff="${script_dir}/perceptualdiff/build/perceptualdiff"
 readonly diff_dir="${script_dir}/output"
 
-mkdir -p "${diff_dir}"
 
-for img in "${script_dir}/"*.png; do
+function check_file {
+  local img="${1}"
+  
   filename=$(basename "${img}")
-  emu_image="${emu_dir}/${filename}"
-  diff_file="${diff_dir}/${filename}"
+  subdir=$(basename $(dirname "${img}"))
+  emu_image="${emu_dir}/${subdir}/${filename}"
+  diff_file="${diff_dir}/${subdir}/${filename}"
 
   set +e
   "${pdiff}" "${img}" "${emu_image}" --verbose --output "${diff_file}"
   different=$?
   set -e
   
-  if [[ ${different} ]]; then
+  if [[ ${different} -ne 0 ]]; then
     echo "${img} differs"
   else
-    rm "${diff_file}"
-  fi
+    rm -f "${diff_file}"
+  fi  
+}
+
+function perform_test {
+  local test_dir="${1}"
+  for img in "${test_dir}/"*.png; do
+    if [[ -f "${img}" ]]; then
+      check_file "${img}"
+    fi
+  done
+}
+
+
+mkdir -p "${diff_dir}"
+
+test_dirs=($(find "${script_dir}" -maxdepth 1 -type d))
+for d in "${test_dirs[@]}"; do
+  perform_test "${d}"
 done
+
