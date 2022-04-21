@@ -15,7 +15,7 @@ else
 fi
 
 
-echo "Collecting output of nxdk_pgraph_tests from ${xbox}..."
+echo "Removing output of nxdk_pgraph_tests from ${xbox}..."
 xbdm "${xbox}" -- rm "${test_output_dir}" -r
 
 
