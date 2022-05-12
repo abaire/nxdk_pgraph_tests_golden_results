@@ -7,12 +7,10 @@ if [[ $# < 1 ]]; then
   exit 1
 fi
 
-readonly script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+readonly emu_dir="$(realpath "$1")"
 
-readonly emu_dir="$1"
-
-readonly pdiff="${script_dir}/perceptualdiff/build/perceptualdiff"
-readonly diff_dir="${script_dir}/output"
+readonly pdiff="${PWD}/perceptualdiff/build/perceptualdiff"
+readonly diff_dir="${PWD}/output"
 readonly log_file="${diff_dir}/log.txt"
 
 function check_file {
@@ -25,11 +23,16 @@ function check_file {
   mkdir -p "${output_dir}"
 
   local diff_file="${output_dir}/${filename}"
-  
-  set +e
-  "${pdiff}" "${img}" "${emu_image}" --verbose --output "${diff_file}"
-  different=$?
-  set -e
+
+  if [[ -f "${emu_image}" ]]; then
+    set +e
+    "${pdiff}" "${img}" "${emu_image}" --verbose --output "${diff_file}"
+    different=$?
+    set -e
+  else
+    echo "Missing emu output file at ${emu_image}"
+    different=1
+  fi
   
   if [[ ${different} -ne 0 ]]; then
     echo "${img} differs"
@@ -53,7 +56,7 @@ function perform_test {
 mkdir -p "${diff_dir}"
 echo "Starting test" > "${log_file}"
 
-test_dirs=($(find "${script_dir}" -maxdepth 1 -type d))
+test_dirs=($(find "${PWD}" -maxdepth 1 -type d))
 for d in "${test_dirs[@]}"; do
   perform_test "${d}"
 done
