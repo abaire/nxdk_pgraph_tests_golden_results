@@ -3,8 +3,13 @@ set -eu
 set -o pipefail
 
 if [[ $# < 1 ]]; then
-  echo "Usage: $(basename $0) <path_to_emulator_outputs>"
+  echo "Usage: $(basename $0) <path_to_emulator_outputs> [ignore_missing]"
   exit 1
+fi
+
+missing_is_different=1
+if [[ $# > 1 ]]; then
+  missing_is_different=0
 fi
 
 readonly emu_dir="$(realpath "$1")"
@@ -31,7 +36,7 @@ function check_file {
     set -e
   else
     echo "Missing emu output file at ${emu_image}"
-    different=1
+    different=${missing_is_different}
   fi
   
   if [[ ${different} -ne 0 ]]; then
@@ -59,5 +64,12 @@ echo "Starting test" > "${log_file}"
 test_dirs=($(find "${PWD}" -maxdepth 1 -type d))
 for d in "${test_dirs[@]}"; do
   perform_test "${d}"
+
+  subdir=$(basename "${d}")
+  output_dir="${diff_dir}/${subdir}"
+  if [[ -d "${output_dir}" && -z "$(ls -A "${output_dir}")" ]]; then
+    rmdir "${output_dir}"
+  fi
+  
 done
 
