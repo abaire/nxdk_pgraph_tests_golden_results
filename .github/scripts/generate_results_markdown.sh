@@ -11,6 +11,7 @@ readonly wiki_dir="$2"
 readonly ignore_dirs=(
   output
   perceptualdiff
+  scripts
 )
 
 
