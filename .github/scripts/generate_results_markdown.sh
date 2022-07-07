@@ -15,6 +15,26 @@ readonly ignore_dirs=(
 )
 
 
+function url_quote() {
+  local string="${1}"
+  local strlen=${#string}
+  url_quoted=""
+  local pos character processed
+
+  for (( pos=0 ; pos<strlen ; pos++ )); do
+     character=${string:$pos:1}
+     case "$character" in
+       [-_.~a-zA-Z0-9] )
+         processed="${character}"
+         ;;
+       * )
+         printf -v processed '%%%02x' "'$character"
+         ;;
+     esac
+     url_quoted+="${processed}"
+  done
+}
+
 function process_dir() {
   test_dir=$1
   test_name=$2
@@ -32,7 +52,8 @@ function process_dir() {
     image_filename="${image_file##${test_dir}/}"
 
     echo "## ${image_filename}" >> "${output_file}"
-    echo "![${image_filename}](${raw_base_url}/${image_relative_path})" >> "${output_file}"
+    url_quote "${image_relative_path}"
+    echo "![${image_filename}](${raw_base_url}/$url_quoted)" >> "${output_file}"
   done
 }
 
