@@ -2,7 +2,7 @@
 set -eu
 set -o pipefail
 
-readonly test_output_dir='e:\nxdk_pgraph_tests_xiso\nxdk_pgraph_tests'
+readonly test_output_dir='e:\nxdk_pgraph_tests'
 
 if [[ $# -gt 0 ]]; then
   xbox=$1
@@ -16,5 +16,5 @@ fi
 
 
 echo "Collecting output of nxdk_pgraph_tests from ${xbox}..."
-xbdm "${xbox}" getfile "${test_output_dir}" .
+xbdm "${xbox}" getfile "${test_output_dir}" ./results
 

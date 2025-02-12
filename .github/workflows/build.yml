@@ -9,6 +9,8 @@ on:
       - '!.github/workflows/**'
       - '!.github/scripts/generate_results_markdown.sh'
       - 'README.md'
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   UpdateWiki:
@@ -16,22 +18,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Clone tree
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         submodules: recursive
         path: results
     - name: Clone wiki
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         repository: ${{github.repository}}.wiki
         path: wiki
     - name: Generate wiki content
       run: |
-        ./results/.github/scripts/generate_results_markdown.sh results wiki
+        ./results/.github/scripts/generate_results_markdown.sh results/results wiki
     - name: Commit changes
+      if: github.event_name == 'workflow_dispatch' || (github.ref == 'refs/heads/main' && github.event_name == 'push')
       run: |
         cd wiki
-        find .
         git config --local user.email "$GITHUB_ACTOR+github-actions@users.noreply.github.com"
         git config --local user.name "$GITHUB_ACTOR via action"
         git add .
