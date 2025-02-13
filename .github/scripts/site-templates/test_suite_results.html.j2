@@ -29,7 +29,7 @@
 {%- endif %}
 
 {% for test_name, info in results | dictsort -%}
-<h2>{{ test_name }}</h2>
+<h2 id="{{ test_name }}">{{ test_name }}</h2>
     {%- if descriptor and descriptor.test_descriptions[test_name]  %}
         <div class="test-case-description">{{ descriptor.test_descriptions[test_name] }}</div>
     {% endif -%}
