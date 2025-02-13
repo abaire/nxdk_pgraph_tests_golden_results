@@ -33,11 +33,26 @@
     {%- if descriptor and descriptor.test_descriptions[test_name]  %}
         <div class="test-case-description">{{ descriptor.test_descriptions[test_name] }}</div>
     {% endif -%}
-    {%- if info.url %}
-<div class="image-container">
-        <img src="{{ info.url }}" alt="Test result for {{ suite_name }}::{{ test_name }}" class="inline-image">
-</div>
+
+{%- if info.url %}
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="{{ info.url }}" alt="Test result for {{ suite_name }}::{{ test_name }}" class="inline-image">
+        </div>
+    </div>
+    {% if info.no_alpha_url %}
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="{{ info.no_alpha_url }}" alt="No alpha test result for {{ suite_name }}::{{ test_name }}" class="inline-image">
+        </div>
+    </div>
     {% endif -%}
+</div>
+{% endif -%}
+
 {% endfor -%}
 
 {%- endblock %}
