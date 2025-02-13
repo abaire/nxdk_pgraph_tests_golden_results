@@ -1,0 +1,43 @@
+{% extends "base.html.j2" %}
+
+{% block title -%}{{ suite_name }}{%- endblock %}
+
+{% block content -%}
+
+<h1>{{ suite_name }}</h1>
+
+{%- if descriptor %}
+<div class="label-value-grid">
+    {%- if descriptor.description %}
+    <div class="label">Description</div>
+    <div class="value">
+    {%- for line in descriptor.description %}
+        <div class="test-description-line">{{ line }}</div>
+    {% endfor -%}
+    </div>
+    {% endif -%}
+
+    {%- if descriptor.source_file %}
+    <div class="label">Suite class def</div>
+    <div class="value">
+        {%- if descriptor.source_url %}<a href="{{ descriptor.source_url }}">{% endif -%}
+        {{ descriptor.source_file }}
+        {%- if descriptor.source_url %}</a>{% endif -%}
+    </div>
+    {%- endif %}
+</div>
+{%- endif %}
+
+{% for test_name, info in results | dictsort -%}
+<h2>{{ test_name }}</h2>
+    {%- if descriptor and descriptor.test_descriptions[test_name]  %}
+        <div class="test-case-description">{{ descriptor.test_descriptions[test_name] }}</div>
+    {% endif -%}
+    {%- if info.url %}
+<div class="image-container">
+        <img src="{{ info.url }}" alt="Test result for {{ suite_name }}::{{ test_name }}" class="inline-image">
+</div>
+    {% endif -%}
+{% endfor -%}
+
+{%- endblock %}
