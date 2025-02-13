@@ -19,6 +19,7 @@ from jinja2 import Environment, FileSystemLoader
 logger = logging.getLogger(__name__)
 
 RESULTS_SUBDIR = "results"
+RESULTS_NO_ALPHA_SUBDIR = "results-noalpha"
 
 
 @dataclass
@@ -99,6 +100,7 @@ class TestResult:
 
     name: str
     artifact_url: str
+    no_alpha_artifact_url: str
 
 
 @dataclass
@@ -118,11 +120,13 @@ class ResultsScanner:
         results_dir: str,
         output_dir: str,
         base_url: str,
+        base_url_no_alpha: str,
         test_suite_descriptors: dict[str, TestSuiteDescriptor],
     ) -> None:
         self.results_dir = results_dir
         self.output_dir = output_dir
         self.base_url = base_url
+        self.base_url_no_alpha = base_url_no_alpha
         self.test_suite_descriptors = test_suite_descriptors
 
     def _get_suite_descriptor(self, suite_name: str) -> TestSuiteDescriptor | None:
@@ -130,8 +134,9 @@ class ResultsScanner:
 
     def _process_suite(self, suite_name: str, images: list[str]) -> SuiteResults | None:
         suite_base_url = f"{self.base_url}/{RESULTS_SUBDIR}/{suite_name}"
+        suite_no_alpha_base_url = f"{self.base_url_no_alpha}/{RESULTS_NO_ALPHA_SUBDIR}/{suite_name}"
         test_results = [
-            TestResult(name=os.path.splitext(image)[0], artifact_url=f"{suite_base_url}/{image}") for image in images
+            TestResult(name=os.path.splitext(image)[0], artifact_url=f"{suite_base_url}/{image}", no_alpha_artifact_url=f"{suite_no_alpha_base_url}/{image}") for image in images
         ]
 
         return SuiteResults(
@@ -214,7 +219,7 @@ class PagesWriter:
 
         result_infos: dict[str, dict[str, str]] = {}
         for result in suite.test_results:
-            result_infos[result.name] = {"url": result.artifact_url}
+            result_infos[result.name] = {"url": result.artifact_url, "no_alpha_url": result.no_alpha_artifact_url}
 
         with open(os.path.join(output_dir, "index.html"), "w") as outfile:
             outfile.write(
@@ -289,6 +294,11 @@ def main():
         help="Base URL at which the contents of the golden images from Xbox hardware may be publicly accessed.",
     )
     parser.add_argument(
+        "--no-alpha-base-url",
+        default="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy",
+        help="Base URL at which the golden images from Xbox hardware with alpha ignored may be publicly accessed.",
+    )
+    parser.add_argument(
         "--templates-dir",
         help="Directory containing the templates used to render the site.",
     )
@@ -320,6 +330,7 @@ def main():
         args.results_dir,
         args.output_dir,
         args.base_url,
+        args.no_alpha_base_url,
         test_suite_descriptors,
     ).process()
 

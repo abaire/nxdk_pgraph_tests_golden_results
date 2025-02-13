@@ -63,6 +63,9 @@ jobs:
           cache: 'pip'
       - name: Install requirements
         run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            imagemagick
           export PIP_BREAK_SYSTEM_PACKAGES=1
           pip3 install -r .github/scripts/requirements.txt
       - name: Create 'pages_deploy' branch
@@ -75,6 +78,7 @@ jobs:
           git reset --hard main
       - name: Generate site content
         run: |
+          .github/scripts/generate_images_without_alpha.sh results results-noalpha
           .github/scripts/generate_site.py results docs -v
       - name: Add and commit site changes
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
