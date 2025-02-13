@@ -8,35 +8,80 @@ on:
       - '.github/**'
       - '!.github/workflows/**'
       - '!.github/scripts/generate_wiki.py'
+      - '!.github/scripts/generate_site.py'
+      - '!.github/scripts/site-templates/**'
+      - '!.github/scripts/requirements.txt'
       - 'README.md'
   pull_request:
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
 
 jobs:
   UpdateWiki:
     name: Update wiki results pages
     runs-on: ubuntu-latest
     steps:
-    - name: Clone tree
-      uses: actions/checkout@v4
-      with:
-        submodules: recursive
-        path: results
-    - name: Clone wiki
-      uses: actions/checkout@v4
-      with:
-        repository: ${{github.repository}}.wiki
-        path: wiki
-    - name: Generate wiki content
-      run: |
-        ./results/.github/scripts/generate_wiki.py results/results wiki -v
-    - name: Commit changes
-      if: github.event_name == 'workflow_dispatch' || (github.ref == 'refs/heads/main' && github.event_name == 'push')
-      run: |
-        cd wiki
-        find .
-        git config --local user.email "$GITHUB_ACTOR+github-actions@users.noreply.github.com"
-        git config --local user.name "$GITHUB_ACTOR via action"
-        git add .
-        git diff-index --quiet HEAD || git commit -m "Update from github action $GITHUB_RUN_NUMBER - $GITHUB_SHA"
-        git push
+      - name: Clone tree
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          path: results
+      - name: Clone wiki
+        uses: actions/checkout@v4
+        with:
+          repository: ${{github.repository}}.wiki
+          path: wiki
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Generate wiki content
+        run: |
+          ./results/.github/scripts/generate_wiki.py results/results wiki -v
+      - name: Commit changes
+        if: github.event_name == 'workflow_dispatch' || (github.ref == 'refs/heads/main' && github.event_name == 'push')
+        run: |
+          cd wiki
+          find .
+          git config --local user.email "$GITHUB_ACTOR+github-actions@users.noreply.github.com"
+          git config --local user.name "$GITHUB_ACTOR via action"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Update from github action $GITHUB_RUN_NUMBER - $GITHUB_SHA"
+          git push
+
+  DeploySite:
+    name: Update GitHub pages site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone tree
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Install requirements
+        run: |
+          export PIP_BREAK_SYSTEM_PACKAGES=1
+          pip3 install -r .github/scripts/requirements.txt
+      - name: Create 'pages_deploy' branch
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git fetch origin --no-recurse-submodules
+          git checkout main
+          git pull
+          git checkout pages_deploy || git checkout -b pages_deploy
+          git rebase main
+      - name: Generate site content
+        run: |
+          .github/scripts/generate_site.py results docs -v
+      - name: Add and commit site changes
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git add docs/*
+          git config --local user.email "$GITHUB_ACTOR+github-actions@users.noreply.github.com"
+          git config --local user.name "$GITHUB_ACTOR via action"
+          git commit -m "Update site content" || echo "No changes to commit"
+          git push --set-upstream origin pages_deploy -f

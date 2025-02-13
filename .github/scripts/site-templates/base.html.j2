@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ css_dir }}/site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    {%- if home_url %}
+    <a href="{{ home_url }}"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="{{ sidenav_icon_width }}" alt="Navigate to the top level" /></a>
+    {% endif -%}
+    {%- if navigate_up_url %}
+      <a href="{{ navigate_up_url }}"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Arrow_chevron_up_in_sharp_solid_style.svg" width="{{ sidenav_icon_width }}" alt="Navigate up one level" /></a>
+    {% endif -%}
+    </div>
+
+    <div class="page-content">
+{%- block content %}{% endblock -%}
+    </div>
+
+    <script src="{{ js_dir }}/script.js"></script>
+</body>
+</html>

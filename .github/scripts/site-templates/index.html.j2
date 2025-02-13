@@ -1,0 +1,17 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+    nxdk_pgraph_tests results
+{% endblock %}
+
+{% block content %}
+
+<h1>nxdk_pgraph_tests Results on Xbox 1.0 hardware</h1>
+
+<ul>
+{% for suite_name, results_url in results | dictsort -%}
+    <li><a href="{{ results_url | urlencode }}">{{ suite_name }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}
