@@ -61,7 +61,33 @@ function enableViewLinks(document) {
     });
 }
 
+function enableAnchorCopying(document) {
+    function addClickHandler(element) {
+        if (element.id) {
+            element.addEventListener('click', () => {
+                const currentURL = window.location.href.split('#');
+                const anchor = element.id;
+                const urlWithAnchor = `${currentURL}#${anchor}`;
+
+                navigator.clipboard.writeText(urlWithAnchor)
+            });
+        }
+    }
+
+    const h2Elements = document.querySelectorAll('h2');
+    h2Elements.forEach(addClickHandler);
+    const h3Elements = document.querySelectorAll('h3');
+    h3Elements.forEach(addClickHandler);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     enableViewLinks(document);
     enableImagePairs(document);
+    enableAnchorCopying(document);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    enableViewLinks(document);
+    enableImagePairs(document);
+    enableAnchorCopying(document);
 });
