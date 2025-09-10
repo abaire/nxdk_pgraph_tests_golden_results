@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Specular</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Specular</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests handling of specular color with interesting combinations of lighting settings and specular params.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/specular_tests.h#L17">src/tests/specular_tests.h</a></div>
+</div>
+
+<h2 id="ControlFlags_FF">ControlFlags_FF</h2>
+        <div class="test-case-description">
+            <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1 and failing to set SEPARATE_SPECULAR will pass through vertex specular RGB instead of performing the light calculation.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is enabled but with a directional light pointing at {1, 0, 1}.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0</p><p>Because lighting is enabled, the diffuse alpha is entirely dictated by SET_MATERIAL_ALPHA, and RGB is entirely set by the lighting calculations. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlags_FF.png" alt="Test result for Specular::ControlFlags_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/ControlFlags_FF.png" alt="No alpha test result for Specular::ControlFlags_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ControlFlags_VS">ControlFlags_VS</h2>
+        <div class="test-case-description">
+            <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1 and failing to set SEPARATE_SPECULAR will pass through vertex specular RGB instead of performing the light calculation.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is enabled but with a directional light pointing at {1, 0, 1}.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0</p><p>Because lighting is enabled, the diffuse alpha is entirely dictated by SET_MATERIAL_ALPHA, and RGB is entirely set by the lighting calculations. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlags_VS.png" alt="Test result for Specular::ControlFlags_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/ControlFlags_VS.png" alt="No alpha test result for Specular::ControlFlags_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ControlFlagsLightDisable_FF">ControlFlagsLightDisable_FF</h2>
+        <div class="test-case-description">
+            <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is disabled.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper two rows have SET_SPECULAR_ENABLE = false. The lower rows have it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0 </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlagsLightDisable_FF.png" alt="Test result for Specular::ControlFlagsLightDisable_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/ControlFlagsLightDisable_FF.png" alt="No alpha test result for Specular::ControlFlagsLightDisable_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ControlFlagsLightDisable_VS">ControlFlagsLightDisable_VS</h2>
+        <div class="test-case-description">
+            <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is disabled.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0 </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlagsLightDisable_VS.png" alt="Test result for Specular::ControlFlagsLightDisable_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/ControlFlagsLightDisable_VS.png" alt="No alpha test result for Specular::ControlFlagsLightDisable_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ControlFlagsNoLight_FF">ControlFlagsNoLight_FF</h2>
+        <div class="test-case-description">
+            <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1 and failing to set SEPARATE_SPECULAR will pass through vertex specular RGB instead of performing the light calculation.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is enabled but no light exists.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0</p><p>Because lighting is enabled, the diffuse alpha is entirely dictated by SET_MATERIAL_ALPHA, and RGB is entirely set by the lighting calculations. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlagsNoLight_FF.png" alt="Test result for Specular::ControlFlagsNoLight_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/ControlFlagsNoLight_FF.png" alt="No alpha test result for Specular::ControlFlagsNoLight_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ControlFlagsNoLight_VS">ControlFlagsNoLight_VS</h2>
+        <div class="test-case-description">
+            <p>Demonstrates that SET_SPECULAR_ENABLE = false forces specular values to {0, 0, 0, 1}. Also demonstrates that failing to set ALPHA_FROM_MATERIAL_SPECULAR will cause the specular alpha to be set to 1 and failing to set SEPARATE_SPECULAR will pass through vertex specular RGB instead of performing the light calculation.</p><p>Renders two groups of two rows of 4 quads each with the fixed function pipeline. The first row is the specular component, the second is the diffuse. Lighting is enabled but no light exists.</p><p>Each quad has specular and diffuse colors of: UL = {1.f, 0.f, 0.f, 0.15f}, {0.f, 0.f, 0.5f, 1.f} UR = {1.f, 0.f, 0.f, 0.75f}, {0.f, 0.f, 0.75f, 1.f} LR = {0.f, 1.f, 0.f, 1.f}, {0.f, 0.f, 1.f, 1.f} LL = {0.f, 1.f, 0.f, 0.2f}, {0.f, 0.f, 0.25f, 1.f}</p><p>The upper row has SET_SPECULAR_ENABLE = false. The lower row has it true. The first column has SET_LIGHT_CONTROL = SEPARATE_SPECULAR + ALPHA_FROM_MATERIAL_SPECULAR The second has SET_LIGHT_CONTROL = SEPARATE_SPECULAR The third has SET_LIGHT_CONTROL = ALPHA_FROM_MATERIAL_SPECULAR The fourth has SET_LIGHT_CONTROL = 0</p><p>Because lighting is enabled, the diffuse alpha is entirely dictated by SET_MATERIAL_ALPHA, and RGB is entirely set by the lighting calculations. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/ControlFlagsNoLight_VS.png" alt="Test result for Specular::ControlFlagsNoLight_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/ControlFlagsNoLight_VS.png" alt="No alpha test result for Specular::ControlFlagsNoLight_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="NonUnitNormal_0.972">NonUnitNormal_0.972</h2>
+        <div class="test-case-description">
+            <p>Renders a triangle fan with spherical normals that are scaled to be 0.972 in length. 0.972 is small enough that no pixels are illuminated.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_0.972.png" alt="Test result for Specular::NonUnitNormal_0.972" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/NonUnitNormal_0.972.png" alt="No alpha test result for Specular::NonUnitNormal_0.972" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="NonUnitNormal_0.973">NonUnitNormal_0.973</h2>
+        <div class="test-case-description">
+            <p>Renders a triangle fan with spherical normals that are scaled to be 0.973 in length. 0.973 is large enough that center pixels are non-0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_0.973.png" alt="Test result for Specular::NonUnitNormal_0.973" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/NonUnitNormal_0.973.png" alt="No alpha test result for Specular::NonUnitNormal_0.973" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="NonUnitNormal_1.000">NonUnitNormal_1.000</h2>
+        <div class="test-case-description">
+            <p>Renders a triangle fan with spherical unit-length normals. This is the control image.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_1.000.png" alt="Test result for Specular::NonUnitNormal_1.000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/NonUnitNormal_1.000.png" alt="No alpha test result for Specular::NonUnitNormal_1.000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="NonUnitNormal_1.008">NonUnitNormal_1.008</h2>
+        <div class="test-case-description">
+            <p>Renders a triangle fan with spherical normals that are scaled to be 1.008 in length. This is close enough to 1.0 that the color is still applied.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_1.008.png" alt="Test result for Specular::NonUnitNormal_1.008" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/NonUnitNormal_1.008.png" alt="No alpha test result for Specular::NonUnitNormal_1.008" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="NonUnitNormal_1.009">NonUnitNormal_1.009</h2>
+        <div class="test-case-description">
+            <p>Renders a triangle fan with spherical normals that are scaled to be 1.009 in length. This demonstrates that specular color is reset to 0 when overflowing ~1.0. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/NonUnitNormal_1.009.png" alt="Test result for Specular::NonUnitNormal_1.009" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/NonUnitNormal_1.009.png" alt="No alpha test result for Specular::NonUnitNormal_1.009" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SpecParams_FF_AllZero">SpecParams_FF_AllZero</h2>
+        <div class="test-case-description">
+            <p>Renders a number of meshes with a directional light and a point light, shading the specular channel only. LIGHT_CONTROL is set to SEPARATE_SPECULAR and SET_SPECULAR_PARAMS is set to the values displayed in the image.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_AllZero.png" alt="Test result for Specular::SpecParams_FF_AllZero" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/SpecParams_FF_AllZero.png" alt="No alpha test result for Specular::SpecParams_FF_AllZero" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SpecParams_FF_InvMechAssault">SpecParams_FF_InvMechAssault</h2>
+        <div class="test-case-description">
+            <p>Renders a number of meshes with a directional light and a point light, shading the specular channel only. LIGHT_CONTROL is set to SEPARATE_SPECULAR and SET_SPECULAR_PARAMS is set to the values displayed in the image.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_InvMechAssault.png" alt="Test result for Specular::SpecParams_FF_InvMechAssault" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/SpecParams_FF_InvMechAssault.png" alt="No alpha test result for Specular::SpecParams_FF_InvMechAssault" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SpecParams_FF_MechAssault">SpecParams_FF_MechAssault</h2>
+        <div class="test-case-description">
+            <p>Renders a number of meshes with a directional light and a point light, shading the specular channel only. LIGHT_CONTROL is set to SEPARATE_SPECULAR and SET_SPECULAR_PARAMS is set to the values displayed in the image.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_MechAssault.png" alt="Test result for Specular::SpecParams_FF_MechAssault" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/SpecParams_FF_MechAssault.png" alt="No alpha test result for Specular::SpecParams_FF_MechAssault" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SpecParams_FF_NinjaGaidenBlack">SpecParams_FF_NinjaGaidenBlack</h2>
+        <div class="test-case-description">
+            <p>Renders a number of meshes with a directional light and a point light, shading the specular channel only. LIGHT_CONTROL is set to SEPARATE_SPECULAR and SET_SPECULAR_PARAMS is set to the values displayed in the image.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_NinjaGaidenBlack.png" alt="Test result for Specular::SpecParams_FF_NinjaGaidenBlack" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/SpecParams_FF_NinjaGaidenBlack.png" alt="No alpha test result for Specular::SpecParams_FF_NinjaGaidenBlack" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SpecParams_FF_Pow0_1">SpecParams_FF_Pow0_1</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow0_1.png" alt="Test result for Specular::SpecParams_FF_Pow0_1" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/SpecParams_FF_Pow0_1.png" alt="No alpha test result for Specular::SpecParams_FF_Pow0_1" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SpecParams_FF_Pow16_0">SpecParams_FF_Pow16_0</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow16_0.png" alt="Test result for Specular::SpecParams_FF_Pow16_0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/SpecParams_FF_Pow16_0.png" alt="No alpha test result for Specular::SpecParams_FF_Pow16_0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SpecParams_FF_Pow1_0">SpecParams_FF_Pow1_0</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow1_0.png" alt="Test result for Specular::SpecParams_FF_Pow1_0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/SpecParams_FF_Pow1_0.png" alt="No alpha test result for Specular::SpecParams_FF_Pow1_0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SpecParams_FF_Pow24_0">SpecParams_FF_Pow24_0</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow24_0.png" alt="Test result for Specular::SpecParams_FF_Pow24_0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/SpecParams_FF_Pow24_0.png" alt="No alpha test result for Specular::SpecParams_FF_Pow24_0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SpecParams_FF_Pow2_0">SpecParams_FF_Pow2_0</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow2_0.png" alt="Test result for Specular::SpecParams_FF_Pow2_0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/SpecParams_FF_Pow2_0.png" alt="No alpha test result for Specular::SpecParams_FF_Pow2_0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SpecParams_FF_Pow4_0">SpecParams_FF_Pow4_0</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow4_0.png" alt="Test result for Specular::SpecParams_FF_Pow4_0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/SpecParams_FF_Pow4_0.png" alt="No alpha test result for Specular::SpecParams_FF_Pow4_0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SpecParams_FF_Pow8_0">SpecParams_FF_Pow8_0</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Specular/SpecParams_FF_Pow8_0.png" alt="Test result for Specular::SpecParams_FF_Pow8_0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Specular/SpecParams_FF_Pow8_0.png" alt="No alpha test result for Specular::SpecParams_FF_Pow8_0" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
