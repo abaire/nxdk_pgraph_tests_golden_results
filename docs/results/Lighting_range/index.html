@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Lighting_range</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Lighting_range</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the effects of NV097_SET_LIGHT_LOCAL_RANGE (0x1024).</div>
+    
+        <div class="test-description-line">Each test renders a grid mesh in the center, angled such that the left side is closer to the camera than the right. Two quads are also rendered to the left and the right of the main mesh, the one on the left at a depth close to the camera and the one on the right farther away.</div>
+    
+        <div class="test-description-line">A light is then projected onto the geometry with a range cutoff set such that a portion of the vertices should not be lit.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/lighting_range_tests.h#L27">src/tests/lighting_range_tests.h</a></div>
+</div>
+
+<h2 id="Directional">Directional</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with a directional (infinite) light.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_range/Directional.png" alt="Test result for Lighting_range::Directional" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_range/Directional.png" alt="No alpha test result for Lighting_range::Directional" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Point">Point</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with a point (local) light. Attenuation is set to 0 for the light, resulting in hard edges.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_range/Point.png" alt="Test result for Lighting_range::Point" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_range/Point.png" alt="No alpha test result for Lighting_range::Point" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Spot">Spot</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with a spotlight. Attenuation is set to 0 for the light, resulting in hard edges. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_range/Spot.png" alt="Test result for Lighting_range::Spot" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_range/Spot.png" alt="No alpha test result for Lighting_range::Spot" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
