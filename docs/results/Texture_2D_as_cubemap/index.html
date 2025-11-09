@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Texture_2D_as_cubemap</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Texture_2D_as_cubemap</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the behavior of various texture stage modes that require cubemap/volumetric textures but are given textures registered as 2d.</div>
+    
+        <div class="test-description-line">NOTE: This suite tests behavior of incorrectly configured textures. Please see</div>
+    
+        <div class="test-description-line">TextureCubemapTests</div>
+    
+        <div class="test-description-line"> for examples of how these modes should actually be used.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/texture_2d_as_cubemap_tests.h#L15">src/tests/texture_2d_as_cubemap_tests.h</a></div>
+</div>
+
+<h2 id="Cubemap_Bad2D">Cubemap_Bad2D</h2>
+        <div class="test-case-description">
+            <p>Renders two angles of a cube utilizing a cubemap texture.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_2D_as_cubemap/Cubemap_Bad2D.png" alt="Test result for Texture_2D_as_cubemap::Cubemap_Bad2D" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_2D_as_cubemap/Cubemap_Bad2D.png" alt="No alpha test result for Texture_2D_as_cubemap::Cubemap_Bad2D" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DotReflectDiffuse_Bad2D">DotReflectDiffuse_Bad2D</h2>
+        <div class="test-case-description">
+            <p>Renders two angles of a cube utilizing PS_TEXTUREMODES_DOT_RFLCT_DIFF pixel shading mode but passing a 2d texture instead of a cubemap for the final lookup.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_2D_as_cubemap/DotReflectDiffuse_Bad2D.png" alt="Test result for Texture_2D_as_cubemap::DotReflectDiffuse_Bad2D" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_2D_as_cubemap/DotReflectDiffuse_Bad2D.png" alt="No alpha test result for Texture_2D_as_cubemap::DotReflectDiffuse_Bad2D" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DotReflectSpec_Bad2D">DotReflectSpec_Bad2D</h2>
+        <div class="test-case-description">
+            <p>Renders two angles of a cube utilizing PS_TEXTUREMODES_DOT_RFLCT_SPEC pixel shading mode but passing a 2d texture instead of a cubemap for the final lookup.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_2D_as_cubemap/DotReflectSpec_Bad2D.png" alt="Test result for Texture_2D_as_cubemap::DotReflectSpec_Bad2D" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_2D_as_cubemap/DotReflectSpec_Bad2D.png" alt="No alpha test result for Texture_2D_as_cubemap::DotReflectSpec_Bad2D" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DotReflectSpecConst_Bad2D">DotReflectSpecConst_Bad2D</h2>
+        <div class="test-case-description">
+            <p>Renders two angles of a cube utilizing PS_TEXTUREMODES_DOT_RFLCT_SPEC_CONST but passing a 2d texture instead of a cubemap for the final lookup.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_2D_as_cubemap/DotReflectSpecConst_Bad2D.png" alt="Test result for Texture_2D_as_cubemap::DotReflectSpecConst_Bad2D" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_2D_as_cubemap/DotReflectSpecConst_Bad2D.png" alt="No alpha test result for Texture_2D_as_cubemap::DotReflectSpecConst_Bad2D" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DotSTR3D_Bad2D">DotSTR3D_Bad2D</h2>
+        <div class="test-case-description">
+            <p>Renders two angles of a cube utilizing PS_TEXTUREMODES_DOT_STR_3D pixel shading mode but passing a 2d texture instead of a cubemap for the final lookup.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_2D_as_cubemap/DotSTR3D_Bad2D.png" alt="Test result for Texture_2D_as_cubemap::DotSTR3D_Bad2D" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_2D_as_cubemap/DotSTR3D_Bad2D.png" alt="No alpha test result for Texture_2D_as_cubemap::DotSTR3D_Bad2D" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DotSTRCube_Bad2D">DotSTRCube_Bad2D</h2>
+        <div class="test-case-description">
+            <p>Renders two angles of a cube utilizing PS_TEXTUREMODES_DOT_STR_CUBE pixel shading mode but passing a 2d texture instead of a cubemap for the final lookup. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_2D_as_cubemap/DotSTRCube_Bad2D.png" alt="Test result for Texture_2D_as_cubemap::DotSTRCube_Bad2D" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_2D_as_cubemap/DotSTRCube_Bad2D.png" alt="No alpha test result for Texture_2D_as_cubemap::DotSTRCube_Bad2D" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
