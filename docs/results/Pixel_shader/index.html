@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Pixel_shader</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Pixel_shader</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests various D3D PixelShader / NV097_SET_SHADER_STAGE_PROGRAM operations.</div>
+    
+        <div class="test-description-line">See</div>
+    
+        <div class="test-description-line">https://xboxdevwiki.net/NV2A/Pixel_Combiner</div>
+    
+        <div class="test-description-line"> See</div>
+    
+        <div class="test-description-line">https://web.archive.org/web/20240607015835/https://developer.download.nvidia.com/assets/gamedev/docs/GDC2K1_DX8_Pixel_Shaders.pdf</div>
+    
+        <div class="test-description-line"></div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/pixel_shader_tests.h#L14">src/tests/pixel_shader_tests.h</a></div>
+</div>
+
+<h2 id="BumpEnvMap">BumpEnvMap</h2>
+        <div class="test-case-description">
+            <p>Demonstrates behavior of PS_TEXTUREMODES_BUMPENVMAP with various values for the NV097_SET_TEXTURE_SET_BUMP_ENV_MAT matrix. Values are {-1.f, 0.f, 1.f, 0.f}, {1.f, 1.f, 1.f, 1.f}, {0.f, 0.2f, 0.f, 0.75f}, {0.5f, -0.5f, 0.5f, -0.5f}, {0.3f, 0.5f, 0.7f, 1.f}, {0.f, 1.f, -1.f, 0.f}, {0.f, 0.f, 1.f, 1.f}, {0.5f, 0.8f, 0.f, 0.f},</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Pixel_shader/BumpEnvMap.png" alt="Test result for Pixel_shader::BumpEnvMap" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Pixel_shader/BumpEnvMap.png" alt="No alpha test result for Pixel_shader::BumpEnvMap" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="BumpEnvMapLuminance">BumpEnvMapLuminance</h2>
+        <div class="test-case-description">
+            <p>Demonstrates behavior of PS_TEXTUREMODES_BUMPENVMAP_LUM with various values for NV097_SET_TEXTURE_SET_BUMP_ENV_SCALE and NV097_SET_TEXTURE_SET_BUMP_ENV_OFFSET. Outputs are grouped by the env bump matrix (the value of each element is identical and printed in row 1). Columns are divided up by the scale factor, whose value is printed in row 2. Rows are defined by the offset value: {0, 0.25, 0.75, 1.0}.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Pixel_shader/BumpEnvMapLuminance.png" alt="Test result for Pixel_shader::BumpEnvMapLuminance" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Pixel_shader/BumpEnvMapLuminance.png" alt="No alpha test result for Pixel_shader::BumpEnvMapLuminance" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ClipPlane">ClipPlane</h2>
+        <div class="test-case-description">
+            <p>Demonstrates behavior of PS_TEXTUREMODES_CLIPPLANE. Various mock values for clipping planes are assigned to texture coordinates for stages 0 (red), 1 (green), and 2 (blue). The values of the coordinates are summarized in the image, with &#34;1&#34; used to indicate a positive value and &#34;-&#34; to indicate a negative one. The comparator function is set for each quad in the image with a similar shorthand indicating whether results &lt; 0 are clipped (&#34;-&#34;) or &gt;= 0 (&#34;0&#34;).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Pixel_shader/ClipPlane.png" alt="Test result for Pixel_shader::ClipPlane" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Pixel_shader/ClipPlane.png" alt="No alpha test result for Pixel_shader::ClipPlane" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DotST">DotST</h2>
+        <div class="test-case-description">
+            <p>Renders a quad using PS_TEXTUREMODES_DOT_ST. Texture stage 0 is set to a bump map, stage 2 to an image with diagonal lines. Texture coordinates 1 are set to a normalized vector from the eye coordinate to each vertex (technically to a virtual position rather than the actual vertex position) and coordinate 2 is set to a normalized vector from the vertex to a virtual light. See </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Pixel_shader/DotST.png" alt="Test result for Pixel_shader::DotST" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Pixel_shader/DotST.png" alt="No alpha test result for Pixel_shader::DotST" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DotZW">DotZW</h2>
+        <div class="test-case-description">
+            <p>Renders a quad using PS_TEXTUREMODES_DOT_ZW. Texture stage 0 is set to a bump map. Tex coords for stages 1 and 2 define a 3x2 matrix multiplied against the texture 0 sampler to determine the Z and W components of the fragment&#39;s depth (z = tex1.uvw * tex0.rgb, w = tex2.uvw * tex0.rgb, final depth = z/w). See </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Pixel_shader/DotZW.png" alt="Test result for Pixel_shader::DotZW" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Pixel_shader/DotZW.png" alt="No alpha test result for Pixel_shader::DotZW" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Passthru">Passthru</h2>
+        <div class="test-case-description">
+            <p>Demonstrates behavior of PS_TEXTUREMODES_PASSTHRU, which simply utilizes texture coordinates as colors.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Pixel_shader/Passthru.png" alt="Test result for Pixel_shader::Passthru" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Pixel_shader/Passthru.png" alt="No alpha test result for Pixel_shader::Passthru" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="StageDependentAlphaRed">StageDependentAlphaRed</h2>
+        <div class="test-case-description">
+            <p>Renders a quad using PS_TEXTUREMODES_DPNDNT_AR. Texture stage 0 is set to a gradient textured. The sampled alpha and red channels from this texture are used as UV coordinates into the texture at stage 2.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Pixel_shader/StageDependentAlphaRed.png" alt="Test result for Pixel_shader::StageDependentAlphaRed" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Pixel_shader/StageDependentAlphaRed.png" alt="No alpha test result for Pixel_shader::StageDependentAlphaRed" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="StageDependentGreenBlue">StageDependentGreenBlue</h2>
+        <div class="test-case-description">
+            <p>Renders a quad using PS_TEXTUREMODES_DPNDNT_GB. Texture stage 0 is set to a gradient textured. The sampled green and blue channels from this texture are used as UV coordinates into the texture at stage 2. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Pixel_shader/StageDependentGreenBlue.png" alt="Test result for Pixel_shader::StageDependentGreenBlue" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Pixel_shader/StageDependentGreenBlue.png" alt="No alpha test result for Pixel_shader::StageDependentGreenBlue" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
