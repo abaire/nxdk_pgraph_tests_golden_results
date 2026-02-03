@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Combiner</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Combiner</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests behavior of NV097_SET_COMBINER_* and NV097_SET_SPECULAR_* final combiner operations.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/combiner_tests.h#L17">src/tests/combiner_tests.h</a></div>
+</div>
+
+<h2 id="AlphaFromBlue">AlphaFromBlue</h2>
+        <div class="test-case-description">
+            <p>Demonstrates behavior of the &#34;blue to alpha&#34; flags.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/AlphaFromBlue.png" alt="Test result for Combiner::AlphaFromBlue" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Combiner/AlphaFromBlue.png" alt="No alpha test result for Combiner::AlphaFromBlue" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ColorAlphaIndependence">ColorAlphaIndependence</h2>
+        <div class="test-case-description">
+            <p>Demonstrates that setting color on a combiner register does not affect alpha.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/ColorAlphaIndependence.png" alt="Test result for Combiner::ColorAlphaIndependence" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Combiner/ColorAlphaIndependence.png" alt="No alpha test result for Combiner::ColorAlphaIndependence" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="CombinerOps">CombinerOps</h2>
+        <div class="test-case-description">
+            <p>Tests the various output operations.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/CombinerOps.png" alt="Test result for Combiner::CombinerOps" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Combiner/CombinerOps.png" alt="No alpha test result for Combiner::CombinerOps" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Flags">Flags</h2>
+        <div class="test-case-description">
+            <p>Tests behavior of specular_add_invert_r0, specular_add_invert_v1, and specular_clamp on final combiners.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/Flags.png" alt="Test result for Combiner::Flags" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Combiner/Flags.png" alt="No alpha test result for Combiner::Flags" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Independence">Independence</h2>
+        <div class="test-case-description">
+            <p>Demonstrates that setting a register&#39;s value in a combiner stage does not mutate the value until after it is assigned as an output. The test performs several draws where R0 is initialized to some color then both mutated and copied into R1, demonstrating that the original value of R0 is copied into R1 before being replaced with the new value.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/Independence.png" alt="Test result for Combiner::Independence" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Combiner/Independence.png" alt="No alpha test result for Combiner::Independence" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Mux">Mux</h2>
+        <div class="test-case-description">
+            <p>Tests behavior of the &#34;MUX&#34; combiner mode, in which R0.a is used to select between the AB and CD outputs.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/Mux.png" alt="Test result for Combiner::Mux" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Combiner/Mux.png" alt="No alpha test result for Combiner::Mux" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SpecialInputs">SpecialInputs</h2>
+        <div class="test-case-description">
+            <p>Tests the special input registers in the final combiner. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/SpecialInputs.png" alt="Test result for Combiner::SpecialInputs" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Combiner/SpecialInputs.png" alt="No alpha test result for Combiner::SpecialInputs" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="UnboundTexSampler">UnboundTexSampler</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Combiner/UnboundTexSampler.png" alt="Test result for Combiner::UnboundTexSampler" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Combiner/UnboundTexSampler.png" alt="No alpha test result for Combiner::UnboundTexSampler" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

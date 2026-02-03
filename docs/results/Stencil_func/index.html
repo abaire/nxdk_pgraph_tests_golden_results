@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Stencil_func</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Stencil_func</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the behavior of NV097_SET_STENCIL_FUNC (0x00000364).</div>
+    
+        <div class="test-description-line">Each test renders a series of red quads unconditionally, then renders an invisible quad on top to set the value of the stencil buffer to various test values. Finally, a green quad is rendered across all test patches using the selected stencil function, causing areas that pass the function to turn green, while failing pixels remain red.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/stencil_func_tests.h#L21">src/tests/stencil_func_tests.h</a></div>
+</div>
+
+<h2 id="Always">Always</h2>
+        <div class="test-case-description">
+            <p>Tests NV097_SET_STENCIL_FUNC_V_ALWAYS - the entire test region should be green.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/Always.png" alt="Test result for Stencil_func::Always" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/Always.png" alt="No alpha test result for Stencil_func::Always" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Always_ZB">Always_ZB</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/Always_ZB.png" alt="Test result for Stencil_func::Always_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/Always_ZB.png" alt="No alpha test result for Stencil_func::Always_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Equal">Equal</h2>
+        <div class="test-case-description">
+            <p>Tests NV097_SET_STENCIL_FUNC_V_EQUAL - only the 0x7F patch should be green.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/Equal.png" alt="Test result for Stencil_func::Equal" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/Equal.png" alt="No alpha test result for Stencil_func::Equal" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Equal_ZB">Equal_ZB</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/Equal_ZB.png" alt="Test result for Stencil_func::Equal_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/Equal_ZB.png" alt="No alpha test result for Stencil_func::Equal_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Greater">Greater</h2>
+        <div class="test-case-description">
+            <p>Tests NV097_SET_STENCIL_FUNC_V_GREATER - all patches less than 0x7F and the test area (stencil = 0) should be green.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/Greater.png" alt="Test result for Stencil_func::Greater" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/Greater.png" alt="No alpha test result for Stencil_func::Greater" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Greater_ZB">Greater_ZB</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/Greater_ZB.png" alt="Test result for Stencil_func::Greater_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/Greater_ZB.png" alt="No alpha test result for Stencil_func::Greater_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GreaterThanOrEqual">GreaterThanOrEqual</h2>
+        <div class="test-case-description">
+            <p>Tests NV097_SET_STENCIL_FUNC_V_GEQUAL - the test area (stencil = 0) and all patches less than 0x7F and the 0x7F patch should be green.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/GreaterThanOrEqual.png" alt="Test result for Stencil_func::GreaterThanOrEqual" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/GreaterThanOrEqual.png" alt="No alpha test result for Stencil_func::GreaterThanOrEqual" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GreaterThanOrEqual_ZB">GreaterThanOrEqual_ZB</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/GreaterThanOrEqual_ZB.png" alt="Test result for Stencil_func::GreaterThanOrEqual_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/GreaterThanOrEqual_ZB.png" alt="No alpha test result for Stencil_func::GreaterThanOrEqual_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Less">Less</h2>
+        <div class="test-case-description">
+            <p>Tests NV097_SET_STENCIL_FUNC_V_LESS - all patches greater than 0x7F should be green.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/Less.png" alt="Test result for Stencil_func::Less" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/Less.png" alt="No alpha test result for Stencil_func::Less" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Less_ZB">Less_ZB</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/Less_ZB.png" alt="Test result for Stencil_func::Less_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/Less_ZB.png" alt="No alpha test result for Stencil_func::Less_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="LessThanOrEqual">LessThanOrEqual</h2>
+        <div class="test-case-description">
+            <p>Tests NV097_SET_STENCIL_FUNC_V_LEQUAL - all patches greater than 0x7F and the 0x7F patch should be green.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/LessThanOrEqual.png" alt="Test result for Stencil_func::LessThanOrEqual" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/LessThanOrEqual.png" alt="No alpha test result for Stencil_func::LessThanOrEqual" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="LessThanOrEqual_ZB">LessThanOrEqual_ZB</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/LessThanOrEqual_ZB.png" alt="Test result for Stencil_func::LessThanOrEqual_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/LessThanOrEqual_ZB.png" alt="No alpha test result for Stencil_func::LessThanOrEqual_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Never">Never</h2>
+        <div class="test-case-description">
+            <p>Tests NV097_SET_STENCIL_FUNC_V_NEVER - all patches should be blue.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/Never.png" alt="Test result for Stencil_func::Never" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/Never.png" alt="No alpha test result for Stencil_func::Never" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Never_ZB">Never_ZB</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/Never_ZB.png" alt="Test result for Stencil_func::Never_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/Never_ZB.png" alt="No alpha test result for Stencil_func::Never_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="NotEqual">NotEqual</h2>
+        <div class="test-case-description">
+            <p>Tests NV097_SET_STENCIL_FUNC_V_NOTEQUAL - the 0x7F patch should be blue, all other patches and the test area (stencil = 0) should be green. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/NotEqual.png" alt="Test result for Stencil_func::NotEqual" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/NotEqual.png" alt="No alpha test result for Stencil_func::NotEqual" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="NotEqual_ZB">NotEqual_ZB</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Stencil_func/NotEqual_ZB.png" alt="Test result for Stencil_func::NotEqual_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Stencil_func/NotEqual_ZB.png" alt="No alpha test result for Stencil_func::NotEqual_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

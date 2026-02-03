@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Lighting_spotlight</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Lighting_spotlight</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the behavior of spotlight falloff and attenuation settings.</div>
+    
+        <div class="test-description-line">The spotlight is placed at {0, 0, -7} (the camera position) pointing directly into the screen, with a maximum range of 15.f. A plane is rendered at {0, 0, 0}, and a cylinder at ~ {1, 1, 0}.</div>
+    
+        <div class="test-description-line">For the "At" prefixed tests, the attenuation factor of the light is adjusted. This factor should decrease the light intensity relative to the distance between the vertex and the light.</div>
+    
+        <div class="test-description-line">For the "Fo" prefixed tests, the falloff factor of the light is adjusted. This factor modifies how the intensity falls off in the zone between the penumbra (the outermost illuminated region) and the umbra (the region within which the light's full intensity is applied). Note that all pixels are still modified by attenuation, which is set to a constant value.</div>
+    
+        <div class="test-description-line">For the "PT" prefixed tests, the phi (penumbra) and theta (umbra) angles are set to various values, including some that would be prevented by DirectX.</div>
+    
+        <div class="test-description-line">See</div>
+    
+        <div class="test-description-line">https://learn.microsoft.com/en-us/windows/uwp/graphics-concepts/attenuation-and-spotlight-factor</div>
+    
+        <div class="test-description-line"></div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/lighting_spotlight_tests.h#L40">src/tests/lighting_spotlight_tests.h</a></div>
+</div>
+
+<h2 id="AtFixed_0.000000_0.000000_0.000000">AtFixed_0.000000_0.000000_0.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/AtFixed_0.000000_0.000000_0.000000.png" alt="Test result for Lighting_spotlight::AtFixed_0.000000_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/AtFixed_0.000000_0.000000_0.000000.png" alt="No alpha test result for Lighting_spotlight::AtFixed_0.000000_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AtFixed_0.050000_0.000000_0.250000">AtFixed_0.050000_0.000000_0.250000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/AtFixed_0.050000_0.000000_0.250000.png" alt="Test result for Lighting_spotlight::AtFixed_0.050000_0.000000_0.250000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/AtFixed_0.050000_0.000000_0.250000.png" alt="No alpha test result for Lighting_spotlight::AtFixed_0.050000_0.000000_0.250000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AtFixed_0.050000_0.050000_0.050000">AtFixed_0.050000_0.050000_0.050000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/AtFixed_0.050000_0.050000_0.050000.png" alt="Test result for Lighting_spotlight::AtFixed_0.050000_0.050000_0.050000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/AtFixed_0.050000_0.050000_0.050000.png" alt="No alpha test result for Lighting_spotlight::AtFixed_0.050000_0.050000_0.050000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AtFixed_0.050000_0.250000_0.000000">AtFixed_0.050000_0.250000_0.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/AtFixed_0.050000_0.250000_0.000000.png" alt="Test result for Lighting_spotlight::AtFixed_0.050000_0.250000_0.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/AtFixed_0.050000_0.250000_0.000000.png" alt="No alpha test result for Lighting_spotlight::AtFixed_0.050000_0.250000_0.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AtFixed_0.500000_0.000000_0.000000">AtFixed_0.500000_0.000000_0.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/AtFixed_0.500000_0.000000_0.000000.png" alt="Test result for Lighting_spotlight::AtFixed_0.500000_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/AtFixed_0.500000_0.000000_0.000000.png" alt="No alpha test result for Lighting_spotlight::AtFixed_0.500000_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AtFixed_1.000000_0.000000_0.000000">AtFixed_1.000000_0.000000_0.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/AtFixed_1.000000_0.000000_0.000000.png" alt="Test result for Lighting_spotlight::AtFixed_1.000000_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/AtFixed_1.000000_0.000000_0.000000.png" alt="No alpha test result for Lighting_spotlight::AtFixed_1.000000_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AtFixed_10.000000_0.000000_0.000000">AtFixed_10.000000_0.000000_0.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/AtFixed_10.000000_0.000000_0.000000.png" alt="Test result for Lighting_spotlight::AtFixed_10.000000_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/AtFixed_10.000000_0.000000_0.000000.png" alt="No alpha test result for Lighting_spotlight::AtFixed_10.000000_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AtFixed_2.000000_0.000000_0.000000">AtFixed_2.000000_0.000000_0.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/AtFixed_2.000000_0.000000_0.000000.png" alt="Test result for Lighting_spotlight::AtFixed_2.000000_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/AtFixed_2.000000_0.000000_0.000000.png" alt="No alpha test result for Lighting_spotlight::AtFixed_2.000000_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FoFixed_-0.000244_0.500122_0.499634">FoFixed_-0.000244_0.500122_0.499634</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/FoFixed_-0.000244_0.500122_0.499634.png" alt="Test result for Lighting_spotlight::FoFixed_-0.000244_0.500122_0.499634" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/FoFixed_-0.000244_0.500122_0.499634.png" alt="No alpha test result for Lighting_spotlight::FoFixed_-0.000244_0.500122_0.499634" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FoFixed_-0.170208_-0.855843_1.685635">FoFixed_-0.170208_-0.855843_1.685635</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/FoFixed_-0.170208_-0.855843_1.685635.png" alt="Test result for Lighting_spotlight::FoFixed_-0.170208_-0.855843_1.685635" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/FoFixed_-0.170208_-0.855843_1.685635.png" alt="No alpha test result for Lighting_spotlight::FoFixed_-0.170208_-0.855843_1.685635" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FoFixed_-0.706496_-2.507095_2.800600">FoFixed_-0.706496_-2.507095_2.800600</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/FoFixed_-0.706496_-2.507095_2.800600.png" alt="Test result for Lighting_spotlight::FoFixed_-0.706496_-2.507095_2.800600" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/FoFixed_-0.706496_-2.507095_2.800600.png" alt="No alpha test result for Lighting_spotlight::FoFixed_-0.706496_-2.507095_2.800600" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FoFixed_-0.932112_-3.097628_3.165516">FoFixed_-0.932112_-3.097628_3.165516</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/FoFixed_-0.932112_-3.097628_3.165516.png" alt="Test result for Lighting_spotlight::FoFixed_-0.932112_-3.097628_3.165516" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/FoFixed_-0.932112_-3.097628_3.165516.png" alt="No alpha test result for Lighting_spotlight::FoFixed_-0.932112_-3.097628_3.165516" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FoFixed_-0.986137_-3.165117_3.178980">FoFixed_-0.986137_-3.165117_3.178980</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/FoFixed_-0.986137_-3.165117_3.178980.png" alt="Test result for Lighting_spotlight::FoFixed_-0.986137_-3.165117_3.178980" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/FoFixed_-0.986137_-3.165117_3.178980.png" alt="No alpha test result for Lighting_spotlight::FoFixed_-0.986137_-3.165117_3.178980" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FoFixed_-0.993286_-2.953324_2.960038">FoFixed_-0.993286_-2.953324_2.960038</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/FoFixed_-0.993286_-2.953324_2.960038.png" alt="Test result for Lighting_spotlight::FoFixed_-0.993286_-2.953324_2.960038" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/FoFixed_-0.993286_-2.953324_2.960038.png" alt="No alpha test result for Lighting_spotlight::FoFixed_-0.993286_-2.953324_2.960038" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FoFixed_-0.996561_-3.084043_3.087482">FoFixed_-0.996561_-3.084043_3.087482</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/FoFixed_-0.996561_-3.084043_3.087482.png" alt="Test result for Lighting_spotlight::FoFixed_-0.996561_-3.084043_3.087482" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/FoFixed_-0.996561_-3.084043_3.087482.png" alt="No alpha test result for Lighting_spotlight::FoFixed_-0.996561_-3.084043_3.087482" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FoFixed_0.000000_-0.494592_1.494592">FoFixed_0.000000_-0.494592_1.494592</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/FoFixed_0.000000_-0.494592_1.494592.png" alt="Test result for Lighting_spotlight::FoFixed_0.000000_-0.494592_1.494592" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/FoFixed_0.000000_-0.494592_1.494592.png" alt="No alpha test result for Lighting_spotlight::FoFixed_0.000000_-0.494592_1.494592" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FoFixed_0.000000_0.000000_0.000000">FoFixed_0.000000_0.000000_0.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/FoFixed_0.000000_0.000000_0.000000.png" alt="Test result for Lighting_spotlight::FoFixed_0.000000_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/FoFixed_0.000000_0.000000_0.000000.png" alt="No alpha test result for Lighting_spotlight::FoFixed_0.000000_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FoFixed_0.000000_1.000000_0.000000">FoFixed_0.000000_1.000000_0.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/FoFixed_0.000000_1.000000_0.000000.png" alt="Test result for Lighting_spotlight::FoFixed_0.000000_1.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/FoFixed_0.000000_1.000000_0.000000.png" alt="No alpha test result for Lighting_spotlight::FoFixed_0.000000_1.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PTFixed_-10.000000_-10.000000">PTFixed_-10.000000_-10.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/PTFixed_-10.000000_-10.000000.png" alt="Test result for Lighting_spotlight::PTFixed_-10.000000_-10.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/PTFixed_-10.000000_-10.000000.png" alt="No alpha test result for Lighting_spotlight::PTFixed_-10.000000_-10.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PTFixed_0.000000_0.000000">PTFixed_0.000000_0.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/PTFixed_0.000000_0.000000.png" alt="Test result for Lighting_spotlight::PTFixed_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/PTFixed_0.000000_0.000000.png" alt="No alpha test result for Lighting_spotlight::PTFixed_0.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PTFixed_10.000000_10.000000">PTFixed_10.000000_10.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/PTFixed_10.000000_10.000000.png" alt="Test result for Lighting_spotlight::PTFixed_10.000000_10.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/PTFixed_10.000000_10.000000.png" alt="No alpha test result for Lighting_spotlight::PTFixed_10.000000_10.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PTFixed_10.000000_25.000000">PTFixed_10.000000_25.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/PTFixed_10.000000_25.000000.png" alt="Test result for Lighting_spotlight::PTFixed_10.000000_25.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/PTFixed_10.000000_25.000000.png" alt="No alpha test result for Lighting_spotlight::PTFixed_10.000000_25.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PTFixed_25.000000_0.000000">PTFixed_25.000000_0.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/PTFixed_25.000000_0.000000.png" alt="Test result for Lighting_spotlight::PTFixed_25.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/PTFixed_25.000000_0.000000.png" alt="No alpha test result for Lighting_spotlight::PTFixed_25.000000_0.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PTFixed_25.000000_5.000000">PTFixed_25.000000_5.000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_spotlight/PTFixed_25.000000_5.000000.png" alt="Test result for Lighting_spotlight::PTFixed_25.000000_5.000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_spotlight/PTFixed_25.000000_5.000000.png" alt="No alpha test result for Lighting_spotlight::PTFixed_25.000000_5.000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

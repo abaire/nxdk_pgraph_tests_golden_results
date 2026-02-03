@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Surface_format</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Surface_format</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests behavior of NV097_SET_SURFACE_FORMAT_COLOR. Tests render two quads into a render target with the surface color format under test. The left quad consists of 4 color gradient patches (red, yellow, cyan, blue) with alpha forced to fully opaque. The second quad uses the same color gradients but has alpha set in a radial pattern such that it is 0 at the corners and fully opaque in the center.</div>
+    
+        <div class="test-description-line">The resultant surface is then rendered to an RGBA framebuffer twice, once at the top of the screen with the alpha channel preserved, and again at the bottom of the screen with alpha forced to fully opaque.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/surface_format_tests.h#L19">src/tests/surface_format_tests.h</a></div>
+</div>
+
+<h2 id="Fmt_A8R8G8B8">Fmt_A8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Tests the A8R8G8B8 surface format. Quads appear the same as if they were rendered directly into the framebuffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_A8R8G8B8.png" alt="Test result for Surface_format::Fmt_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_format/Fmt_A8R8G8B8.png" alt="No alpha test result for Surface_format::Fmt_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Fmt_B8">Fmt_B8</h2>
+        <div class="test-case-description">
+            <p>Tests the B8 surface format. Quads appear as alpha+luma ramps and are distorted and repeated due to the difference in bytes per pixel.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_B8.png" alt="Test result for Surface_format::Fmt_B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_format/Fmt_B8.png" alt="No alpha test result for Surface_format::Fmt_B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Fmt_G8B8">Fmt_G8B8</h2>
+        <div class="test-case-description">
+            <p>Tests the G8B8 surface format. Quads set the red channel equal to the blue channel and alpha equal to the green channel. Quads are once again repeated due to the difference in bytes per pixel.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_G8B8.png" alt="Test result for Surface_format::Fmt_G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_format/Fmt_G8B8.png" alt="No alpha test result for Surface_format::Fmt_G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Fmt_R5G6B5">Fmt_R5G6B5</h2>
+        <div class="test-case-description">
+            <p>Tests the R5G6B5 surface format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_R5G6B5.png" alt="Test result for Surface_format::Fmt_R5G6B5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_format/Fmt_R5G6B5.png" alt="No alpha test result for Surface_format::Fmt_R5G6B5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Fmt_X1A7R8G8B8_O1A7R8G8B8">Fmt_X1A7R8G8B8_O1A7R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Tests the X1A7R8G8B8_O1A7R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the high bit of the alpha is set to 1, causing all quads to be less translucent.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_X1A7R8G8B8_O1A7R8G8B8.png" alt="Test result for Surface_format::Fmt_X1A7R8G8B8_O1A7R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_format/Fmt_X1A7R8G8B8_O1A7R8G8B8.png" alt="No alpha test result for Surface_format::Fmt_X1A7R8G8B8_O1A7R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Fmt_X1A7R8G8B8_Z1A7R8G8B8">Fmt_X1A7R8G8B8_Z1A7R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Tests the X1A7R8G8B8_Z1A7R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the high bit of the alpha is set to 0, causing all quads to be translucent.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_X1A7R8G8B8_Z1A7R8G8B8.png" alt="Test result for Surface_format::Fmt_X1A7R8G8B8_Z1A7R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_format/Fmt_X1A7R8G8B8_Z1A7R8G8B8.png" alt="No alpha test result for Surface_format::Fmt_X1A7R8G8B8_Z1A7R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Fmt_X1R5G5B5_O1R5G5B5">Fmt_X1R5G5B5_O1R5G5B5</h2>
+        <div class="test-case-description">
+            <p>Tests the X1R5G5B5_O1R5G5B5 surface format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_X1R5G5B5_O1R5G5B5.png" alt="Test result for Surface_format::Fmt_X1R5G5B5_O1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_format/Fmt_X1R5G5B5_O1R5G5B5.png" alt="No alpha test result for Surface_format::Fmt_X1R5G5B5_O1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Fmt_X1R5G5B5_Z1R5G5B5">Fmt_X1R5G5B5_Z1R5G5B5</h2>
+        <div class="test-case-description">
+            <p>Tests the X1R5G5B5_Z1R5G5B5 surface format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_X1R5G5B5_Z1R5G5B5.png" alt="Test result for Surface_format::Fmt_X1R5G5B5_Z1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_format/Fmt_X1R5G5B5_Z1R5G5B5.png" alt="No alpha test result for Surface_format::Fmt_X1R5G5B5_Z1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Fmt_X8R8G8B8_O8R8G8B8">Fmt_X8R8G8B8_O8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Tests the X8R8G8B8_O8R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the alpha is set to fully opaque.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_X8R8G8B8_O8R8G8B8.png" alt="Test result for Surface_format::Fmt_X8R8G8B8_O8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_format/Fmt_X8R8G8B8_O8R8G8B8.png" alt="No alpha test result for Surface_format::Fmt_X8R8G8B8_O8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Fmt_X8R8G8B8_Z8R8G8B8">Fmt_X8R8G8B8_Z8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Tests the X8R8G8B8_Z8R8G8B8 surface format. Quads appear similar to A8R8G8B8, but the alpha is set to fully transparent (no quads should appear in the top half of the image). </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_format/Fmt_X8R8G8B8_Z8R8G8B8.png" alt="Test result for Surface_format::Fmt_X8R8G8B8_Z8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_format/Fmt_X8R8G8B8_Z8R8G8B8.png" alt="No alpha test result for Surface_format::Fmt_X8R8G8B8_Z8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

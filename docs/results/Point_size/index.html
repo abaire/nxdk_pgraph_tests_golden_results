@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Point_size</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Point_size</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the behavior of NV097_SET_POINT_SIZE and NV097_SET_POINT_SMOOTH_ENABLE</div>
+    
+        <div class="test-description-line">See</div>
+    
+        <div class="test-description-line">https://registry.khronos.org/OpenGL-Refpages/gl2.1/xhtml/glPointSize.xml</div>
+    
+        <div class="test-description-line">Each test renders a grid of points.</div>
+    
+        <div class="test-description-line">As points go from left to right: point size starts at 0 and increases by point_size_increment per point.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/point_size_tests.h#L19">src/tests/point_size_tests.h</a></div>
+</div>
+
+<h2 id="LargestPointSize_FF">LargestPointSize_FF</h2>
+        <div class="test-case-description">
+            <p>Using the fixed function pipeline: Top row renders a single point with a point size of 1 pixel (8), then a huge value with ~0x1FF set. Bottom row renders a single point with a point size of 511 (0x1FF), then a huge value with ~0x1FF set. 64 pixel ruler quads are rendered near the huge value points. Demonstrates that values larger than 0x1FF are completely ignored rather than masked.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/LargestPointSize_FF.png" alt="Test result for Point_size::LargestPointSize_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/LargestPointSize_FF.png" alt="No alpha test result for Point_size::LargestPointSize_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="LargestPointSize_VS">LargestPointSize_VS</h2>
+        <div class="test-case-description">
+            <p>Using the programmable pipeline: Top row renders a single point with a point size of 1 pixel (8), then a huge value with ~0x1FF set. Bottom row renders a single point with a point size of 511 (0x1FF), then a huge value with ~0x1FF set. 64 pixel ruler quads are rendered near the huge value points. Demonstrates that values larger than 0x1FF are completely ignored rather than masked.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/LargestPointSize_VS.png" alt="Test result for Point_size::LargestPointSize_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/LargestPointSize_VS.png" alt="No alpha test result for Point_size::LargestPointSize_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOff_01_FF">PointSmoothOff_01_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with point smoothing disabled. Point size starts at 0 and increases by 1 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_01_FF.png" alt="Test result for Point_size::PointSmoothOff_01_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOff_01_FF.png" alt="No alpha test result for Point_size::PointSmoothOff_01_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOff_01_VS">PointSmoothOff_01_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using a programmable shader with point smoothing disabled. Point size starts at 0 and increases by 1 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_01_VS.png" alt="Test result for Point_size::PointSmoothOff_01_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOff_01_VS.png" alt="No alpha test result for Point_size::PointSmoothOff_01_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOff_04_FF">PointSmoothOff_04_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with point smoothing disabled. Point size starts at 0 and increases by 4 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_04_FF.png" alt="Test result for Point_size::PointSmoothOff_04_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOff_04_FF.png" alt="No alpha test result for Point_size::PointSmoothOff_04_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOff_04_VS">PointSmoothOff_04_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using a programmable shader with point smoothing disabled. Point size starts at 0 and increases by 1 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_04_VS.png" alt="Test result for Point_size::PointSmoothOff_04_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOff_04_VS.png" alt="No alpha test result for Point_size::PointSmoothOff_04_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOff_08_FF">PointSmoothOff_08_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with point smoothing disabled. Point size starts at 0 and increases by 8 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_08_FF.png" alt="Test result for Point_size::PointSmoothOff_08_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOff_08_FF.png" alt="No alpha test result for Point_size::PointSmoothOff_08_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOff_08_VS">PointSmoothOff_08_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using a programmable shader with point smoothing disabled. Point size starts at 0 and increases by 8 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_08_VS.png" alt="Test result for Point_size::PointSmoothOff_08_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOff_08_VS.png" alt="No alpha test result for Point_size::PointSmoothOff_08_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOff_16_FF">PointSmoothOff_16_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with point smoothing disabled. Point size starts at 0 and increases by 16 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_16_FF.png" alt="Test result for Point_size::PointSmoothOff_16_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOff_16_FF.png" alt="No alpha test result for Point_size::PointSmoothOff_16_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOff_16_VS">PointSmoothOff_16_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using a programmable shader with point smoothing disabled. Point size starts at 0 and increases by 16 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOff_16_VS.png" alt="Test result for Point_size::PointSmoothOff_16_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOff_16_VS.png" alt="No alpha test result for Point_size::PointSmoothOff_16_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOn_01_FF">PointSmoothOn_01_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with point smoothing enabled. Point size starts at 0 and increases by 1 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_01_FF.png" alt="Test result for Point_size::PointSmoothOn_01_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOn_01_FF.png" alt="No alpha test result for Point_size::PointSmoothOn_01_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOn_01_VS">PointSmoothOn_01_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using a programmable shader with point smoothing enabled. Point size starts at 0 and increases by 1 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_01_VS.png" alt="Test result for Point_size::PointSmoothOn_01_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOn_01_VS.png" alt="No alpha test result for Point_size::PointSmoothOn_01_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOn_04_FF">PointSmoothOn_04_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with point smoothing enabled. Point size starts at 0 and increases by 4 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_04_FF.png" alt="Test result for Point_size::PointSmoothOn_04_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOn_04_FF.png" alt="No alpha test result for Point_size::PointSmoothOn_04_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOn_04_VS">PointSmoothOn_04_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using a programmable shader with point smoothing enabled. Point size starts at 0 and increases by 1 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_04_VS.png" alt="Test result for Point_size::PointSmoothOn_04_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOn_04_VS.png" alt="No alpha test result for Point_size::PointSmoothOn_04_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOn_08_FF">PointSmoothOn_08_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with point smoothing enabled. Point size starts at 0 and increases by 8 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_08_FF.png" alt="Test result for Point_size::PointSmoothOn_08_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOn_08_FF.png" alt="No alpha test result for Point_size::PointSmoothOn_08_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOn_08_VS">PointSmoothOn_08_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using a programmable shader with point smoothing enabled. Point size starts at 0 and increases by 8 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_08_VS.png" alt="Test result for Point_size::PointSmoothOn_08_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOn_08_VS.png" alt="No alpha test result for Point_size::PointSmoothOn_08_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOn_16_FF">PointSmoothOn_16_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with point smoothing enabled. Point size starts at 0 and increases by 16 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_16_FF.png" alt="Test result for Point_size::PointSmoothOn_16_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOn_16_FF.png" alt="No alpha test result for Point_size::PointSmoothOn_16_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointSmoothOn_16_VS">PointSmoothOn_16_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using a programmable shader with point smoothing enabled. Point size starts at 0 and increases by 16 per point starting at the upper left point.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/PointSmoothOn_16_VS.png" alt="Test result for Point_size::PointSmoothOn_16_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/PointSmoothOn_16_VS.png" alt="No alpha test result for Point_size::PointSmoothOn_16_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SmallestPointSize_FF">SmallestPointSize_FF</h2>
+        <div class="test-case-description">
+            <p>Using the fixed function pipeline, render points sized 0 - 1 with point params and smoothing off.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/SmallestPointSize_FF.png" alt="Test result for Point_size::SmallestPointSize_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/SmallestPointSize_FF.png" alt="No alpha test result for Point_size::SmallestPointSize_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SmallestPointSize_VS">SmallestPointSize_VS</h2>
+        <div class="test-case-description">
+            <p>Using the programmable pipeline, render points sized 0 - 1 with point params enabled and smoothing off.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/SmallestPointSize_VS.png" alt="Test result for Point_size::SmallestPointSize_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/SmallestPointSize_VS.png" alt="No alpha test result for Point_size::SmallestPointSize_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VSPointSize">VSPointSize</h2>
+        <div class="test-case-description">
+            <p>Using the programmable pipeline, renders two rows with a point using immediate mode (SET_POINT_SIZE) followed by a DrawArrays with a configured point size (v6) parameter. Then renders another two rows with point params enabled with a constant scale factor. Demonstrates that point size is entirely governed by SET_POINT_SIZE when point params is disabled and that it is not possible for the vertex shader to influence point size. Further demonstrates that point size is entirely goverened by oPts if point params are enabled. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_size/VSPointSize.png" alt="Test result for Point_size::VSPointSize" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_size/VSPointSize.png" alt="No alpha test result for Point_size::VSPointSize" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+.code-snippet {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-container div {
+    margin: 10px;
+}
+
+.image-container img {
+    max-width: 1280px;
+    max-height: 720px;
+}
+
+.image-title {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.titled-image-container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.title-and-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.image-title {
+    text-align: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.view-link {
+    cursor: pointer;
+    display: block;
+}
+
+.hidden-image {
+    max-width: 1280px;
+    max-height: 720px;
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.label-value-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+}
+
+.label {
+    font-weight: bold;
+    text-align: right;
+}
+
+.value {
+}
+
+.label-value-grid > * {
+    padding: 2px 0;
+}
+
+.comparison-image-set {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+}
+
+.comparison-image-set >.image-container {
+    margin-top: 0;
+}
+
+.comparison-image-set >.image-container:has(+.image-pair) {
+    margin-top: 40px;
+}
+
+@media (max-width: 1280px) {
+  .comparison-image-set {
+        flex-direction: column;
+    }
+
+  .image-pair-title-bar {
+        margin-left: 20px;
+    }
+  .image-pair {
+        margin-left: 20px;
+    }
+}
+
+.missing-image {
+    display: flex;
+    width: 640px;
+    height: 480px;
+    align-items: center;
+    justify-content: center;
+    background: floralwhite;
+}
+
+.image-pair {
+    outline-style: none;
+    outline-offset: 6px;
+}
+
+.image-pair-golden {
+    outline: 6px solid gold;
+}
+
+.image-pair-title-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    height: 40px;
+}
+
+.image-comparison {
+    cursor: pointer;
+}
+
+.page-content {
+  margin-left: 48px;
+  padding: 0 10px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 48px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
