@@ -34,7 +34,7 @@ jobs:
         with:
           repository: ${{github.repository}}.wiki
           path: wiki
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Generate wiki content
@@ -57,7 +57,7 @@ jobs:
     steps:
       - name: Clone tree
         uses: actions/checkout@v6
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
