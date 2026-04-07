@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Image_blit</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Image_blit</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests behavior of the 2D blitting commands.</div>
+    
+        <div class="test-description-line">NV09F, NV012, NV019, NV072</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/image_blit_tests.h#L15">src/tests/image_blit_tests.h</a></div>
+</div>
+
+<h2 id="BlitBeyondWidth">BlitBeyondWidth</h2>
+        <div class="test-case-description">
+            <p>Demonstrates the interaction between 0x9F image blit operations and assigned GPU tiles. A blit operation is configured with a target smaller than the source. The target address is set within an active GPU tile such that the blit would extend beyond the end of the tile and a guard value is tested to prove that the blit is clipped to stay within the tile. A similar blit is performed outside of the tile, demonstrating that unprotected blits may overdraw the target region. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/BlitBeyondWidth.png" alt="Test result for Image_blit::BlitBeyondWidth" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/BlitBeyondWidth.png" alt="No alpha test result for Image_blit::BlitBeyondWidth" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="BlitRenderBlit">BlitRenderBlit</h2>
+        <div class="test-case-description">
+            <p>Blits an image into a render surface, then performs a 3d render on top of the surface, then another blit on top of the composited two. Finally does a srccopy to blit the finished composition to the framebuffer. Demonstrates apparent incorrect ordering in various versions of xemu.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/BlitRenderBlit.png" alt="Test result for Image_blit::BlitRenderBlit" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/BlitRenderBlit.png" alt="No alpha test result for Image_blit::BlitRenderBlit" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DirtyOverlappedDestSurf">DirtyOverlappedDestSurf</h2>
+        <div class="test-case-description">
+            <p>Performs a 3d render into the backbuffer, then a 2D srccopy that completely overwrites it. Finally performs another 3d render, demonstrating incorrect behavior in various versions of xemu.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/DirtyOverlappedDestSurf.png" alt="Test result for Image_blit::DirtyOverlappedDestSurf" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/DirtyOverlappedDestSurf.png" alt="No alpha test result for Image_blit::DirtyOverlappedDestSurf" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_XRGB_B00000000">ImgBlt_BLENDAND_XRGB_B00000000</h2>
+        <div class="test-case-description">
+            <p>Demonstrates expected behavior of the contextual beta (class 0x12) during image blits.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B00000000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_XRGB_B00000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_XRGB_B00000000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_XRGB_B00000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_XRGB_B007FFFFF">ImgBlt_BLENDAND_XRGB_B007FFFFF</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B007FFFFF.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_XRGB_B007FFFFF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_XRGB_B007FFFFF.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_XRGB_B007FFFFF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_XRGB_B00800000">ImgBlt_BLENDAND_XRGB_B00800000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B00800000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_XRGB_B00800000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_XRGB_B00800000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_XRGB_B00800000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_XRGB_B00D00000">ImgBlt_BLENDAND_XRGB_B00D00000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B00D00000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_XRGB_B00D00000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_XRGB_B00D00000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_XRGB_B00D00000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_XRGB_B03300000">ImgBlt_BLENDAND_XRGB_B03300000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B03300000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_XRGB_B03300000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_XRGB_B03300000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_XRGB_B03300000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_XRGB_B44400000">ImgBlt_BLENDAND_XRGB_B44400000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B44400000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_XRGB_B44400000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_XRGB_B44400000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_XRGB_B44400000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_XRGB_B444FFFFF">ImgBlt_BLENDAND_XRGB_B444FFFFF</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B444FFFFF.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_XRGB_B444FFFFF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_XRGB_B444FFFFF.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_XRGB_B444FFFFF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_XRGB_B66800000">ImgBlt_BLENDAND_XRGB_B66800000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B66800000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_XRGB_B66800000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_XRGB_B66800000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_XRGB_B66800000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_XRGB_B7F800000">ImgBlt_BLENDAND_XRGB_B7F800000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B7F800000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_XRGB_B7F800000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_XRGB_B7F800000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_XRGB_B7F800000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_XRGB_B7FFFFFFF">ImgBlt_BLENDAND_XRGB_B7FFFFFFF</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B7FFFFFFF.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_XRGB_B7FFFFFFF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_XRGB_B7FFFFFFF.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_XRGB_B7FFFFFFF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_XRGB_B80000000">ImgBlt_BLENDAND_XRGB_B80000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B80000000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_XRGB_B80000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_XRGB_B80000000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_XRGB_B80000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_XRGB_B8FFFFFFF">ImgBlt_BLENDAND_XRGB_B8FFFFFFF</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_XRGB_B8FFFFFFF.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_XRGB_B8FFFFFFF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_XRGB_B8FFFFFFF.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_XRGB_B8FFFFFFF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_ZRGB_B007FFFFF">ImgBlt_BLENDAND_ZRGB_B007FFFFF</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_ZRGB_B007FFFFF.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B007FFFFF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_ZRGB_B007FFFFF.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B007FFFFF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_ZRGB_B00800000">ImgBlt_BLENDAND_ZRGB_B00800000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_ZRGB_B00800000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B00800000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_ZRGB_B00800000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B00800000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_ZRGB_B00D00000">ImgBlt_BLENDAND_ZRGB_B00D00000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_ZRGB_B00D00000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B00D00000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_ZRGB_B00D00000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B00D00000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_ZRGB_B03300000">ImgBlt_BLENDAND_ZRGB_B03300000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_ZRGB_B03300000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B03300000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_ZRGB_B03300000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B03300000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_ZRGB_B44400000">ImgBlt_BLENDAND_ZRGB_B44400000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_ZRGB_B44400000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B44400000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_ZRGB_B44400000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B44400000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_ZRGB_B444FFFFF">ImgBlt_BLENDAND_ZRGB_B444FFFFF</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_ZRGB_B444FFFFF.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B444FFFFF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_ZRGB_B444FFFFF.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B444FFFFF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_ZRGB_B66800000">ImgBlt_BLENDAND_ZRGB_B66800000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_ZRGB_B66800000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B66800000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_ZRGB_B66800000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B66800000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_BLENDAND_ZRGB_B7F800000">ImgBlt_BLENDAND_ZRGB_B7F800000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_BLENDAND_ZRGB_B7F800000.png" alt="Test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B7F800000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_BLENDAND_ZRGB_B7F800000.png" alt="No alpha test result for Image_blit::ImgBlt_BLENDAND_ZRGB_B7F800000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_Clip_0_0_640_480">ImgBlt_Clip_0_0_640_480</h2>
+        <div class="test-case-description">
+            <p>Demonstrates expected behavior of the contextual clip rectangle (class 0x19) during image blits.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_Clip_0_0_640_480.png" alt="Test result for Image_blit::ImgBlt_Clip_0_0_640_480" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_Clip_0_0_640_480.png" alt="No alpha test result for Image_blit::ImgBlt_Clip_0_0_640_480" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_Clip_300_200_16_24">ImgBlt_Clip_300_200_16_24</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_Clip_300_200_16_24.png" alt="Test result for Image_blit::ImgBlt_Clip_300_200_16_24" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_Clip_300_200_16_24.png" alt="No alpha test result for Image_blit::ImgBlt_Clip_300_200_16_24" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_Clip_320_240_0_0">ImgBlt_Clip_320_240_0_0</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_Clip_320_240_0_0.png" alt="Test result for Image_blit::ImgBlt_Clip_320_240_0_0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_Clip_320_240_0_0.png" alt="No alpha test result for Image_blit::ImgBlt_Clip_320_240_0_0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_Clip_320_240_0_10">ImgBlt_Clip_320_240_0_10</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_Clip_320_240_0_10.png" alt="Test result for Image_blit::ImgBlt_Clip_320_240_0_10" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_Clip_320_240_0_10.png" alt="No alpha test result for Image_blit::ImgBlt_Clip_320_240_0_10" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_Clip_320_240_1_1">ImgBlt_Clip_320_240_1_1</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_Clip_320_240_1_1.png" alt="Test result for Image_blit::ImgBlt_Clip_320_240_1_1" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_Clip_320_240_1_1.png" alt="No alpha test result for Image_blit::ImgBlt_Clip_320_240_1_1" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_Clip_320_240_640_480">ImgBlt_Clip_320_240_640_480</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_Clip_320_240_640_480.png" alt="Test result for Image_blit::ImgBlt_Clip_320_240_640_480" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_Clip_320_240_640_480.png" alt="No alpha test result for Image_blit::ImgBlt_Clip_320_240_640_480" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_Clip_320_240_64_40">ImgBlt_Clip_320_240_64_40</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_Clip_320_240_64_40.png" alt="Test result for Image_blit::ImgBlt_Clip_320_240_64_40" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_Clip_320_240_64_40.png" alt="No alpha test result for Image_blit::ImgBlt_Clip_320_240_64_40" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_SRCCOPY_ARGB_B00000000">ImgBlt_SRCCOPY_ARGB_B00000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_SRCCOPY_ARGB_B00000000.png" alt="Test result for Image_blit::ImgBlt_SRCCOPY_ARGB_B00000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_SRCCOPY_ARGB_B00000000.png" alt="No alpha test result for Image_blit::ImgBlt_SRCCOPY_ARGB_B00000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_SRCCOPY_XRGB_B00000000">ImgBlt_SRCCOPY_XRGB_B00000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_SRCCOPY_XRGB_B00000000.png" alt="Test result for Image_blit::ImgBlt_SRCCOPY_XRGB_B00000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_SRCCOPY_XRGB_B00000000.png" alt="No alpha test result for Image_blit::ImgBlt_SRCCOPY_XRGB_B00000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ImgBlt_SRCCOPY_ZRGB_B00000000">ImgBlt_SRCCOPY_ZRGB_B00000000</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/ImgBlt_SRCCOPY_ZRGB_B00000000.png" alt="Test result for Image_blit::ImgBlt_SRCCOPY_ZRGB_B00000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/ImgBlt_SRCCOPY_ZRGB_B00000000.png" alt="No alpha test result for Image_blit::ImgBlt_SRCCOPY_ZRGB_B00000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="OverlapFIFO">OverlapFIFO</h2>
+        <div class="test-case-description">
+            <p>Demonstrates that image blits overlapping the pushbuffer are performed without issue on HW. A blit copying the test image over the current pushbuffer write address is queued, followed by a blit copying the data from there to the screen. This is flushed to the HW, along with a wait until the pushbuffer is fully consumed. Failure to wait demonstrates a race between the blits and subsequent instructions, generally leading to some corruption near the top of the image.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Image_blit/OverlapFIFO.png" alt="Test result for Image_blit::OverlapFIFO" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Image_blit/OverlapFIFO.png" alt="No alpha test result for Image_blit::OverlapFIFO" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
