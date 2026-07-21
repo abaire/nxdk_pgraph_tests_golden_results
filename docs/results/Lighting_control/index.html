@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Lighting_control</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Lighting_control</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the effects of NV097_SET_LIGHT_CONTROL (0x294) in conjunction with NV097_SET_SPECULAR_ENABLE.</div>
+    
+        <div class="test-description-line">A number of test meshes are rendered and lit with two lights:</div>
+    
+        <div class="test-description-line">1) A directional light coming from the left and pointing into the screen (direction is {1, 0, 1}).</div>
+    
+        <div class="test-description-line">2) An attenuated point light on the right at {1.5f, 1.f, -2.5f} with a max rannge of 4. and attenuation of {0.025f, 0.15f, 0.02f}.</div>
+    
+        <div class="test-description-line">Both lights have ambient {0.f, 0.f, 0.05f}, diffuse {0.25f, 0.f, 0.f}, specular {0.f, 0.2f, 0.4f}.</div>
+    
+        <div class="test-description-line">Meshes have the specular color of each vertex at {0.f, 0.4, 0.f, 0.25f}.</div>
+    
+        <div class="test-description-line">All colors are taken from the material (i.e., contributed by the lights). NV097_SET_MATERIAL_ALPHA is set to 0.4 and the scene ambient is a very dark grey at 0.031373.</div>
+    
+        <div class="test-description-line">See also: the OpenGL 2.1 specification lighting model</div>
+    
+        <div class="test-description-line">https://registry.khronos.org/OpenGL/specs/gl/glspec21.pdf</div>
+    
+        <div class="test-description-line">Notes on use with the programmable pipeline:</div>
+    
+        <div class="test-description-line">While it is possible to enable lights when using a vertex shader, it appears that parts of the pipeline are not fully initialized, leading to non-deterministic color effects that change with each draw and often differ across cold boots of the hardware.</div>
+    
+        <div class="test-description-line">Leaving lighting enabled without enabling any lights via NV097_SET_LIGHT_ENABLE_MASK will cause all vertices to be black in color, but alpha will still come from the material when allowed by the light control and specular enable settings.</div>
+    
+        <div class="test-description-line">Disabling specular with lighting enabled will still disable the alpha application.</div>
+    
+        <div class="test-description-line">Enabling specular with lighting disabled will apply the material alpha and use the vertex shader output colors.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/lighting_control_tests.h#L58">src/tests/lighting_control_tests.h</a></div>
+</div>
+
+<h2 id="FF_0x000000">FF_0x000000</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED on. Separate specular is off, causing the green of the mesh specular to be retained. Localeye is off, using a simplified model for specular highlighting, causing artifacts for the point light on the cylinder mesh. Light control alpha is forced to opaque.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x000000.png" alt="Test result for Lighting_control::FF_0x000000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x000000.png" alt="No alpha test result for Lighting_control::FF_0x000000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x000000NoSpec">FF_0x000000NoSpec</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED off. Separate specular is ignored because SPECULAR_ENABLED is off, so the green of the mesh specular is not seen. Localeye is off, using a simplified model for specular highlighting, causing artifacts for the point light on the cylinder mesh. Light control alpha is ignored and the mesh is forced to opaque because SPECULAR_ENABLED is off. Visually equivalent to FF_0x000001.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x000000NoSpec.png" alt="Test result for Lighting_control::FF_0x000000NoSpec" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x000000NoSpec.png" alt="No alpha test result for Lighting_control::FF_0x000000NoSpec" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x000001">FF_0x000001</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED on. Separate specular is on, so the green of the mesh specular is not seen. Localeye is off, using a simplified model for specular highlighting, causing artifacts for the point light on the cylinder mesh. Light control alpha is forced to opaque.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x000001.png" alt="Test result for Lighting_control::FF_0x000001" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x000001.png" alt="No alpha test result for Lighting_control::FF_0x000001" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x000001NoSpec">FF_0x000001NoSpec</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED off. Separate specular is ignored because SPECULAR_ENABLED is off, so the green of the mesh specular is not seen. Localeye is off, using a simplified model for specular highlighting, causing artifacts for the point light on the cylinder mesh. Light control alpha is ignored and the mesh is forced to opaque because SPECULAR_ENABLED is off.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x000001NoSpec.png" alt="Test result for Lighting_control::FF_0x000001NoSpec" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x000001NoSpec.png" alt="No alpha test result for Lighting_control::FF_0x000001NoSpec" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x010000">FF_0x010000</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED on. Separate specular is off, causing the green of the mesh specular to be retained. Localeye is on, using a slower model for specular highlighting that results in more realistic behavior for the point light on the cylinder mesh. Light control alpha is forced to opaque.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x010000.png" alt="Test result for Lighting_control::FF_0x010000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x010000.png" alt="No alpha test result for Lighting_control::FF_0x010000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x010000NoSpec">FF_0x010000NoSpec</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED off. Separate specular is ignored because SPECULAR_ENABLED is off, so the green of the mesh specular is not seen. Localeye is on, using a slower model for specular highlighting that results in more realistic behavior for the point light on the cylinder mesh. Light control alpha is ignored and the mesh is forced to opaque because SPECULAR_ENABLED is off.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x010000NoSpec.png" alt="Test result for Lighting_control::FF_0x010000NoSpec" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x010000NoSpec.png" alt="No alpha test result for Lighting_control::FF_0x010000NoSpec" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x010001">FF_0x010001</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED on. Separate specular is on, so the green of the mesh specular is not seen. Localeye is on, using a slower model for specular highlighting that results in more realistic behavior for the point light on the cylinder mesh. Light control alpha is forced to opaque.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x010001.png" alt="Test result for Lighting_control::FF_0x010001" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x010001.png" alt="No alpha test result for Lighting_control::FF_0x010001" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x010001NoSpec">FF_0x010001NoSpec</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED off. Separate specular is ignored because SPECULAR_ENABLED is off, so the green of the mesh specular is not seen. Localeye is on, using a slower model for specular highlighting that results in more realistic behavior for the point light on the cylinder mesh. Light control alpha is ignored and the mesh is forced to opaque because SPECULAR_ENABLED is off.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x010001NoSpec.png" alt="Test result for Lighting_control::FF_0x010001NoSpec" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x010001NoSpec.png" alt="No alpha test result for Lighting_control::FF_0x010001NoSpec" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x020000">FF_0x020000</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED on. Separate specular is off, causing the green of the mesh specular to be retained. Localeye is off, using a simplified model for specular highlighting, causing artifacts for the point light on the cylinder mesh. Light control alpha is set to compute the alpha from the specular and light effects, so the model is transluscent.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x020000.png" alt="Test result for Lighting_control::FF_0x020000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x020000.png" alt="No alpha test result for Lighting_control::FF_0x020000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x020000NoSpec">FF_0x020000NoSpec</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED off. Separate specular is ignored because SPECULAR_ENABLED is off, so the green of the mesh specular is not seen. Localeye is off, using a simplified model for specular highlighting, causing artifacts for the point light on the cylinder mesh. Light control alpha is ignored and the mesh is forced to opaque because SPECULAR_ENABLED is off.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x020000NoSpec.png" alt="Test result for Lighting_control::FF_0x020000NoSpec" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x020000NoSpec.png" alt="No alpha test result for Lighting_control::FF_0x020000NoSpec" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x020001">FF_0x020001</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED on. Separate specular is on, so the green of the mesh specular is not seen. Localeye is off, using a simplified model for specular highlighting, causing artifacts for the point light on the cylinder mesh. Light control alpha is set to compute the alpha from the specular and light effects, so the model is transluscent.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x020001.png" alt="Test result for Lighting_control::FF_0x020001" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x020001.png" alt="No alpha test result for Lighting_control::FF_0x020001" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x020001NoSpec">FF_0x020001NoSpec</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED off. Separate specular is ignored because SPECULAR_ENABLED is off, so the green of the mesh specular is not seen. Localeye is off, using a simplified model for specular highlighting, causing artifacts for the point light on the cylinder mesh. Light control alpha is ignored and the mesh is forced to opaque because SPECULAR_ENABLED is off.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x020001NoSpec.png" alt="Test result for Lighting_control::FF_0x020001NoSpec" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x020001NoSpec.png" alt="No alpha test result for Lighting_control::FF_0x020001NoSpec" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x030000">FF_0x030000</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED on. Separate specular is off, causing the green of the mesh specular to be retained. Localeye is on, using a slower model for specular highlighting that results in more realistic behavior for the point light on the cylinder mesh. Light control alpha is set to compute the alpha from the specular and light effects, so the model is transluscent.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x030000.png" alt="Test result for Lighting_control::FF_0x030000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x030000.png" alt="No alpha test result for Lighting_control::FF_0x030000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x030000NoSpec">FF_0x030000NoSpec</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED off. Separate specular is ignored because SPECULAR_ENABLED is off, so the green of the mesh specular is not seen. Localeye is on, using a slower model for specular highlighting that results in more realistic behavior for the point light on the cylinder mesh. Light control alpha is ignored and the mesh is forced to opaque because SPECULAR_ENABLED is off.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x030000NoSpec.png" alt="Test result for Lighting_control::FF_0x030000NoSpec" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x030000NoSpec.png" alt="No alpha test result for Lighting_control::FF_0x030000NoSpec" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x030001">FF_0x030001</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED on. Separate specular is on, so the green of the mesh specular is not seen. Localeye is on, using a slower model for specular highlighting that results in more realistic behavior for the point light on the cylinder mesh. Light control alpha is set to compute the alpha from the specular and light effects, so the model is transluscent.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x030001.png" alt="Test result for Lighting_control::FF_0x030001" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x030001.png" alt="No alpha test result for Lighting_control::FF_0x030001" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FF_0x030001NoSpec">FF_0x030001NoSpec</h2>
+        <div class="test-case-description">
+            <p>Tests behavior using the fixed function pipeline with SET_SPECULAR_ENABLED off. Separate specular is ignored because SPECULAR_ENABLED is off, so the green of the mesh specular is not seen. Localeye is on, using a slower model for specular highlighting that results in more realistic behavior for the point light on the cylinder mesh. Light control alpha is ignored and the mesh is forced to opaque because SPECULAR_ENABLED is off. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/FF_0x030001NoSpec.png" alt="Test result for Lighting_control::FF_0x030001NoSpec" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/FF_0x030001NoSpec.png" alt="No alpha test result for Lighting_control::FF_0x030001NoSpec" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x000000_LightOff">VS_0x000000_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x000000_LightOff.png" alt="Test result for Lighting_control::VS_0x000000_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x000000_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x000000_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x000000NoSpec_LightOff">VS_0x000000NoSpec_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x000000NoSpec_LightOff.png" alt="Test result for Lighting_control::VS_0x000000NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x000000NoSpec_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x000000NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x000001_LightOff">VS_0x000001_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x000001_LightOff.png" alt="Test result for Lighting_control::VS_0x000001_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x000001_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x000001_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x000001NoSpec_LightOff">VS_0x000001NoSpec_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x000001NoSpec_LightOff.png" alt="Test result for Lighting_control::VS_0x000001NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x000001NoSpec_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x000001NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x010000_LightOff">VS_0x010000_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x010000_LightOff.png" alt="Test result for Lighting_control::VS_0x010000_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x010000_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x010000_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x010000NoSpec_LightOff">VS_0x010000NoSpec_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x010000NoSpec_LightOff.png" alt="Test result for Lighting_control::VS_0x010000NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x010000NoSpec_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x010000NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x010001_LightOff">VS_0x010001_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x010001_LightOff.png" alt="Test result for Lighting_control::VS_0x010001_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x010001_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x010001_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x010001NoSpec_LightOff">VS_0x010001NoSpec_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x010001NoSpec_LightOff.png" alt="Test result for Lighting_control::VS_0x010001NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x010001NoSpec_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x010001NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x020000_LightOff">VS_0x020000_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x020000_LightOff.png" alt="Test result for Lighting_control::VS_0x020000_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x020000_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x020000_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x020000NoSpec_LightOff">VS_0x020000NoSpec_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x020000NoSpec_LightOff.png" alt="Test result for Lighting_control::VS_0x020000NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x020000NoSpec_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x020000NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x020001_LightOff">VS_0x020001_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x020001_LightOff.png" alt="Test result for Lighting_control::VS_0x020001_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x020001_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x020001_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x020001NoSpec_LightOff">VS_0x020001NoSpec_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x020001NoSpec_LightOff.png" alt="Test result for Lighting_control::VS_0x020001NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x020001NoSpec_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x020001NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x030000_LightOff">VS_0x030000_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x030000_LightOff.png" alt="Test result for Lighting_control::VS_0x030000_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x030000_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x030000_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x030000NoSpec_LightOff">VS_0x030000NoSpec_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x030000NoSpec_LightOff.png" alt="Test result for Lighting_control::VS_0x030000NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x030000NoSpec_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x030000NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x030001_LightOff">VS_0x030001_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x030001_LightOff.png" alt="Test result for Lighting_control::VS_0x030001_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x030001_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x030001_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VS_0x030001NoSpec_LightOff">VS_0x030001NoSpec_LightOff</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Lighting_control/VS_0x030001NoSpec_LightOff.png" alt="Test result for Lighting_control::VS_0x030001NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Lighting_control/VS_0x030001NoSpec_LightOff.png" alt="No alpha test result for Lighting_control::VS_0x030001NoSpec_LightOff" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Material_color_source</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Material_color_source</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests behavior when lighting is enabled and color components are requested from various sources. Also tests the behavior of non-zero NV097_SET_MATERIAL_EMISSION values.</div>
+    
+        <div class="test-description-line">A color legend is rendered along the left hand side: vD = vertex diffuse. vS = vertex specular. sA = scene ambient. mD = material diffuse. mS = material specular. mE = material emissive. mA = material ambient. A single directional light is used with ambient, diffuse, and specular multipliers all set to 1.0.</div>
+    
+        <div class="test-description-line">NV097_SET_SCENE_AMBIENT_COLOR is set to scene ambient + material emissive.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/material_color_source_tests.h#L23">src/tests/material_color_source_tests.h</a></div>
+</div>
+
+<h2 id="Emissive_me0">Emissive_me0</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with combinations of emissive and ambient color taken from vertex diffuse and specular. The combinations in (emissive_src, ambient_src) format are: (D, D), (S, D), (D, S), (S, S), (M, S), (S, M), (M, D), (D, M), (M, M). Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0, 0, 0). </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/Emissive_me0.png" alt="Test result for Material_color_source::Emissive_me0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/Emissive_me0.png" alt="No alpha test result for Material_color_source::Emissive_me0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Emissive_me0_15">Emissive_me0_15</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/Emissive_me0_15.png" alt="Test result for Material_color_source::Emissive_me0_15" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/Emissive_me0_15.png" alt="No alpha test result for Material_color_source::Emissive_me0_15" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Emissive_me0_5">Emissive_me0_5</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/Emissive_me0_5.png" alt="Test result for Material_color_source::Emissive_me0_5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/Emissive_me0_5.png" alt="No alpha test result for Material_color_source::Emissive_me0_5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Emissive_me1_0">Emissive_me1_0</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/Emissive_me1_0.png" alt="Test result for Material_color_source::Emissive_me1_0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/Emissive_me1_0.png" alt="No alpha test result for Material_color_source::Emissive_me1_0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromMaterial">FromMaterial</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with all colors taken from the material settings. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromMaterial.png" alt="Test result for Material_color_source::FromMaterial" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromMaterial.png" alt="No alpha test result for Material_color_source::FromMaterial" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromMaterial_2light">FromMaterial_2light</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with all colors taken from the material settings. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. There are two lights with all colors set to (0.25, 0.25, 0.25).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromMaterial_2light.png" alt="Test result for Material_color_source::FromMaterial_2light" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromMaterial_2light.png" alt="No alpha test result for Material_color_source::FromMaterial_2light" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromMaterial_me0_15">FromMaterial_me0_15</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with all colors taken from the material settings. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0.15, 0.15, 0.15).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromMaterial_me0_15.png" alt="Test result for Material_color_source::FromMaterial_me0_15" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromMaterial_me0_15.png" alt="No alpha test result for Material_color_source::FromMaterial_me0_15" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromMaterial_me0_15_2light">FromMaterial_me0_15_2light</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with all colors taken from the material settings. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0.15, 0.15, 0.15). There are two lights with all colors set to (0.25, 0.25, 0.25).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromMaterial_me0_15_2light.png" alt="Test result for Material_color_source::FromMaterial_me0_15_2light" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromMaterial_me0_15_2light.png" alt="No alpha test result for Material_color_source::FromMaterial_me0_15_2light" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromMaterial_me0_5">FromMaterial_me0_5</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with all colors taken from the material settings. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0.5, 0.5, 0.5).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromMaterial_me0_5.png" alt="Test result for Material_color_source::FromMaterial_me0_5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromMaterial_me0_5.png" alt="No alpha test result for Material_color_source::FromMaterial_me0_5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromMaterial_me0_5_2light">FromMaterial_me0_5_2light</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with all colors taken from the material settings. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0.5, 0.5, 0.5). There are two lights with all colors set to (0.25, 0.25, 0.25).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromMaterial_me0_5_2light.png" alt="Test result for Material_color_source::FromMaterial_me0_5_2light" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromMaterial_me0_5_2light.png" alt="No alpha test result for Material_color_source::FromMaterial_me0_5_2light" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromMaterial_me1_0">FromMaterial_me1_0</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with all colors taken from the material settings. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. Each quad is broken into thirds: the top is just diffuse, the center is just specular, the bottom is both. NV097_SET_MATERIAL_EMISSION is set to (1, 1, 1).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromMaterial_me1_0.png" alt="Test result for Material_color_source::FromMaterial_me1_0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromMaterial_me1_0.png" alt="No alpha test result for Material_color_source::FromMaterial_me1_0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromMaterial_me1_0_2light">FromMaterial_me1_0_2light</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with all colors taken from the material settings. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. Each quad is broken into thirds: the top is just diffuse, the center is just specular, the bottom is both. NV097_SET_MATERIAL_EMISSION is set to (1, 1, 1). There are two lights with all colors set to (0.25, 0.25, 0.25).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromMaterial_me1_0_2light.png" alt="Test result for Material_color_source::FromMaterial_me1_0_2light" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromMaterial_me1_0_2light.png" alt="No alpha test result for Material_color_source::FromMaterial_me1_0_2light" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexDiffuse">FromVertexDiffuse</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex diffuse color {0.f, 0.25f, 0.5f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexDiffuse.png" alt="Test result for Material_color_source::FromVertexDiffuse" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexDiffuse.png" alt="No alpha test result for Material_color_source::FromVertexDiffuse" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexDiffuse_2light">FromVertexDiffuse_2light</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex diffuse color {0.f, 0.25f, 0.5f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. There are two lights with all colors set to (0.25, 0.25, 0.25).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexDiffuse_2light.png" alt="Test result for Material_color_source::FromVertexDiffuse_2light" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexDiffuse_2light.png" alt="No alpha test result for Material_color_source::FromVertexDiffuse_2light" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexDiffuse_me0_15">FromVertexDiffuse_me0_15</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex diffuse color {0.f, 0.25f, 0.5f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0.15, 0.15, 0.15).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexDiffuse_me0_15.png" alt="Test result for Material_color_source::FromVertexDiffuse_me0_15" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexDiffuse_me0_15.png" alt="No alpha test result for Material_color_source::FromVertexDiffuse_me0_15" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexDiffuse_me0_15_2light">FromVertexDiffuse_me0_15_2light</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex diffuse color {0.f, 0.25f, 0.5f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0.15, 0.15, 0.15). There are two lights with all colors set to (0.25, 0.25, 0.25).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexDiffuse_me0_15_2light.png" alt="Test result for Material_color_source::FromVertexDiffuse_me0_15_2light" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexDiffuse_me0_15_2light.png" alt="No alpha test result for Material_color_source::FromVertexDiffuse_me0_15_2light" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexDiffuse_me0_5">FromVertexDiffuse_me0_5</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex diffuse color {0.f, 0.25f, 0.5f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0.5, 0.5, 0.5).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexDiffuse_me0_5.png" alt="Test result for Material_color_source::FromVertexDiffuse_me0_5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexDiffuse_me0_5.png" alt="No alpha test result for Material_color_source::FromVertexDiffuse_me0_5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexDiffuse_me0_5_2light">FromVertexDiffuse_me0_5_2light</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex diffuse color {0.f, 0.25f, 0.5f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0.5, 0.5, 0.5). There are two lights with all colors set to (0.25, 0.25, 0.25).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexDiffuse_me0_5_2light.png" alt="Test result for Material_color_source::FromVertexDiffuse_me0_5_2light" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexDiffuse_me0_5_2light.png" alt="No alpha test result for Material_color_source::FromVertexDiffuse_me0_5_2light" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexDiffuse_me1_0">FromVertexDiffuse_me1_0</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex diffuse color {0.f, 0.25f, 0.5f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (1, 1, 1).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexDiffuse_me1_0.png" alt="Test result for Material_color_source::FromVertexDiffuse_me1_0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexDiffuse_me1_0.png" alt="No alpha test result for Material_color_source::FromVertexDiffuse_me1_0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexDiffuse_me1_0_2light">FromVertexDiffuse_me1_0_2light</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex diffuse color {0.f, 0.25f, 0.5f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (1, 1, 1). There are two lights with all colors set to (0.25, 0.25, 0.25).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexDiffuse_me1_0_2light.png" alt="Test result for Material_color_source::FromVertexDiffuse_me1_0_2light" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexDiffuse_me1_0_2light.png" alt="No alpha test result for Material_color_source::FromVertexDiffuse_me1_0_2light" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexSpecular">FromVertexSpecular</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex specular color {0.5f, 0.25f, 0.f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexSpecular.png" alt="Test result for Material_color_source::FromVertexSpecular" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexSpecular.png" alt="No alpha test result for Material_color_source::FromVertexSpecular" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexSpecular_2light">FromVertexSpecular_2light</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex specular color {0.5f, 0.25f, 0.f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. There are two lights with all colors set to (0.25, 0.25, 0.25).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexSpecular_2light.png" alt="Test result for Material_color_source::FromVertexSpecular_2light" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexSpecular_2light.png" alt="No alpha test result for Material_color_source::FromVertexSpecular_2light" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexSpecular_me0_15">FromVertexSpecular_me0_15</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex specular color {0.5f, 0.25f, 0.f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0.15, 0.15, 0.15).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexSpecular_me0_15.png" alt="Test result for Material_color_source::FromVertexSpecular_me0_15" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexSpecular_me0_15.png" alt="No alpha test result for Material_color_source::FromVertexSpecular_me0_15" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexSpecular_me0_15_2light">FromVertexSpecular_me0_15_2light</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex specular color {0.5f, 0.25f, 0.f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0.15, 0.15, 0.15). There are two lights with all colors set to (0.25, 0.25, 0.25).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexSpecular_me0_15_2light.png" alt="Test result for Material_color_source::FromVertexSpecular_me0_15_2light" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexSpecular_me0_15_2light.png" alt="No alpha test result for Material_color_source::FromVertexSpecular_me0_15_2light" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexSpecular_me0_5">FromVertexSpecular_me0_5</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex specular color {0.5f, 0.25f, 0.f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0.5, 0.5, 0.5).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexSpecular_me0_5.png" alt="Test result for Material_color_source::FromVertexSpecular_me0_5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexSpecular_me0_5.png" alt="No alpha test result for Material_color_source::FromVertexSpecular_me0_5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexSpecular_me0_5_2light">FromVertexSpecular_me0_5_2light</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex specular color {0.5f, 0.25f, 0.f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (0.5, 0.5, 0.5). There are two lights with all colors set to (0.25, 0.25, 0.25).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexSpecular_me0_5_2light.png" alt="Test result for Material_color_source::FromVertexSpecular_me0_5_2light" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexSpecular_me0_5_2light.png" alt="No alpha test result for Material_color_source::FromVertexSpecular_me0_5_2light" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexSpecular_me1_0">FromVertexSpecular_me1_0</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex specular color {0.5f, 0.25f, 0.f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (1, 1, 1).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexSpecular_me1_0.png" alt="Test result for Material_color_source::FromVertexSpecular_me1_0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexSpecular_me1_0.png" alt="No alpha test result for Material_color_source::FromVertexSpecular_me1_0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FromVertexSpecular_me1_0_2light">FromVertexSpecular_me1_0_2light</h2>
+        <div class="test-case-description">
+            <p>Draws 9 quads with some colors taken from the vertex specular color {0.5f, 0.25f, 0.f, 0.25f}. Each quad is divided into rows: the top is just diffuse, the center is just specular, the bottom is both. It is also divided into columns: the left column retains material alpha, the right forces alpha to 1.0. NV097_SET_MATERIAL_EMISSION is set to (1, 1, 1). There are two lights with all colors set to (0.25, 0.25, 0.25).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Material_color_source/FromVertexSpecular_me1_0_2light.png" alt="Test result for Material_color_source::FromVertexSpecular_me1_0_2light" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Material_color_source/FromVertexSpecular_me1_0_2light.png" alt="No alpha test result for Material_color_source::FromVertexSpecular_me1_0_2light" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

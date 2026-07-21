@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Surface_clip</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Surface_clip</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests behavior of NV097_SET_SURFACE_CLIP_HORIZONTAL and NV097_SET_SURFACE_CLIP_VERTICAL.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/surface_clip_tests.h#L14">src/tests/surface_clip_tests.h</a></div>
+</div>
+
+<h2 id="DebugTextShouldClip">DebugTextShouldClip</h2>
+        <div class="test-case-description">
+            <p>Sets a tiny clip area and renders debug text. No text should be visible.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/DebugTextShouldClip.png" alt="Test result for Surface_clip::DebugTextShouldClip" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/DebugTextShouldClip.png" alt="No alpha test result for Surface_clip::DebugTextShouldClip" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="rt_x0y0_w0h0">rt_x0y0_w0h0</h2>
+        <div class="test-case-description">
+            <p>Configures a texture target as R5G6B5 and sets the clip region to 0,0 0x0, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. The texture is then rendered into an 8888 backbuffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/rt_x0y0_w0h0.png" alt="Test result for Surface_clip::rt_x0y0_w0h0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/rt_x0y0_w0h0.png" alt="No alpha test result for Surface_clip::rt_x0y0_w0h0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="rt_x0y0_w0h384">rt_x0y0_w0h384</h2>
+        <div class="test-case-description">
+            <p>Configures a texture target as R5G6B5 and sets the clip region to 0,0 0x384, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. The texture is then rendered into an 8888 backbuffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/rt_x0y0_w0h384.png" alt="Test result for Surface_clip::rt_x0y0_w0h384" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/rt_x0y0_w0h384.png" alt="No alpha test result for Surface_clip::rt_x0y0_w0h384" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="rt_x0y0_w512h0">rt_x0y0_w512h0</h2>
+        <div class="test-case-description">
+            <p>Configures a texture target as R5G6B5 and sets the clip region to 0,0 512x0, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. The texture is then rendered into an 8888 backbuffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/rt_x0y0_w512h0.png" alt="Test result for Surface_clip::rt_x0y0_w512h0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/rt_x0y0_w512h0.png" alt="No alpha test result for Surface_clip::rt_x0y0_w512h0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="rt_x0y0_w512h384">rt_x0y0_w512h384</h2>
+        <div class="test-case-description">
+            <p>Configures a texture target as R5G6B5 and sets the clip region to 0,0 512x384, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. The texture is then rendered into an 8888 backbuffer. No red should be seen, and the light green quads should be fully visible.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/rt_x0y0_w512h384.png" alt="Test result for Surface_clip::rt_x0y0_w512h384" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/rt_x0y0_w512h384.png" alt="No alpha test result for Surface_clip::rt_x0y0_w512h384" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="rt_x0y0_w640h480">rt_x0y0_w640h480</h2>
+        <div class="test-case-description">
+            <p>Configures a texture target as R5G6B5 and sets the clip region to 0,0 640x480, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary.The texture is then rendered into an 8888 backbuffer. No red should be seen, and the light green quads should be fully visible.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/rt_x0y0_w640h480.png" alt="Test result for Surface_clip::rt_x0y0_w640h480" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/rt_x0y0_w640h480.png" alt="No alpha test result for Surface_clip::rt_x0y0_w640h480" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="rt_x0y240_w640h240">rt_x0y240_w640h240</h2>
+        <div class="test-case-description">
+            <p>Configures a texture target as R5G6B5 and sets the clip region to 0,240 640x240, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. The texture is then rendered into an 8888 backbuffer. No red should be seen, and the light green quads should be fully visible.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/rt_x0y240_w640h240.png" alt="Test result for Surface_clip::rt_x0y240_w640h240" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/rt_x0y240_w640h240.png" alt="No alpha test result for Surface_clip::rt_x0y240_w640h240" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="rt_x16y8_w512h384">rt_x16y8_w512h384</h2>
+        <div class="test-case-description">
+            <p>Configures a texture target as R5G6B5 and sets the clip region to 16,8 512x384, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. The texture is then rendered into an 8888 backbuffer. No red should be seen, and the light green quads should be fully visible.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/rt_x16y8_w512h384.png" alt="Test result for Surface_clip::rt_x16y8_w512h384" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/rt_x16y8_w512h384.png" alt="No alpha test result for Surface_clip::rt_x16y8_w512h384" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="rt_x320y240_w320h240">rt_x320y240_w320h240</h2>
+        <div class="test-case-description">
+            <p>Configures a texture target as R5G6B5 and sets the clip region to 320,240 320x240, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. The texture is then rendered into an 8888 backbuffer. No red should be seen, and the light green quads should be fully visible.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/rt_x320y240_w320h240.png" alt="Test result for Surface_clip::rt_x320y240_w320h240" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/rt_x320y240_w320h240.png" alt="No alpha test result for Surface_clip::rt_x320y240_w320h240" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="rt_x8y16_w632h464">rt_x8y16_w632h464</h2>
+        <div class="test-case-description">
+            <p>Configures a texture target as R5G6B5 and sets the clip region to 8,16 632x464, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. The texture is then rendered into an 8888 backbuffer. No red should be seen, and the light green quads should be fully visible.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/rt_x8y16_w632h464.png" alt="Test result for Surface_clip::rt_x8y16_w632h464" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/rt_x8y16_w632h464.png" alt="No alpha test result for Surface_clip::rt_x8y16_w632h464" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w0h0">x0y0_w0h0</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as R5G6B5 and sets the clip region to 0,0 0x0, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w0h0.png" alt="Test result for Surface_clip::x0y0_w0h0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w0h0.png" alt="No alpha test result for Surface_clip::x0y0_w0h0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w0h0_A8R8G8B8">x0y0_w0h0_A8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as A8R8G8B8 and sets the clip region to 0,0 0x0, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No geometry should be seen, since width and height of the clip region are 0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w0h0_A8R8G8B8.png" alt="Test result for Surface_clip::x0y0_w0h0_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w0h0_A8R8G8B8.png" alt="No alpha test result for Surface_clip::x0y0_w0h0_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w0h0_B8">x0y0_w0h0_B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w0h0_B8.png" alt="Test result for Surface_clip::x0y0_w0h0_B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w0h0_B8.png" alt="No alpha test result for Surface_clip::x0y0_w0h0_B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w0h0_G8B8">x0y0_w0h0_G8B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w0h0_G8B8.png" alt="Test result for Surface_clip::x0y0_w0h0_G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w0h0_G8B8.png" alt="No alpha test result for Surface_clip::x0y0_w0h0_G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w0h384">x0y0_w0h384</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as R5G6B5 and sets the clip region to 0,0 0x384, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w0h384.png" alt="Test result for Surface_clip::x0y0_w0h384" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w0h384.png" alt="No alpha test result for Surface_clip::x0y0_w0h384" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w0h384_A8R8G8B8">x0y0_w0h384_A8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as A8R8G8B8 and sets the clip region to 0,0 0x384, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No geometry should be seen, since width and height of the clip region are 0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w0h384_A8R8G8B8.png" alt="Test result for Surface_clip::x0y0_w0h384_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w0h384_A8R8G8B8.png" alt="No alpha test result for Surface_clip::x0y0_w0h384_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w0h384_B8">x0y0_w0h384_B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w0h384_B8.png" alt="Test result for Surface_clip::x0y0_w0h384_B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w0h384_B8.png" alt="No alpha test result for Surface_clip::x0y0_w0h384_B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w0h384_G8B8">x0y0_w0h384_G8B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w0h384_G8B8.png" alt="Test result for Surface_clip::x0y0_w0h384_G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w0h384_G8B8.png" alt="No alpha test result for Surface_clip::x0y0_w0h384_G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w512h0">x0y0_w512h0</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as R5G6B5 and sets the clip region to 0,0 512x0, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w512h0.png" alt="Test result for Surface_clip::x0y0_w512h0" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w512h0.png" alt="No alpha test result for Surface_clip::x0y0_w512h0" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w512h0_A8R8G8B8">x0y0_w512h0_A8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as A8R8G8B8 and sets the clip region to 0,0 512x0, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No geometry should be seen, since width and height of the clip region are 0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w512h0_A8R8G8B8.png" alt="Test result for Surface_clip::x0y0_w512h0_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w512h0_A8R8G8B8.png" alt="No alpha test result for Surface_clip::x0y0_w512h0_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w512h0_B8">x0y0_w512h0_B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w512h0_B8.png" alt="Test result for Surface_clip::x0y0_w512h0_B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w512h0_B8.png" alt="No alpha test result for Surface_clip::x0y0_w512h0_B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w512h0_G8B8">x0y0_w512h0_G8B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w512h0_G8B8.png" alt="Test result for Surface_clip::x0y0_w512h0_G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w512h0_G8B8.png" alt="No alpha test result for Surface_clip::x0y0_w512h0_G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w512h384">x0y0_w512h384</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as R5G6B5 and sets the clip region to 0,0 512x384, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w512h384.png" alt="Test result for Surface_clip::x0y0_w512h384" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w512h384.png" alt="No alpha test result for Surface_clip::x0y0_w512h384" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w512h384_A8R8G8B8">x0y0_w512h384_A8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as A8R8G8B8 and sets the clip region to 0,0 512x384, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w512h384_A8R8G8B8.png" alt="Test result for Surface_clip::x0y0_w512h384_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w512h384_A8R8G8B8.png" alt="No alpha test result for Surface_clip::x0y0_w512h384_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w512h384_B8">x0y0_w512h384_B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w512h384_B8.png" alt="Test result for Surface_clip::x0y0_w512h384_B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w512h384_B8.png" alt="No alpha test result for Surface_clip::x0y0_w512h384_B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w512h384_G8B8">x0y0_w512h384_G8B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w512h384_G8B8.png" alt="Test result for Surface_clip::x0y0_w512h384_G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w512h384_G8B8.png" alt="No alpha test result for Surface_clip::x0y0_w512h384_G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w640h480">x0y0_w640h480</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as R5G6B5 and sets the clip region to 0,0 640x480, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w640h480.png" alt="Test result for Surface_clip::x0y0_w640h480" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w640h480.png" alt="No alpha test result for Surface_clip::x0y0_w640h480" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w640h480_A8R8G8B8">x0y0_w640h480_A8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as A8R8G8B8 and sets the clip region to 0,0 640x480, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w640h480_A8R8G8B8.png" alt="Test result for Surface_clip::x0y0_w640h480_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w640h480_A8R8G8B8.png" alt="No alpha test result for Surface_clip::x0y0_w640h480_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w640h480_B8">x0y0_w640h480_B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w640h480_B8.png" alt="Test result for Surface_clip::x0y0_w640h480_B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w640h480_B8.png" alt="No alpha test result for Surface_clip::x0y0_w640h480_B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y0_w640h480_G8B8">x0y0_w640h480_G8B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y0_w640h480_G8B8.png" alt="Test result for Surface_clip::x0y0_w640h480_G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y0_w640h480_G8B8.png" alt="No alpha test result for Surface_clip::x0y0_w640h480_G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y240_w640h240">x0y240_w640h240</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as R5G6B5 and sets the clip region to 0,240 640x240, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y240_w640h240.png" alt="Test result for Surface_clip::x0y240_w640h240" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y240_w640h240.png" alt="No alpha test result for Surface_clip::x0y240_w640h240" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y240_w640h240_A8R8G8B8">x0y240_w640h240_A8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as A8R8G8B8 and sets the clip region to 0,240 640x240, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y240_w640h240_A8R8G8B8.png" alt="Test result for Surface_clip::x0y240_w640h240_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y240_w640h240_A8R8G8B8.png" alt="No alpha test result for Surface_clip::x0y240_w640h240_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y240_w640h240_B8">x0y240_w640h240_B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y240_w640h240_B8.png" alt="Test result for Surface_clip::x0y240_w640h240_B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y240_w640h240_B8.png" alt="No alpha test result for Surface_clip::x0y240_w640h240_B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x0y240_w640h240_G8B8">x0y240_w640h240_G8B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x0y240_w640h240_G8B8.png" alt="Test result for Surface_clip::x0y240_w640h240_G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x0y240_w640h240_G8B8.png" alt="No alpha test result for Surface_clip::x0y240_w640h240_G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x16y8_w512h384">x16y8_w512h384</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as R5G6B5 and sets the clip region to 16,8 512x384, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x16y8_w512h384.png" alt="Test result for Surface_clip::x16y8_w512h384" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x16y8_w512h384.png" alt="No alpha test result for Surface_clip::x16y8_w512h384" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x16y8_w512h384_A8R8G8B8">x16y8_w512h384_A8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as A8R8G8B8 and sets the clip region to 16,8 512x384, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x16y8_w512h384_A8R8G8B8.png" alt="Test result for Surface_clip::x16y8_w512h384_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x16y8_w512h384_A8R8G8B8.png" alt="No alpha test result for Surface_clip::x16y8_w512h384_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x16y8_w512h384_B8">x16y8_w512h384_B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x16y8_w512h384_B8.png" alt="Test result for Surface_clip::x16y8_w512h384_B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x16y8_w512h384_B8.png" alt="No alpha test result for Surface_clip::x16y8_w512h384_B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x16y8_w512h384_G8B8">x16y8_w512h384_G8B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x16y8_w512h384_G8B8.png" alt="Test result for Surface_clip::x16y8_w512h384_G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x16y8_w512h384_G8B8.png" alt="No alpha test result for Surface_clip::x16y8_w512h384_G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x320y240_w320h240">x320y240_w320h240</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as R5G6B5 and sets the clip region to 320,240 320x240, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x320y240_w320h240.png" alt="Test result for Surface_clip::x320y240_w320h240" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x320y240_w320h240.png" alt="No alpha test result for Surface_clip::x320y240_w320h240" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x320y240_w320h240_A8R8G8B8">x320y240_w320h240_A8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as A8R8G8B8 and sets the clip region to 320,240 320x240, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x320y240_w320h240_A8R8G8B8.png" alt="Test result for Surface_clip::x320y240_w320h240_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x320y240_w320h240_A8R8G8B8.png" alt="No alpha test result for Surface_clip::x320y240_w320h240_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x320y240_w320h240_B8">x320y240_w320h240_B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x320y240_w320h240_B8.png" alt="Test result for Surface_clip::x320y240_w320h240_B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x320y240_w320h240_B8.png" alt="No alpha test result for Surface_clip::x320y240_w320h240_B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x320y240_w320h240_G8B8">x320y240_w320h240_G8B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x320y240_w320h240_G8B8.png" alt="Test result for Surface_clip::x320y240_w320h240_G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x320y240_w320h240_G8B8.png" alt="No alpha test result for Surface_clip::x320y240_w320h240_G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x8y16_w632h464">x8y16_w632h464</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as R5G6B5 and sets the clip region to 8,16 632x464, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible. Because the format is 565, the colors are shifted from red -&gt; green, light green -&gt; light pink, and dark green -&gt; pink.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x8y16_w632h464.png" alt="Test result for Surface_clip::x8y16_w632h464" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x8y16_w632h464.png" alt="No alpha test result for Surface_clip::x8y16_w632h464" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x8y16_w632h464_A8R8G8B8">x8y16_w632h464_A8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Configures the backbuffer as A8R8G8B8 and sets the clip region to 8,16 632x464, then clears the clipped region and draws 4 red quads just outside the clip region, a dark green quad 1 pixel within the clip region, and 4 lighter green quads along the clip boundary. No red should be seen, and the light green quads should be fully visible.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x8y16_w632h464_A8R8G8B8.png" alt="Test result for Surface_clip::x8y16_w632h464_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x8y16_w632h464_A8R8G8B8.png" alt="No alpha test result for Surface_clip::x8y16_w632h464_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x8y16_w632h464_B8">x8y16_w632h464_B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x8y16_w632h464_B8.png" alt="Test result for Surface_clip::x8y16_w632h464_B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x8y16_w632h464_B8.png" alt="No alpha test result for Surface_clip::x8y16_w632h464_B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="x8y16_w632h464_G8B8">x8y16_w632h464_G8B8</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/x8y16_w632h464_G8B8.png" alt="Test result for Surface_clip::x8y16_w632h464_G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/x8y16_w632h464_G8B8.png" alt="No alpha test result for Surface_clip::x8y16_w632h464_G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="XemuBug420">XemuBug420</h2>
+        <div class="test-case-description">
+            <p>Reproduction case for xemu#420. A 32-bit surface is created, then immediately changed to a 16-bit one, followed by a region clear. This caused an assertion in versions before xemu#919</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Surface_clip/XemuBug420.png" alt="Test result for Surface_clip::XemuBug420" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Surface_clip/XemuBug420.png" alt="No alpha test result for Surface_clip::XemuBug420" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

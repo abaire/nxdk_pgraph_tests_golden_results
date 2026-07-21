@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Color_key</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Color_key</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests NV097_SET_COLOR_KEY_COLOR (0x0AE0) and the NV097_SET_TEXTURE_CONTROL0_COLOR_KEY_MODE color key functions.</div>
+    
+        <div class="test-description-line">NV097_SET_TEXTURE_CONTROL0_COLOR_KEY_MODE is used to instruct the hardware what to do when a texel's value matches a color key. See ColorKeyMode for the supported modes.</div>
+    
+        <div class="test-description-line">NV097_SET_COLOR_KEY_COLOR is used to instruct the hardware which texels should have the color key mode applied.</div>
+    
+        <div class="test-description-line">Each test renders a series of quads, with each quad being divided into four subcomponents (NW = northwest/top left, etc...):</div>
+    
+        <div class="test-description-line">NW: Checkerboard alternating a color-keyed color and a light grey. NE: Checkerboard alternating a dark grey and an alpha-keyed color. SW: Checkerboard alternating the color-keyed color with alpha from the alpha key and the color keyed color with 0xFF alpha that matches none of the keys. SE: Checkerboard alternating a non-keyed color with alpha from the color key and a non-keyed color with alpha from the alpha key.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/color_key_tests.h#L33">src/tests/color_key_tests.h</a></div>
+</div>
+
+<h2 id="FixedTex_Alpha">FixedTex_Alpha</h2>
+        <div class="test-case-description">
+            <p>With the fixed function pipeline, zero out just the alpha channel for all places where the colorkey matches the value of a texel. RGB channels are unaffected. This should omit all texels that match the color key.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/FixedTex_Alpha.png" alt="Test result for Color_key::FixedTex_Alpha" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/FixedTex_Alpha.png" alt="No alpha test result for Color_key::FixedTex_Alpha" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FixedTex_AlphaColor">FixedTex_AlphaColor</h2>
+        <div class="test-case-description">
+            <p>With the fixed function pipeline, kill the texel completely for wherever the color key matches the value of a texel. This completely masks the texel rather than simply zero-ing out values. See IgnAlphaCh_FixedTex_AlphaColor. This should omit all texels that match the color key.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/FixedTex_AlphaColor.png" alt="Test result for Color_key::FixedTex_AlphaColor" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/FixedTex_AlphaColor.png" alt="No alpha test result for Color_key::FixedTex_AlphaColor" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FixedTex_Color">FixedTex_Color</h2>
+        <div class="test-case-description">
+            <p>With the fixed function pipeline, zero out the color and alpha channels for all places where the color key matches the value of a texel. Note that the Alpha channel is also set to zero. This should omit all texels that match the color key.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/FixedTex_Color.png" alt="Test result for Color_key::FixedTex_Color" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/FixedTex_Color.png" alt="No alpha test result for Color_key::FixedTex_Color" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FixedTex_Disabled">FixedTex_Disabled</h2>
+        <div class="test-case-description">
+            <p>With the fixed function pipeline, make no changes to any texel whose value matches the color key. This should render all texels as fully opaque with their original colors.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/FixedTex_Disabled.png" alt="Test result for Color_key::FixedTex_Disabled" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/FixedTex_Disabled.png" alt="No alpha test result for Color_key::FixedTex_Disabled" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="IgnAlphaCh_FixedTex_Alpha">IgnAlphaCh_FixedTex_Alpha</h2>
+        <div class="test-case-description">
+            <p>With the fixed function pipeline, set the color key mode to clear just the alpha channel for matching texels. When rendering, set the final combiner to use an alpha value of 0xFF for all texels, forcing pixels to be rendered opaque despite matching the color key. This should render all texels fully opaque with their original colors, since the texel alpha is ignored during texturing.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/IgnAlphaCh_FixedTex_Alpha.png" alt="Test result for Color_key::IgnAlphaCh_FixedTex_Alpha" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/IgnAlphaCh_FixedTex_Alpha.png" alt="No alpha test result for Color_key::IgnAlphaCh_FixedTex_Alpha" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="IgnAlphaCh_FixedTex_AlphaColor">IgnAlphaCh_FixedTex_AlphaColor</h2>
+        <div class="test-case-description">
+            <p>With the fixed function pipeline, kill the texel completely for wherever the color key matches the value of a texel. This completely masks the texel rather than simply zero-ing out values. When rendering, set the final combiner to use an alpha value of 0xFF for all texels. This omits killed texels even though the combiner sets them to fully opaque during texturing.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/IgnAlphaCh_FixedTex_AlphaColor.png" alt="Test result for Color_key::IgnAlphaCh_FixedTex_AlphaColor" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/IgnAlphaCh_FixedTex_AlphaColor.png" alt="No alpha test result for Color_key::IgnAlphaCh_FixedTex_AlphaColor" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="IgnAlphaCh_FixedTex_Color">IgnAlphaCh_FixedTex_Color</h2>
+        <div class="test-case-description">
+            <p>With the fixed function pipeline, zero out the color and alpha channels for all places where the color key matches the value of a texel. When rendering, set the final combiner to use an alpha value of 0xFF for all texels, forcing pixels to be rendered opaque despite matching the color key. This should render matching texels as fully black, since their RGB values were zeroed out and the zeroed alpha channel is ignored.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/IgnAlphaCh_FixedTex_Color.png" alt="Test result for Color_key::IgnAlphaCh_FixedTex_Color" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/IgnAlphaCh_FixedTex_Color.png" alt="No alpha test result for Color_key::IgnAlphaCh_FixedTex_Color" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="IgnAlphaCh_FixedTex_Disabled">IgnAlphaCh_FixedTex_Disabled</h2>
+        <div class="test-case-description">
+            <p>With the fixed function pipeline, make no changes to any texel whose value matches the color key. When rendering, set the final combiner to use an alpha value of 0xFF for all texels. This should render all texels as fully opaque with their original colors.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/IgnAlphaCh_FixedTex_Disabled.png" alt="Test result for Color_key::IgnAlphaCh_FixedTex_Disabled" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/IgnAlphaCh_FixedTex_Disabled.png" alt="No alpha test result for Color_key::IgnAlphaCh_FixedTex_Disabled" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="IgnAlphaCh_ProgTex_Alpha">IgnAlphaCh_ProgTex_Alpha</h2>
+        <div class="test-case-description">
+            <p>With a programmable shader, set the color key mode to clear just the alpha channel for matching texels. When rendering, set the final combiner to use an alpha value of 0xFF for all texels, forcing pixels to be rendered opaque despite matching the color key. This should render all texels fully opaque with their original colors, since the texel alpha is ignored during texturing.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/IgnAlphaCh_ProgTex_Alpha.png" alt="Test result for Color_key::IgnAlphaCh_ProgTex_Alpha" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/IgnAlphaCh_ProgTex_Alpha.png" alt="No alpha test result for Color_key::IgnAlphaCh_ProgTex_Alpha" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="IgnAlphaCh_ProgTex_AlphaColor">IgnAlphaCh_ProgTex_AlphaColor</h2>
+        <div class="test-case-description">
+            <p>With a programmable shader, kill the texel completely for wherever the color key matches the value of a texel. This completely masks the texel rather than simply zero-ing out values. When rendering, set the final combiner to use an alpha value of 0xFF for all texels. This omits killed texels even though the combiner sets them to fully opaque during texturing.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/IgnAlphaCh_ProgTex_AlphaColor.png" alt="Test result for Color_key::IgnAlphaCh_ProgTex_AlphaColor" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/IgnAlphaCh_ProgTex_AlphaColor.png" alt="No alpha test result for Color_key::IgnAlphaCh_ProgTex_AlphaColor" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="IgnAlphaCh_ProgTex_Color">IgnAlphaCh_ProgTex_Color</h2>
+        <div class="test-case-description">
+            <p>With a programmable shader, zero out the color and alpha channels for all places where the color key matches the value of a texel. When rendering, set the final combiner to use an alpha value of 0xFF for all texels, forcing pixels to be rendered opaque despite matching the color key. This should render matching texels as fully black, since their RGB values were zeroed out and the zeroed alpha channel is ignored.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/IgnAlphaCh_ProgTex_Color.png" alt="Test result for Color_key::IgnAlphaCh_ProgTex_Color" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/IgnAlphaCh_ProgTex_Color.png" alt="No alpha test result for Color_key::IgnAlphaCh_ProgTex_Color" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="IgnAlphaCh_ProgTex_Disabled">IgnAlphaCh_ProgTex_Disabled</h2>
+        <div class="test-case-description">
+            <p>With a programmable shader, make no changes to any texel whose value matches the color key. When rendering, set the final combiner to use an alpha value of 0xFF for all texels. This should render all texels as fully opaque with their original colors.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/IgnAlphaCh_ProgTex_Disabled.png" alt="Test result for Color_key::IgnAlphaCh_ProgTex_Disabled" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/IgnAlphaCh_ProgTex_Disabled.png" alt="No alpha test result for Color_key::IgnAlphaCh_ProgTex_Disabled" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProgTex_Alpha">ProgTex_Alpha</h2>
+        <div class="test-case-description">
+            <p>With a programmable shader, zero out just the alpha channel for all places where the colorkey matches the value of a texel. RGB channels are unaffected. This should omit all texels that match the color key.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/ProgTex_Alpha.png" alt="Test result for Color_key::ProgTex_Alpha" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/ProgTex_Alpha.png" alt="No alpha test result for Color_key::ProgTex_Alpha" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProgTex_AlphaColor">ProgTex_AlphaColor</h2>
+        <div class="test-case-description">
+            <p>With a programmable shader, kill the texel completely for wherever the color key matches the value of a texel. This completely masks the texel rather than simply zero-ing out values. See IgnAlphaCh_FixedTex_AlphaColor. This should omit all texels that match the color key.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/ProgTex_AlphaColor.png" alt="Test result for Color_key::ProgTex_AlphaColor" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/ProgTex_AlphaColor.png" alt="No alpha test result for Color_key::ProgTex_AlphaColor" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProgTex_Color">ProgTex_Color</h2>
+        <div class="test-case-description">
+            <p>With a programmable shader, zero out the color and alpha channels for all places where the color key matches the value of a texel. Note that the Alpha channel is also set to zero. This should omit all texels that match the color key.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/ProgTex_Color.png" alt="Test result for Color_key::ProgTex_Color" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/ProgTex_Color.png" alt="No alpha test result for Color_key::ProgTex_Color" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProgTex_Disabled">ProgTex_Disabled</h2>
+        <div class="test-case-description">
+            <p>With a programmable shader, make no changes to any texel whose value matches the color key. This should render all texels as fully opaque with their original colors.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/ProgTex_Disabled.png" alt="Test result for Color_key::ProgTex_Disabled" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/ProgTex_Disabled.png" alt="No alpha test result for Color_key::ProgTex_Disabled" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="UnsampledTex">UnsampledTex</h2>
+        <div class="test-case-description">
+            <p>Demonstrates that the color keys are independent of whether the associated texture stage is used in the final composition or not. With a programable shader, draw two quads with the color key mode set to kill matching texels. In both cases, the final color combiner only samples from texture 0. The left quad renders with the blue color key as key 0. The right quad enables the second texture stage, keeps key 0, and adds the magenta color key with an alpha value forced to 0xFF as key 1. The left image should have the blue color in the NW checkerboard killed. The right image should have the blue color in the NW checkerboard killed, but also the secondary blue color in the SW checkerboard killed. This is because the unsampled magenta texture&#39;s SW secondary color matches the magenta + 0xFF alpha enabled as a color key in the second operation.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/UnsampledTex.png" alt="Test result for Color_key::UnsampledTex" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/UnsampledTex.png" alt="No alpha test result for Color_key::UnsampledTex" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="XAlphaFormat">XAlphaFormat</h2>
+        <div class="test-case-description">
+            <p>Demonstrates that the alpha component of textures using an &#34;X&#34; alpha mode (e.g., NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_X8R8G8B8) are matched against color keys without respect to their alpha value. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_key/XAlphaFormat.png" alt="Test result for Color_key::XAlphaFormat" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_key/XAlphaFormat.png" alt="No alpha test result for Color_key::XAlphaFormat" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

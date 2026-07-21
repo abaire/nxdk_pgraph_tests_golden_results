@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Clear</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Clear</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the behavior of various write masks on NV097_CLEAR_SURFACE.</div>
+    
+        <div class="test-description-line">Color mask (C*) tests: Each test draws some geometry, then modifies the NV097_SET_COLOR_MASK, NV097_SET_DEPTH_MASK, and NV097_SET_STENCIL_MASK settings, then invokes NV097_CLEAR_SURFACE.</div>
+    
+        <div class="test-description-line">In all cases, the clear color is set to 0x7F7F7F7F and the depth value is set to 0xFFFFFFFF.</div>
+    
+        <div class="test-description-line">Surface format color (SFC*) tests: Each test clears a render target surface and then renders it as a texture with alpha blending disabled in order to test the interaction of surface format with NV097_CLEAR_SURFACE_COLOR.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/clear_tests.h#L23">src/tests/clear_tests.h</a></div>
+</div>
+
+<h2 id="C00000000_Depth_n">C00000000_Depth_n</h2>
+        <div class="test-case-description">
+            <p>Framebuffer result after disabling writing to all color channels and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00000000_Depth_n.png" alt="Test result for Clear::C00000000_Depth_n" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00000000_Depth_n.png" alt="No alpha test result for Clear::C00000000_Depth_n" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00000000_Depth_n_ZB">C00000000_Depth_n_ZB</h2>
+        <div class="test-case-description">
+            <p>Z-buffer result after disabling writing to all color channels and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00000000_Depth_n_ZB.png" alt="Test result for Clear::C00000000_Depth_n_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00000000_Depth_n_ZB.png" alt="No alpha test result for Clear::C00000000_Depth_n_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00000000_Depth_y">C00000000_Depth_y</h2>
+        <div class="test-case-description">
+            <p>Framebuffer result after disabling writing to all color channels and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00000000_Depth_y.png" alt="Test result for Clear::C00000000_Depth_y" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00000000_Depth_y.png" alt="No alpha test result for Clear::C00000000_Depth_y" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00000000_Depth_y_ZB">C00000000_Depth_y_ZB</h2>
+        <div class="test-case-description">
+            <p>Z-buffer result after disabling writing to all color channels and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00000000_Depth_y_ZB.png" alt="Test result for Clear::C00000000_Depth_y_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00000000_Depth_y_ZB.png" alt="No alpha test result for Clear::C00000000_Depth_y_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00000001_Depth_n">C00000001_Depth_n</h2>
+        <div class="test-case-description">
+            <p>Framebuffer result after disabling writing to all color channels except blue and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00000001_Depth_n.png" alt="Test result for Clear::C00000001_Depth_n" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00000001_Depth_n.png" alt="No alpha test result for Clear::C00000001_Depth_n" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00000001_Depth_n_ZB">C00000001_Depth_n_ZB</h2>
+        <div class="test-case-description">
+            <p>Z-buffer result after disabling writing to all color channels except blue and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00000001_Depth_n_ZB.png" alt="Test result for Clear::C00000001_Depth_n_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00000001_Depth_n_ZB.png" alt="No alpha test result for Clear::C00000001_Depth_n_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00000001_Depth_y">C00000001_Depth_y</h2>
+        <div class="test-case-description">
+            <p>Framebuffer result after disabling writing to all color channels except blue enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00000001_Depth_y.png" alt="Test result for Clear::C00000001_Depth_y" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00000001_Depth_y.png" alt="No alpha test result for Clear::C00000001_Depth_y" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00000001_Depth_y_ZB">C00000001_Depth_y_ZB</h2>
+        <div class="test-case-description">
+            <p>Z-buffer result after disabling writing to all color channels except blue enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00000001_Depth_y_ZB.png" alt="Test result for Clear::C00000001_Depth_y_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00000001_Depth_y_ZB.png" alt="No alpha test result for Clear::C00000001_Depth_y_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00000100_Depth_n">C00000100_Depth_n</h2>
+        <div class="test-case-description">
+            <p>Framebuffer result after disabling writing to all color channels except green and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00000100_Depth_n.png" alt="Test result for Clear::C00000100_Depth_n" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00000100_Depth_n.png" alt="No alpha test result for Clear::C00000100_Depth_n" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00000100_Depth_n_ZB">C00000100_Depth_n_ZB</h2>
+        <div class="test-case-description">
+            <p>Z-buffer result after disabling writing to all color channels except green and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00000100_Depth_n_ZB.png" alt="Test result for Clear::C00000100_Depth_n_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00000100_Depth_n_ZB.png" alt="No alpha test result for Clear::C00000100_Depth_n_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00000100_Depth_y">C00000100_Depth_y</h2>
+        <div class="test-case-description">
+            <p>Framebuffer result after disabling writing to all color channels except green and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00000100_Depth_y.png" alt="Test result for Clear::C00000100_Depth_y" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00000100_Depth_y.png" alt="No alpha test result for Clear::C00000100_Depth_y" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00000100_Depth_y_ZB">C00000100_Depth_y_ZB</h2>
+        <div class="test-case-description">
+            <p>Z-buffer result after disabling writing to all color channels except green and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00000100_Depth_y_ZB.png" alt="Test result for Clear::C00000100_Depth_y_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00000100_Depth_y_ZB.png" alt="No alpha test result for Clear::C00000100_Depth_y_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00010000_Depth_n">C00010000_Depth_n</h2>
+        <div class="test-case-description">
+            <p>Framebuffer result after disabling writing to all color channels except red and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00010000_Depth_n.png" alt="Test result for Clear::C00010000_Depth_n" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00010000_Depth_n.png" alt="No alpha test result for Clear::C00010000_Depth_n" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00010000_Depth_n_ZB">C00010000_Depth_n_ZB</h2>
+        <div class="test-case-description">
+            <p>Z-buffer result after disabling writing to all color channels except red and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00010000_Depth_n_ZB.png" alt="Test result for Clear::C00010000_Depth_n_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00010000_Depth_n_ZB.png" alt="No alpha test result for Clear::C00010000_Depth_n_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00010000_Depth_y">C00010000_Depth_y</h2>
+        <div class="test-case-description">
+            <p>Framebuffer result after disabling writing to all color channels except red and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00010000_Depth_y.png" alt="Test result for Clear::C00010000_Depth_y" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00010000_Depth_y.png" alt="No alpha test result for Clear::C00010000_Depth_y" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C00010000_Depth_y_ZB">C00010000_Depth_y_ZB</h2>
+        <div class="test-case-description">
+            <p>Z-buffer result after disabling writing to all color channels except red and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C00010000_Depth_y_ZB.png" alt="Test result for Clear::C00010000_Depth_y_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C00010000_Depth_y_ZB.png" alt="No alpha test result for Clear::C00010000_Depth_y_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C01000000_Depth_n">C01000000_Depth_n</h2>
+        <div class="test-case-description">
+            <p>Framebuffer result after disabling writing to all color channels except alpha and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C01000000_Depth_n.png" alt="Test result for Clear::C01000000_Depth_n" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C01000000_Depth_n.png" alt="No alpha test result for Clear::C01000000_Depth_n" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C01000000_Depth_n_ZB">C01000000_Depth_n_ZB</h2>
+        <div class="test-case-description">
+            <p>Z-buffer result after disabling writing to all color channels except alpha and to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C01000000_Depth_n_ZB.png" alt="Test result for Clear::C01000000_Depth_n_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C01000000_Depth_n_ZB.png" alt="No alpha test result for Clear::C01000000_Depth_n_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C01000000_Depth_y">C01000000_Depth_y</h2>
+        <div class="test-case-description">
+            <p>Framebuffer result after disabling writing to all color channels except alpha and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C01000000_Depth_y.png" alt="Test result for Clear::C01000000_Depth_y" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C01000000_Depth_y.png" alt="No alpha test result for Clear::C01000000_Depth_y" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C01000000_Depth_y_ZB">C01000000_Depth_y_ZB</h2>
+        <div class="test-case-description">
+            <p>Z-buffer result after disabling writing to all color channels except alpha and enabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C01000000_Depth_y_ZB.png" alt="Test result for Clear::C01000000_Depth_y_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C01000000_Depth_y_ZB.png" alt="No alpha test result for Clear::C01000000_Depth_y_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C01010101_Depth_n">C01010101_Depth_n</h2>
+        <div class="test-case-description">
+            <p>Framebuffer result after enabling writing to all color channels but disabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C01010101_Depth_n.png" alt="Test result for Clear::C01010101_Depth_n" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C01010101_Depth_n.png" alt="No alpha test result for Clear::C01010101_Depth_n" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C01010101_Depth_n_ZB">C01010101_Depth_n_ZB</h2>
+        <div class="test-case-description">
+            <p>Z-buffer result after enabling writing to all color channels but disabling writes to the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C01010101_Depth_n_ZB.png" alt="Test result for Clear::C01010101_Depth_n_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C01010101_Depth_n_ZB.png" alt="No alpha test result for Clear::C01010101_Depth_n_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C01010101_Depth_y">C01010101_Depth_y</h2>
+        <div class="test-case-description">
+            <p>Framebuffer result after enabling writing to all color channels and the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C01010101_Depth_y.png" alt="Test result for Clear::C01010101_Depth_y" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C01010101_Depth_y.png" alt="No alpha test result for Clear::C01010101_Depth_y" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="C01010101_Depth_y_ZB">C01010101_Depth_y_ZB</h2>
+        <div class="test-case-description">
+            <p>Z-buffer result after enabling writing to all color channels and the depth/stencil buffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/C01010101_Depth_y_ZB.png" alt="Test result for Clear::C01010101_Depth_y_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/C01010101_Depth_y_ZB.png" alt="No alpha test result for Clear::C01010101_Depth_y_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SCF_R5G6B5">SCF_R5G6B5</h2>
+        <div class="test-case-description">
+            <p>Tests the effect of clear color on LE_R5G6B5 surface format. (Note that the surface is rendered as an ARGB8 texture)</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/SCF_R5G6B5.png" alt="Test result for Clear::SCF_R5G6B5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/SCF_R5G6B5.png" alt="No alpha test result for Clear::SCF_R5G6B5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SCF_X1A7R8G8B8_O1A7R8G8B8">SCF_X1A7R8G8B8_O1A7R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Tests the effect of clear color on LE_X1A7R8G8B8_O1A7R8G8B8 surface format. The cleared surface will have its most significant bit set to 1. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/SCF_X1A7R8G8B8_O1A7R8G8B8.png" alt="Test result for Clear::SCF_X1A7R8G8B8_O1A7R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/SCF_X1A7R8G8B8_O1A7R8G8B8.png" alt="No alpha test result for Clear::SCF_X1A7R8G8B8_O1A7R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SCF_X1A7R8G8B8_Z1A7R8G8B8">SCF_X1A7R8G8B8_Z1A7R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Tests the effect of clear color on LE_X1A7R8G8B8_Z1A7R8G8B8 surface format. The cleared surface will have its most significant bit set to 0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/SCF_X1A7R8G8B8_Z1A7R8G8B8.png" alt="Test result for Clear::SCF_X1A7R8G8B8_Z1A7R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/SCF_X1A7R8G8B8_Z1A7R8G8B8.png" alt="No alpha test result for Clear::SCF_X1A7R8G8B8_Z1A7R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SCF_X1R5G5B5_O1R5G5B5">SCF_X1R5G5B5_O1R5G5B5</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/SCF_X1R5G5B5_O1R5G5B5.png" alt="Test result for Clear::SCF_X1R5G5B5_O1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/SCF_X1R5G5B5_O1R5G5B5.png" alt="No alpha test result for Clear::SCF_X1R5G5B5_O1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SCF_X8R8G8B8_O8R8G8B8">SCF_X8R8G8B8_O8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Tests the effect of clear color on LE_X8R8G8B8_O8R8G8B8 surface format. The cleared surface will have its most significant byte set to 1.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/SCF_X8R8G8B8_O8R8G8B8.png" alt="Test result for Clear::SCF_X8R8G8B8_O8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/SCF_X8R8G8B8_O8R8G8B8.png" alt="No alpha test result for Clear::SCF_X8R8G8B8_O8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SCF_X8R8G8B8_Z8R8G8B8">SCF_X8R8G8B8_Z8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Tests the effect of clear color on LE_X8R8G8B8_Z8R8G8B8 surface format. The cleared surface will have its most significant byte set to 0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/SCF_X8R8G8B8_Z8R8G8B8.png" alt="Test result for Clear::SCF_X8R8G8B8_Z8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/SCF_X8R8G8B8_Z8R8G8B8.png" alt="No alpha test result for Clear::SCF_X8R8G8B8_Z8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SFC_A8R8G8B8">SFC_A8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Tests the effect of clear color on LE_A8R8G8B8 surface format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/SFC_A8R8G8B8.png" alt="Test result for Clear::SFC_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/SFC_A8R8G8B8.png" alt="No alpha test result for Clear::SFC_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="SFC_X1R5G5B5_Z1R5G5B5">SFC_X1R5G5B5_Z1R5G5B5</h2>
+        <div class="test-case-description">
+            <p>Tests the effect of clear color on LE_X1R5G5B5_Z1R5G5B5 surface format. The cleared surface will have its most significant bit set to 0. (Note that the surface is rendered as an ARGB8 texture)</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Clear/SFC_X1R5G5B5_Z1R5G5B5.png" alt="Test result for Clear::SFC_X1R5G5B5_Z1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Clear/SFC_X1R5G5B5_Z1R5G5B5.png" alt="No alpha test result for Clear::SFC_X1R5G5B5_Z1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
