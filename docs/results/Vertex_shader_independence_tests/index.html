@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Vertex_shader_independence_tests</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Vertex_shader_independence_tests</h1>
+<div class="label-value-grid">
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/vertex_shader_independence_tests.h#L10">src/tests/vertex_shader_independence_tests.h</a></div>
+</div>
+
+<h2 id="MAC_ILU_Independence">MAC_ILU_Independence</h2>
+        <div class="test-case-description">
+            <p>Verifies that instructions running on the MAC and ILU in parallel that write to an input of the other execute using the original value of the input rather than the result of the operation.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_independence_tests/MAC_ILU_Independence.png" alt="Test result for Vertex_shader_independence_tests::MAC_ILU_Independence" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_independence_tests/MAC_ILU_Independence.png" alt="No alpha test result for Vertex_shader_independence_tests::MAC_ILU_Independence" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Multioutput">Multioutput</h2>
+        <div class="test-case-description">
+            <p>Verifies that MAC &amp; ILU instructions that write to both oPos and a temporary register using the R12 input alias use the original value of oPos when generating the output. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_independence_tests/Multioutput.png" alt="Test result for Vertex_shader_independence_tests::Multioutput" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_independence_tests/Multioutput.png" alt="No alpha test result for Vertex_shader_independence_tests::Multioutput" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
