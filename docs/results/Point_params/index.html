@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Point_params</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Point_params</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the behavior of NV097_SET_POINT_PARAMS_ENABLE (0x00000318) and NV097_SET_POINT_PARAMS (0x00000A30).</div>
+    
+        <div class="test-description-line">The scale factors are used to calculate a multiplier for the point size using the formula SFactor = sqrt(1/(A + B * Deye + C * Deye ^ 2)).</div>
+    
+        <div class="test-description-line">See</div>
+    
+        <div class="test-description-line">https://learn.microsoft.com/en-us/windows/win32/direct3d9/point-sprites</div>
+    
+        <div class="test-description-line">PointParamsX_SmoothX_PtSize_(FF | VS) Each test renders a grid of points. Point size is set to a test value for all points.</div>
+    
+        <div class="test-description-line">As points go from top to bottom: Z starts at -5 (eye at -7) and increases by 25 per row (max depth = 193).</div>
+    
+        <div class="test-description-line">In each row, as points go from left to right, point params are set from the following:</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">No scale factors, min size 0, size range 0. Should be 1 pixel.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">No scale factors, min size 16, size range 0. Should be 16 pixels square.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">Negligible constant scale, size range 16, min size 0. Should be 16 pixels.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">Negligible constant scale, size range 16, min size 8. Should be 24 pixels.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">4 constant scale, size range 14, min size 16. Should be ~23 pixels.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">4 constant scale, size range 36, min size 4. Should be ~21 pixels.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">256 constant scale, size range 36, min size 4. Should be ~7 pixels.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min 1.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">0.05 quadratic scale, size range 39, min 1.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">4 constant scale, size range 14, min size 16, bias -0.5.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">4 constant scale, size range 14, min size 16, bias 0.5.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">No scale factors, size range 15, min size 1, bias -100.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">No scale factors, size range 15, min size 1, bias 100.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">Detailed_(FF | VS) Each test renders a grid of points. Point size is set to 128 (16 pixels) for all points.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">No scale factors, min size 0, size range 0. Should be 1 pixel.</div>
+    
+        <div class="test-description-line">No scale factors, min size 16, size range 0. Should be 16 pixels square.</div>
+    
+        <div class="test-description-line">Negligible constant scale, size range 16, min size 0. Should be 16 pixels.</div>
+    
+        <div class="test-description-line">Negligible constant scale, size range 16, min size 8. Should be 24 pixels.</div>
+    
+        <div class="test-description-line">4 constant scale, size range 14, min size 16. Should be ~23 pixels.</div>
+    
+        <div class="test-description-line">4 constant scale, size range 36, min size 4. Should be ~21 pixels.</div>
+    
+        <div class="test-description-line">256 constant scale, size range 36, min size 4. Should be ~7 pixels.</div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min 1.</div>
+    
+        <div class="test-description-line">0.05 quadratic scale, size range 39, min 1.</div>
+    
+        <div class="test-description-line">4 constant scale, size range 14, min size 16, bias -0.5.</div>
+    
+        <div class="test-description-line">4 constant scale, size range 14, min size 16, bias 0.5.</div>
+    
+        <div class="test-description-line">No scale factors, size range 15, min size 1, bias -100.</div>
+    
+        <div class="test-description-line">No scale factors, size range 15, min size 1, bias 100.</div>
+    
+        <div class="test-description-line">Detailed_(FF | VS) Each test renders a grid of points. Point size is set to 128 (16 pixels) for all points.</div>
+    
+        <div class="test-description-line">As points go from top to bottom: Z starts at -5 (eye at -7) and increases by 25 per row (max depth = 193).</div>
+    
+        <div class="test-description-line">In each row, as points go from left to right, point params are set from the following:</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -1.0</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -0.5</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -0.25</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -0.01</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias 0</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -0.01</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -0.25</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -0.5</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -1.0</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">4 constant scale, size range 36, min size 4, scale bias -0.4</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">4 constant scale, size range 36, min size 4, scale bias -0.25</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">4 constant scale, size range 36, min size 4, scale bias 0.25</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">4 constant scale, size range 36, min size 4, scale bias 0.4</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -1.0</div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -0.5</div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -0.25</div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -0.01</div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias 0</div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -0.01</div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -0.25</div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -0.5</div>
+    
+        <div class="test-description-line">0.25 linear scale, size range 39, min size 1, scale bias -1.0</div>
+    
+        <div class="test-description-line">4 constant scale, size range 36, min size 4, scale bias -0.4</div>
+    
+        <div class="test-description-line">4 constant scale, size range 36, min size 4, scale bias -0.25</div>
+    
+        <div class="test-description-line">4 constant scale, size range 36, min size 4, scale bias 0.25</div>
+    
+        <div class="test-description-line">4 constant scale, size range 36, min size 4, scale bias 0.4</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/point_params_tests.h#L66">src/tests/point_params_tests.h</a></div>
+</div>
+
+<h2 id="Detailed_FF">Detailed_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with more complex point params.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Detailed_FF.png" alt="Test result for Point_params::Detailed_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Detailed_FF.png" alt="No alpha test result for Point_params::Detailed_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Detailed_VS">Detailed_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using a programmable shader with more complex point params.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Detailed_VS.png" alt="Test result for Point_params::Detailed_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Detailed_VS.png" alt="No alpha test result for Point_params::Detailed_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointParamsOff_SmoothOff_128_FF">PointParamsOff_SmoothOff_128_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with point size 128 (16px), point smoothing and point params disabled.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/PointParamsOff_SmoothOff_128_FF.png" alt="Test result for Point_params::PointParamsOff_SmoothOff_128_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/PointParamsOff_SmoothOff_128_FF.png" alt="No alpha test result for Point_params::PointParamsOff_SmoothOff_128_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointParamsOff_SmoothOff_128_VS">PointParamsOff_SmoothOff_128_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using a programmable shader with point size 128 (16px), point smoothing and point params disabled.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/PointParamsOff_SmoothOff_128_VS.png" alt="Test result for Point_params::PointParamsOff_SmoothOff_128_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/PointParamsOff_SmoothOff_128_VS.png" alt="No alpha test result for Point_params::PointParamsOff_SmoothOff_128_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointParamsOn_SmoothOff_128_FF">PointParamsOn_SmoothOff_128_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with point size 128 (16px), point smoothing disabled and point params enabled.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/PointParamsOn_SmoothOff_128_FF.png" alt="Test result for Point_params::PointParamsOn_SmoothOff_128_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/PointParamsOn_SmoothOff_128_FF.png" alt="No alpha test result for Point_params::PointParamsOn_SmoothOff_128_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointParamsOn_SmoothOff_128_VS">PointParamsOn_SmoothOff_128_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using a programmable shader with point size 128 (16px), point smoothing disabled and point params enabled.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/PointParamsOn_SmoothOff_128_VS.png" alt="Test result for Point_params::PointParamsOn_SmoothOff_128_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/PointParamsOn_SmoothOff_128_VS.png" alt="No alpha test result for Point_params::PointParamsOn_SmoothOff_128_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointParamsOn_SmoothOn_001_FF">PointParamsOn_SmoothOn_001_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with point size 1, point smoothing and point params enabled. Demonstrates that point size is ignored when point params are enabled.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/PointParamsOn_SmoothOn_001_FF.png" alt="Test result for Point_params::PointParamsOn_SmoothOn_001_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/PointParamsOn_SmoothOn_001_FF.png" alt="No alpha test result for Point_params::PointParamsOn_SmoothOn_001_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointParamsOn_SmoothOn_128_FF">PointParamsOn_SmoothOn_128_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline with point size 128 (16px), point smoothing and point params enabled.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/PointParamsOn_SmoothOn_128_FF.png" alt="Test result for Point_params::PointParamsOn_SmoothOn_128_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/PointParamsOn_SmoothOn_128_FF.png" alt="No alpha test result for Point_params::PointParamsOn_SmoothOn_128_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="PointParamsOn_SmoothOn_128_VS">PointParamsOn_SmoothOn_128_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using a programmable shader with point size 128 (16px), point smoothing and point params enabled.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/PointParamsOn_SmoothOn_128_VS.png" alt="Test result for Point_params::PointParamsOn_SmoothOn_128_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/PointParamsOn_SmoothOn_128_VS.png" alt="No alpha test result for Point_params::PointParamsOn_SmoothOn_128_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_0_0_0_FF">Scale_0_0_0_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline at varying distances from the eye point with point size 130 (16.25px) and point scale params 0.0, 0.0, 0.0. Minimum size is set to 0.5.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_0_0_0_FF.png" alt="Test result for Point_params::Scale_0_0_0_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_0_0_0_FF.png" alt="No alpha test result for Point_params::Scale_0_0_0_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_0_0_0_VS">Scale_0_0_0_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using the programmable pipeline at varying distances from the eye point with point size 130 (16.25px) and point scale params 0.0, 0.0, 0.0. Minimum size is set to 0.5.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_0_0_0_VS.png" alt="Test result for Point_params::Scale_0_0_0_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_0_0_0_VS.png" alt="No alpha test result for Point_params::Scale_0_0_0_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_0_0_1_FF">Scale_0_0_1_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline at varying distances from the eye point with point size 130 (16.25px) and point scale params 0.0, 0.0, 1.0. Minimum size is set to 0.5.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_0_0_1_FF.png" alt="Test result for Point_params::Scale_0_0_1_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_0_0_1_FF.png" alt="No alpha test result for Point_params::Scale_0_0_1_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_0_0_1_VS">Scale_0_0_1_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using the programmable pipeline at varying distances from the eye point with point size 130 (16.25px) and point scale params 0.0, 0.0, 1.0. Minimum size is set to 0.5. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_0_0_1_VS.png" alt="Test result for Point_params::Scale_0_0_1_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_0_0_1_VS.png" alt="No alpha test result for Point_params::Scale_0_0_1_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_0_1_0_FF">Scale_0_1_0_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline at varying distances from the eye point with point size 130 (16.25px) and point scale params 0.0, 1.0, 0.0. Minimum size is set to 0.5.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_0_1_0_FF.png" alt="Test result for Point_params::Scale_0_1_0_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_0_1_0_FF.png" alt="No alpha test result for Point_params::Scale_0_1_0_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_0_1_0_VS">Scale_0_1_0_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using the programmable pipeline at varying distances from the eye point with point size 130 (16.25px) and point scale params 0.0, 1.0, 0.0. Minimum size is set to 0.5.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_0_1_0_VS.png" alt="Test result for Point_params::Scale_0_1_0_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_0_1_0_VS.png" alt="No alpha test result for Point_params::Scale_0_1_0_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_0_1_1_FF">Scale_0_1_1_FF</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_0_1_1_FF.png" alt="Test result for Point_params::Scale_0_1_1_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_0_1_1_FF.png" alt="No alpha test result for Point_params::Scale_0_1_1_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_0_1_1_VS">Scale_0_1_1_VS</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_0_1_1_VS.png" alt="Test result for Point_params::Scale_0_1_1_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_0_1_1_VS.png" alt="No alpha test result for Point_params::Scale_0_1_1_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_4_0_0_FF">Scale_4_0_0_FF</h2>
+        <div class="test-case-description">
+            <p>Renders points using the fixed function pipeline at varying distances from the eye point with point size 130 (16.25px) and point scale params 4.0, 0.0, 0.0. Minimum size is set to 0.5.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_4_0_0_FF.png" alt="Test result for Point_params::Scale_4_0_0_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_4_0_0_FF.png" alt="No alpha test result for Point_params::Scale_4_0_0_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_4_0_0_VS">Scale_4_0_0_VS</h2>
+        <div class="test-case-description">
+            <p>Renders points using the programmable pipeline at varying distances from the eye point with point size 130 (16.25px) and point scale params 4.0, 0.0, 0.0. Minimum size is set to 0.5.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_4_0_0_VS.png" alt="Test result for Point_params::Scale_4_0_0_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_4_0_0_VS.png" alt="No alpha test result for Point_params::Scale_4_0_0_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_4_0_1_FF">Scale_4_0_1_FF</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_4_0_1_FF.png" alt="Test result for Point_params::Scale_4_0_1_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_4_0_1_FF.png" alt="No alpha test result for Point_params::Scale_4_0_1_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_4_0_1_VS">Scale_4_0_1_VS</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_4_0_1_VS.png" alt="Test result for Point_params::Scale_4_0_1_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_4_0_1_VS.png" alt="No alpha test result for Point_params::Scale_4_0_1_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_4_1_0_FF">Scale_4_1_0_FF</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_4_1_0_FF.png" alt="Test result for Point_params::Scale_4_1_0_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_4_1_0_FF.png" alt="No alpha test result for Point_params::Scale_4_1_0_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_4_1_0_VS">Scale_4_1_0_VS</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_4_1_0_VS.png" alt="Test result for Point_params::Scale_4_1_0_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_4_1_0_VS.png" alt="No alpha test result for Point_params::Scale_4_1_0_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_4_1_1_FF">Scale_4_1_1_FF</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_4_1_1_FF.png" alt="Test result for Point_params::Scale_4_1_1_FF" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_4_1_1_FF.png" alt="No alpha test result for Point_params::Scale_4_1_1_FF" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Scale_4_1_1_VS">Scale_4_1_1_VS</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Point_params/Scale_4_1_1_VS.png" alt="Test result for Point_params::Scale_4_1_1_VS" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Point_params/Scale_4_1_1_VS.png" alt="No alpha test result for Point_params::Scale_4_1_1_VS" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

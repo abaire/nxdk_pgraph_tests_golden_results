@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Texture_3D_as_2D</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Texture_3D_as_2D</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the behavior of various texture stage modes that require 2D textures but are given cubemap/volumetric textures.</div>
+    
+        <div class="test-description-line">NOTE: This suite tests behavior of incorrectly configured textures. Please see</div>
+    
+        <div class="test-description-line">TextureFormatTests</div>
+    
+        <div class="test-description-line"> for examples of how 2D textures should generally be used.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/texture_3d_as_2d_tests.h#L14">src/tests/texture_3d_as_2d_tests.h</a></div>
+</div>
+
+<h2 id="Cubemap_as_2D">Cubemap_as_2D</h2>
+        <div class="test-case-description">
+            <p>Renders a textured quad using a cubemap texture sampled as 2D_PROJECTIVE. The +X face is rendered as a native-sized reference image. The quad is rendered at 4x the native size of the texture.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_3D_as_2D/Cubemap_as_2D.png" alt="Test result for Texture_3D_as_2D::Cubemap_as_2D" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_3D_as_2D/Cubemap_as_2D.png" alt="No alpha test result for Texture_3D_as_2D::Cubemap_as_2D" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Volumetric_as_2D">Volumetric_as_2D</h2>
+        <div class="test-case-description">
+            <p>Renders a textured quad using a volumetric texture sampled as 2D_PROJECTIVE. The first two layers are rendered as native sized reference images on the left. The quad is rendered at 4x the native size of the texture. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_3D_as_2D/Volumetric_as_2D.png" alt="Test result for Texture_3D_as_2D::Volumetric_as_2D" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_3D_as_2D/Volumetric_as_2D.png" alt="No alpha test result for Texture_3D_as_2D::Volumetric_as_2D" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
