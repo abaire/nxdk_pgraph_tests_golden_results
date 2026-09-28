@@ -13,6 +13,7 @@ import sys
 from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any, Collection
+from urllib.parse import quote
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -125,18 +126,24 @@ class ResultsScanner:
     ) -> None:
         self.results_dir = results_dir
         self.output_dir = output_dir
-        self.base_url = base_url
-        self.base_url_no_alpha = base_url_no_alpha
+        self.base_url = base_url.rstrip("/")
+        self.base_url_no_alpha = base_url_no_alpha.rstrip("/")
         self.test_suite_descriptors = test_suite_descriptors
 
     def _get_suite_descriptor(self, suite_name: str) -> TestSuiteDescriptor | None:
         return _fuzzy_lookup_suite_descriptor(self.test_suite_descriptors, suite_name)
 
     def _process_suite(self, suite_name: str, images: list[str]) -> SuiteResults | None:
-        suite_base_url = f"{self.base_url}/{RESULTS_SUBDIR}/{suite_name}"
-        suite_no_alpha_base_url = f"{self.base_url_no_alpha}/{RESULTS_NO_ALPHA_SUBDIR}/{suite_name}"
+        escaped_suite_name = quote(suite_name)
+        suite_base_url = f"{self.base_url}/{RESULTS_SUBDIR}/{escaped_suite_name}"
+        suite_no_alpha_base_url = f"{self.base_url_no_alpha}/{RESULTS_NO_ALPHA_SUBDIR}/{escaped_suite_name}"
         test_results = [
-            TestResult(name=os.path.splitext(image)[0], artifact_url=f"{suite_base_url}/{image}", no_alpha_artifact_url=f"{suite_no_alpha_base_url}/{image}") for image in images
+            TestResult(
+                name=os.path.splitext(image)[0],
+                artifact_url=f"{suite_base_url}/{quote(image)}",
+                no_alpha_artifact_url=f"{suite_no_alpha_base_url}/{quote(image)}",
+            )
+            for image in images
         ]
 
         return SuiteResults(
@@ -195,9 +202,10 @@ class PagesWriter:
 
     def _suite_source_url(self, source_file_path: str, source_line: int) -> str:
         if self.test_source_base_url and source_file_path:
+            quoted_source_file_path = quote(source_file_path)
             if source_line >= 0:
-                return f"{self.test_source_base_url}/{source_file_path}#L{source_line}"
-            return f"{self.test_source_base_url}/{source_file_path}"
+                return f"{self.test_source_base_url}/{quoted_source_file_path}#L{source_line}"
+            return f"{self.test_source_base_url}/{quoted_source_file_path}"
         return ""
 
     def _pack_descriptor(self, descriptor: TestSuiteDescriptor | None) -> dict[str, Any] | None:
