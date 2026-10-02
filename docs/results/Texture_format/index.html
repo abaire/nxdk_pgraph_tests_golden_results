@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Texture_format</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Texture_format</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Exercises rendering a textured quad using various NV2A hardware texture formats. A color gradient is generated and converted to the target format (applying swizzling if swizzled), then sampled via the projective 2D shader stage with the final combiner set to output the sampled texture color. Also tests 8-bit palettized textures across various palette sizes and verifies alpha channel behavior for formats containing dummy "X" alpha components.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/texture_format_tests.h#L23">src/tests/texture_format_tests.h</a></div>
+</div>
+
+<h2 id="DepthFmt_D_X8Y24_FIXED">DepthFmt_D_X8Y24_FIXED</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D depth texture in 24-bit fixed-point depth swizzled format (NV097_SET_TEXTURE_FORMAT_COLOR_SZ_DEPTH_X8_Y24_FIXED) using 3D projective shadow comparison against a constant reference depth across 6 shadow compare functions, saving the backbuffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/DepthFmt_D_X8Y24_FIXED.png" alt="Test result for Texture_format::DepthFmt_D_X8Y24_FIXED" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/DepthFmt_D_X8Y24_FIXED.png" alt="No alpha test result for Texture_format::DepthFmt_D_X8Y24_FIXED" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DepthFmt_D_X8Y24_FIXED_L">DepthFmt_D_X8Y24_FIXED_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D depth texture in 24-bit fixed-point depth linear format (NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_DEPTH_X8_Y24_FIXED) using 3D projective shadow comparison against a constant reference depth across 6 shadow compare functions, saving the backbuffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/DepthFmt_D_X8Y24_FIXED_L.png" alt="Test result for Texture_format::DepthFmt_D_X8Y24_FIXED_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/DepthFmt_D_X8Y24_FIXED_L.png" alt="No alpha test result for Texture_format::DepthFmt_D_X8Y24_FIXED_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DepthFmt_D_X8Y24_FLOAT">DepthFmt_D_X8Y24_FLOAT</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D depth texture in 24-bit floating-point depth swizzled format (NV097_SET_TEXTURE_FORMAT_COLOR_SZ_DEPTH_X8_Y24_FLOAT) using 3D projective shadow comparison against a constant reference depth across 6 shadow compare functions, saving the backbuffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/DepthFmt_D_X8Y24_FLOAT.png" alt="Test result for Texture_format::DepthFmt_D_X8Y24_FLOAT" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/DepthFmt_D_X8Y24_FLOAT.png" alt="No alpha test result for Texture_format::DepthFmt_D_X8Y24_FLOAT" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DepthFmt_D_Y16_FIXED">DepthFmt_D_Y16_FIXED</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D depth texture in 16-bit fixed-point depth swizzled format (NV097_SET_TEXTURE_FORMAT_COLOR_SZ_DEPTH_Y16_FIXED) using 3D projective shadow comparison against a constant reference depth across 6 shadow compare functions, saving the backbuffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/DepthFmt_D_Y16_FIXED.png" alt="Test result for Texture_format::DepthFmt_D_Y16_FIXED" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/DepthFmt_D_Y16_FIXED.png" alt="No alpha test result for Texture_format::DepthFmt_D_Y16_FIXED" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DepthFmt_D_Y16_FIXED_L">DepthFmt_D_Y16_FIXED_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D depth texture in 16-bit fixed-point depth linear format (NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_DEPTH_Y16_FIXED) using 3D projective shadow comparison against a constant reference depth across 6 shadow compare functions, saving the backbuffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/DepthFmt_D_Y16_FIXED_L.png" alt="Test result for Texture_format::DepthFmt_D_Y16_FIXED_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/DepthFmt_D_Y16_FIXED_L.png" alt="No alpha test result for Texture_format::DepthFmt_D_Y16_FIXED_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DepthFmt_D_Y16_FLOAT">DepthFmt_D_Y16_FLOAT</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D depth texture in 16-bit floating-point depth swizzled format (NV097_SET_TEXTURE_FORMAT_COLOR_SZ_DEPTH_Y16_FLOAT) using 3D projective shadow comparison against a constant reference depth across 6 shadow compare functions, saving the backbuffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/DepthFmt_D_Y16_FLOAT.png" alt="Test result for Texture_format::DepthFmt_D_Y16_FLOAT" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/DepthFmt_D_Y16_FLOAT.png" alt="No alpha test result for Texture_format::DepthFmt_D_Y16_FLOAT" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="DepthFmt_D_Y16_FLOAT_L">DepthFmt_D_Y16_FLOAT_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D depth texture in 16-bit floating-point depth linear format (NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_DEPTH_Y16_FLOAT) using 3D projective shadow comparison against a constant reference depth across 6 shadow compare functions, saving the backbuffer.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/DepthFmt_D_Y16_FLOAT_L.png" alt="Test result for Texture_format::DepthFmt_D_Y16_FLOAT_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/DepthFmt_D_Y16_FLOAT_L.png" alt="No alpha test result for Texture_format::DepthFmt_D_Y16_FLOAT_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_A1R5G5B5">TexFmt_A1R5G5B5</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in A1R5G5B5 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_A1R5G5B5.png" alt="Test result for Texture_format::TexFmt_A1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_A1R5G5B5.png" alt="No alpha test result for Texture_format::TexFmt_A1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_A1R5G5B5_L">TexFmt_A1R5G5B5_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in A1R5G5B5 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_A1R5G5B5_L.png" alt="Test result for Texture_format::TexFmt_A1R5G5B5_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_A1R5G5B5_L.png" alt="No alpha test result for Texture_format::TexFmt_A1R5G5B5_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_A4R4G4B4">TexFmt_A4R4G4B4</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in A4R4G4B4 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_A4R4G4B4.png" alt="Test result for Texture_format::TexFmt_A4R4G4B4" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_A4R4G4B4.png" alt="No alpha test result for Texture_format::TexFmt_A4R4G4B4" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_A4R4G4B4_L">TexFmt_A4R4G4B4_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in A4R4G4B4 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_A4R4G4B4_L.png" alt="Test result for Texture_format::TexFmt_A4R4G4B4_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_A4R4G4B4_L.png" alt="No alpha test result for Texture_format::TexFmt_A4R4G4B4_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_A8">TexFmt_A8</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in A8 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_A8.png" alt="Test result for Texture_format::TexFmt_A8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_A8.png" alt="No alpha test result for Texture_format::TexFmt_A8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_A8_L">TexFmt_A8_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in A8 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_A8_L.png" alt="Test result for Texture_format::TexFmt_A8_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_A8_L.png" alt="No alpha test result for Texture_format::TexFmt_A8_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_A8B8G8R8">TexFmt_A8B8G8R8</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in A8B8G8R8 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_A8B8G8R8.png" alt="Test result for Texture_format::TexFmt_A8B8G8R8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_A8B8G8R8.png" alt="No alpha test result for Texture_format::TexFmt_A8B8G8R8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_A8B8G8R8_L">TexFmt_A8B8G8R8_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in A8B8G8R8 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_A8B8G8R8_L.png" alt="Test result for Texture_format::TexFmt_A8B8G8R8_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_A8B8G8R8_L.png" alt="No alpha test result for Texture_format::TexFmt_A8B8G8R8_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_A8R8G8B8">TexFmt_A8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in A8R8G8B8 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_A8R8G8B8.png" alt="Test result for Texture_format::TexFmt_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_A8R8G8B8.png" alt="No alpha test result for Texture_format::TexFmt_A8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_A8R8G8B8_L">TexFmt_A8R8G8B8_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in A8R8G8B8 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_A8R8G8B8_L.png" alt="Test result for Texture_format::TexFmt_A8R8G8B8_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_A8R8G8B8_L.png" alt="No alpha test result for Texture_format::TexFmt_A8R8G8B8_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_A8Y8">TexFmt_A8Y8</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in A8Y8 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_A8Y8.png" alt="Test result for Texture_format::TexFmt_A8Y8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_A8Y8.png" alt="No alpha test result for Texture_format::TexFmt_A8Y8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_AY8">TexFmt_AY8</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in AY8 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_AY8.png" alt="Test result for Texture_format::TexFmt_AY8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_AY8.png" alt="No alpha test result for Texture_format::TexFmt_AY8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_AY8_L">TexFmt_AY8_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in AY8 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_AY8_L.png" alt="Test result for Texture_format::TexFmt_AY8_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_AY8_L.png" alt="No alpha test result for Texture_format::TexFmt_AY8_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_B8G8R8A8">TexFmt_B8G8R8A8</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in B8G8R8A8 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_B8G8R8A8.png" alt="Test result for Texture_format::TexFmt_B8G8R8A8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_B8G8R8A8.png" alt="No alpha test result for Texture_format::TexFmt_B8G8R8A8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_B8G8R8A8_L">TexFmt_B8G8R8A8_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in B8G8R8A8 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_B8G8R8A8_L.png" alt="Test result for Texture_format::TexFmt_B8G8R8A8_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_B8G8R8A8_L.png" alt="No alpha test result for Texture_format::TexFmt_B8G8R8A8_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_DXT1">TexFmt_DXT1</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in DXT1 compressed format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_DXT1.png" alt="Test result for Texture_format::TexFmt_DXT1" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_DXT1.png" alt="No alpha test result for Texture_format::TexFmt_DXT1" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_G8B8">TexFmt_G8B8</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in G8B8 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_G8B8.png" alt="Test result for Texture_format::TexFmt_G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_G8B8.png" alt="No alpha test result for Texture_format::TexFmt_G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_G8B8_L">TexFmt_G8B8_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in G8B8 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_G8B8_L.png" alt="Test result for Texture_format::TexFmt_G8B8_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_G8B8_L.png" alt="No alpha test result for Texture_format::TexFmt_G8B8_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_R16B16">TexFmt_R16B16</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in R16B16 swizzled format (NV097_SET_TEXTURE_FORMAT_COLOR_SZ_YB_16_YA_16).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_R16B16.png" alt="Test result for Texture_format::TexFmt_R16B16" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_R16B16.png" alt="No alpha test result for Texture_format::TexFmt_R16B16" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_R16B16_L">TexFmt_R16B16_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in R16B16 linear format (NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_YB16YA16).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_R16B16_L.png" alt="Test result for Texture_format::TexFmt_R16B16_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_R16B16_L.png" alt="No alpha test result for Texture_format::TexFmt_R16B16_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_R5G6B5">TexFmt_R5G6B5</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in R5G6B5 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_R5G6B5.png" alt="Test result for Texture_format::TexFmt_R5G6B5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_R5G6B5.png" alt="No alpha test result for Texture_format::TexFmt_R5G6B5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_R5G6B5_L">TexFmt_R5G6B5_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in R5G6B5 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_R5G6B5_L.png" alt="Test result for Texture_format::TexFmt_R5G6B5_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_R5G6B5_L.png" alt="No alpha test result for Texture_format::TexFmt_R5G6B5_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_R6G5B5">TexFmt_R6G5B5</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in R6G5B5 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_R6G5B5.png" alt="Test result for Texture_format::TexFmt_R6G5B5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_R6G5B5.png" alt="No alpha test result for Texture_format::TexFmt_R6G5B5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_R8B8">TexFmt_R8B8</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in R8B8 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_R8B8.png" alt="Test result for Texture_format::TexFmt_R8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_R8B8.png" alt="No alpha test result for Texture_format::TexFmt_R8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_R8G8B8A8">TexFmt_R8G8B8A8</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in R8G8B8A8 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_R8G8B8A8.png" alt="Test result for Texture_format::TexFmt_R8G8B8A8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_R8G8B8A8.png" alt="No alpha test result for Texture_format::TexFmt_R8G8B8A8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_R8G8B8A8_L">TexFmt_R8G8B8A8_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in R8G8B8A8 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_R8G8B8A8_L.png" alt="Test result for Texture_format::TexFmt_R8G8B8A8_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_R8G8B8A8_L.png" alt="No alpha test result for Texture_format::TexFmt_R8G8B8A8_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_SZ_Index8_p128">TexFmt_SZ_Index8_p128</h2>
+        <div class="test-case-description">
+            <p>Samples an 8-bit palettized texture (SZ_I8_A8R8G8B8) configured with a 128-entry color palette.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_SZ_Index8_p128.png" alt="Test result for Texture_format::TexFmt_SZ_Index8_p128" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_SZ_Index8_p128.png" alt="No alpha test result for Texture_format::TexFmt_SZ_Index8_p128" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_SZ_Index8_p256">TexFmt_SZ_Index8_p256</h2>
+        <div class="test-case-description">
+            <p>Samples an 8-bit palettized texture (SZ_I8_A8R8G8B8) configured with a 256-entry color palette.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_SZ_Index8_p256.png" alt="Test result for Texture_format::TexFmt_SZ_Index8_p256" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_SZ_Index8_p256.png" alt="No alpha test result for Texture_format::TexFmt_SZ_Index8_p256" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_SZ_Index8_p32">TexFmt_SZ_Index8_p32</h2>
+        <div class="test-case-description">
+            <p>Samples an 8-bit palettized texture (SZ_I8_A8R8G8B8) configured with a 32-entry color palette.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_SZ_Index8_p32.png" alt="Test result for Texture_format::TexFmt_SZ_Index8_p32" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_SZ_Index8_p32.png" alt="No alpha test result for Texture_format::TexFmt_SZ_Index8_p32" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_SZ_Index8_p64">TexFmt_SZ_Index8_p64</h2>
+        <div class="test-case-description">
+            <p>Samples an 8-bit palettized texture (SZ_I8_A8R8G8B8) configured with a 64-entry color palette.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_SZ_Index8_p64.png" alt="Test result for Texture_format::TexFmt_SZ_Index8_p64" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_SZ_Index8_p64.png" alt="No alpha test result for Texture_format::TexFmt_SZ_Index8_p64" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_UYVY_L">TexFmt_UYVY_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in UYVY (LC_IMAGE_YB8CR8YA8CB8) linear YUV format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_UYVY_L.png" alt="Test result for Texture_format::TexFmt_UYVY_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_UYVY_L.png" alt="No alpha test result for Texture_format::TexFmt_UYVY_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_X1R5G5B5">TexFmt_X1R5G5B5</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in X1R5G5B5 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_X1R5G5B5.png" alt="Test result for Texture_format::TexFmt_X1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_X1R5G5B5.png" alt="No alpha test result for Texture_format::TexFmt_X1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_X1R5G5B5_L">TexFmt_X1R5G5B5_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in X1R5G5B5 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_X1R5G5B5_L.png" alt="Test result for Texture_format::TexFmt_X1R5G5B5_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_X1R5G5B5_L.png" alt="No alpha test result for Texture_format::TexFmt_X1R5G5B5_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_X8R8G8B8">TexFmt_X8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in X8R8G8B8 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_X8R8G8B8.png" alt="Test result for Texture_format::TexFmt_X8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_X8R8G8B8.png" alt="No alpha test result for Texture_format::TexFmt_X8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_X8R8G8B8_L">TexFmt_X8R8G8B8_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in X8R8G8B8 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_X8R8G8B8_L.png" alt="Test result for Texture_format::TexFmt_X8R8G8B8_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_X8R8G8B8_L.png" alt="No alpha test result for Texture_format::TexFmt_X8R8G8B8_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_Y16">TexFmt_Y16</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in Y16 swizzled format (NV097_SET_TEXTURE_FORMAT_COLOR_SZ_Y16, format 0x32).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_Y16.png" alt="Test result for Texture_format::TexFmt_Y16" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_Y16.png" alt="No alpha test result for Texture_format::TexFmt_Y16" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_Y16_L">TexFmt_Y16_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in Y16 linear format (NV097_SET_TEXTURE_FORMAT_COLOR_LU_IMAGE_Y16, format 0x35).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_Y16_L.png" alt="Test result for Texture_format::TexFmt_Y16_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_Y16_L.png" alt="No alpha test result for Texture_format::TexFmt_Y16_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_Y8">TexFmt_Y8</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in Y8 swizzled format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_Y8.png" alt="Test result for Texture_format::TexFmt_Y8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_Y8.png" alt="No alpha test result for Texture_format::TexFmt_Y8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_Y8_L">TexFmt_Y8_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in Y8 linear format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_Y8_L.png" alt="Test result for Texture_format::TexFmt_Y8_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_Y8_L.png" alt="No alpha test result for Texture_format::TexFmt_Y8_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TexFmt_YUY2_L">TexFmt_YUY2_L</h2>
+        <div class="test-case-description">
+            <p>Samples a 2D color gradient texture in YUY2 (LC_IMAGE_CR8YB8CB8YA8) linear YUV format.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/TexFmt_YUY2_L.png" alt="Test result for Texture_format::TexFmt_YUY2_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/TexFmt_YUY2_L.png" alt="No alpha test result for Texture_format::TexFmt_YUY2_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="XAlpha_A8R8G8B8_L">XAlpha_A8R8G8B8_L</h2>
+        <div class="test-case-description">
+            <p>Baseline test verifying alpha channel sampling and blending behavior with an actual alpha channel (A8R8G8B8 linear).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/XAlpha_A8R8G8B8_L.png" alt="Test result for Texture_format::XAlpha_A8R8G8B8_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/XAlpha_A8R8G8B8_L.png" alt="No alpha test result for Texture_format::XAlpha_A8R8G8B8_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="XAlpha_X1R5G5B5">XAlpha_X1R5G5B5</h2>
+        <div class="test-case-description">
+            <p>Tests that the unused X bit in X1R5G5B5 swizzled textures is treated as 1.0 (opaque) during sampling and blending.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/XAlpha_X1R5G5B5.png" alt="Test result for Texture_format::XAlpha_X1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/XAlpha_X1R5G5B5.png" alt="No alpha test result for Texture_format::XAlpha_X1R5G5B5" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="XAlpha_X1R5G5B5_L">XAlpha_X1R5G5B5_L</h2>
+        <div class="test-case-description">
+            <p>Tests that the unused X bit in X1R5G5B5 linear textures is treated as 1.0 (opaque) during sampling and blending.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/XAlpha_X1R5G5B5_L.png" alt="Test result for Texture_format::XAlpha_X1R5G5B5_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/XAlpha_X1R5G5B5_L.png" alt="No alpha test result for Texture_format::XAlpha_X1R5G5B5_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="XAlpha_X8R8G8B8">XAlpha_X8R8G8B8</h2>
+        <div class="test-case-description">
+            <p>Tests that the unused X byte in X8R8G8B8 swizzled textures is treated as 0xFF (opaque) during sampling and blending.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/XAlpha_X8R8G8B8.png" alt="Test result for Texture_format::XAlpha_X8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/XAlpha_X8R8G8B8.png" alt="No alpha test result for Texture_format::XAlpha_X8R8G8B8" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="XAlpha_X8R8G8B8_L">XAlpha_X8R8G8B8_L</h2>
+        <div class="test-case-description">
+            <p>Tests that the unused X byte in X8R8G8B8 linear textures is treated as 0xFF (opaque) during sampling and blending. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texture_format/XAlpha_X8R8G8B8_L.png" alt="Test result for Texture_format::XAlpha_X8R8G8B8_L" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texture_format/XAlpha_X8R8G8B8_L.png" alt="No alpha test result for Texture_format::XAlpha_X8R8G8B8_L" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

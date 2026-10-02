@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Fog_carryover</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Fog_carryover</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the behavior when fog is enabled but the fog coordinate is not specified by the shader.</div>
+    
+        <div class="test-description-line">This test reproduces behavior observed in "Blade 2"</div>
+    
+        <div class="test-description-line">https://github.com/xemu-project/xemu/issues/1852</div>
+    
+        <div class="test-description-line"></div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/fog_carryover_tests.h#L17">src/tests/fog_carryover_tests.h</a></div>
+</div>
+
+<h2 id="CarryoverLineLoop">CarryoverLineLoop</h2>
+        <div class="test-case-description">
+            <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/CarryoverLineLoop.png" alt="Test result for Fog_carryover::CarryoverLineLoop" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_carryover/CarryoverLineLoop.png" alt="No alpha test result for Fog_carryover::CarryoverLineLoop" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="CarryoverLines">CarryoverLines</h2>
+        <div class="test-case-description">
+            <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/CarryoverLines.png" alt="Test result for Fog_carryover::CarryoverLines" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_carryover/CarryoverLines.png" alt="No alpha test result for Fog_carryover::CarryoverLines" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="CarryoverLineStrip">CarryoverLineStrip</h2>
+        <div class="test-case-description">
+            <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/CarryoverLineStrip.png" alt="Test result for Fog_carryover::CarryoverLineStrip" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_carryover/CarryoverLineStrip.png" alt="No alpha test result for Fog_carryover::CarryoverLineStrip" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="CarryoverPoints">CarryoverPoints</h2>
+        <div class="test-case-description">
+            <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/CarryoverPoints.png" alt="Test result for Fog_carryover::CarryoverPoints" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_carryover/CarryoverPoints.png" alt="No alpha test result for Fog_carryover::CarryoverPoints" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="CarryoverPoly">CarryoverPoly</h2>
+        <div class="test-case-description">
+            <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/CarryoverPoly.png" alt="Test result for Fog_carryover::CarryoverPoly" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_carryover/CarryoverPoly.png" alt="No alpha test result for Fog_carryover::CarryoverPoly" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="CarryoverQuads">CarryoverQuads</h2>
+        <div class="test-case-description">
+            <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/CarryoverQuads.png" alt="Test result for Fog_carryover::CarryoverQuads" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_carryover/CarryoverQuads.png" alt="No alpha test result for Fog_carryover::CarryoverQuads" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="CarryoverQuadStrip">CarryoverQuadStrip</h2>
+        <div class="test-case-description">
+            <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/CarryoverQuadStrip.png" alt="Test result for Fog_carryover::CarryoverQuadStrip" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_carryover/CarryoverQuadStrip.png" alt="No alpha test result for Fog_carryover::CarryoverQuadStrip" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="CarryoverTriFan">CarryoverTriFan</h2>
+        <div class="test-case-description">
+            <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/CarryoverTriFan.png" alt="Test result for Fog_carryover::CarryoverTriFan" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_carryover/CarryoverTriFan.png" alt="No alpha test result for Fog_carryover::CarryoverTriFan" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="CarryoverTris">CarryoverTris</h2>
+        <div class="test-case-description">
+            <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/CarryoverTris.png" alt="Test result for Fog_carryover::CarryoverTris" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_carryover/CarryoverTris.png" alt="No alpha test result for Fog_carryover::CarryoverTris" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="CarryoverTriStrip">CarryoverTriStrip</h2>
+        <div class="test-case-description">
+            <p>Renders a series of primitives using various draw modes on the left, setting fog coordinates. Then renders a quad using the same draw mode on the right without specifying a fog coordinate at all. The fog mode is set to EXP.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/CarryoverTriStrip.png" alt="Test result for Fog_carryover::CarryoverTriStrip" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_carryover/CarryoverTriStrip.png" alt="No alpha test result for Fog_carryover::CarryoverTriStrip" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="FogCarryover">FogCarryover</h2>
+        <div class="test-case-description">
+            <p>The left column triangles are rendered with the fog coordinate explicitly passed through from the vertex by the shader. The right column triangles do not specify the fog coordinate at all.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_carryover/FogCarryover.png" alt="Test result for Fog_carryover::FogCarryover" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_carryover/FogCarryover.png" alt="No alpha test result for Fog_carryover::FogCarryover" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
