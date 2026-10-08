@@ -62,22 +62,16 @@ function enableViewLinks(document) {
 }
 
 function enableAnchorCopying(document) {
-    function addClickHandler(element) {
-        if (element.id) {
-            element.addEventListener('click', () => {
-                const currentURL = window.location.href.split('#');
-                const anchor = element.id;
-                const urlWithAnchor = `${currentURL}#${anchor}`;
-
-                navigator.clipboard.writeText(urlWithAnchor)
+    const links = document.querySelectorAll('.test-link');
+    links.forEach(link => {
+        link.addEventListener('click', (event) => {
+            // Note: We do not call event.preventDefault() so that the browser naturally
+            // updates the URL hash and scrolls to the element.
+            navigator.clipboard.writeText(link.href).catch(err => {
+                console.error("Failed to copy link: ", err);
             });
-        }
-    }
-
-    const h2Elements = document.querySelectorAll('h2');
-    h2Elements.forEach(addClickHandler);
-    const h3Elements = document.querySelectorAll('h3');
-    h3Elements.forEach(addClickHandler);
+        });
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
