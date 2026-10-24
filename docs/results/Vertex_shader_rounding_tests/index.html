@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Vertex_shader_rounding_tests</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Vertex_shader_rounding_tests</h1>
+<div class="label-value-grid">
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/vertex_shader_rounding_tests.h#L16">src/tests/vertex_shader_rounding_tests.h</a></div>
+</div>
+
+<h2 id="AdjacentGeometry_0.0000">
+    AdjacentGeometry_0.0000
+    <a href="#AdjacentGeometry_0.0000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Draws a light grey 400x200 background, then a 4x2 grid of adjacent 100x100 green quads, each offset by the bias in x and y, through a passthrough vertex shader. Grey seams between neighboring quads show inconsistent rounding of shared edges. This case uses no offset.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/AdjacentGeometry_0.0000.png" alt="Test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.0000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/AdjacentGeometry_0.0000.png" alt="No alpha test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.0000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AdjacentGeometry_0.0010">
+    AdjacentGeometry_0.0010
+    <a href="#AdjacentGeometry_0.0010" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As AdjacentGeometry_0.0000 with a bias of 0.0010 (a tiny offset).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/AdjacentGeometry_0.0010.png" alt="Test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.0010" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/AdjacentGeometry_0.0010.png" alt="No alpha test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.0010" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AdjacentGeometry_0.4999">
+    AdjacentGeometry_0.4999
+    <a href="#AdjacentGeometry_0.4999" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As AdjacentGeometry_0.0000 with a bias of 0.4999 (just under half a pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/AdjacentGeometry_0.4999.png" alt="Test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.4999" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/AdjacentGeometry_0.4999.png" alt="No alpha test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.4999" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AdjacentGeometry_0.5000">
+    AdjacentGeometry_0.5000
+    <a href="#AdjacentGeometry_0.5000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As AdjacentGeometry_0.0000 with a bias of 0.5000 (exactly half a pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/AdjacentGeometry_0.5000.png" alt="Test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.5000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/AdjacentGeometry_0.5000.png" alt="No alpha test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.5000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AdjacentGeometry_0.5624">
+    AdjacentGeometry_0.5624
+    <a href="#AdjacentGeometry_0.5624" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As AdjacentGeometry_0.0000 with a bias of 0.5624 (just under the 9/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/AdjacentGeometry_0.5624.png" alt="Test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.5624" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/AdjacentGeometry_0.5624.png" alt="No alpha test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.5624" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AdjacentGeometry_0.5625">
+    AdjacentGeometry_0.5625
+    <a href="#AdjacentGeometry_0.5625" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As AdjacentGeometry_0.0000 with a bias of 0.5625 (exactly 9/16 of a pixel, a 1/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/AdjacentGeometry_0.5625.png" alt="Test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.5625" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/AdjacentGeometry_0.5625.png" alt="No alpha test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.5625" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AdjacentGeometry_0.5626">
+    AdjacentGeometry_0.5626
+    <a href="#AdjacentGeometry_0.5626" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As AdjacentGeometry_0.0000 with a bias of 0.5626 (just over the 9/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/AdjacentGeometry_0.5626.png" alt="Test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.5626" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/AdjacentGeometry_0.5626.png" alt="No alpha test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.5626" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AdjacentGeometry_0.9990">
+    AdjacentGeometry_0.9990
+    <a href="#AdjacentGeometry_0.9990" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As AdjacentGeometry_0.0000 with a bias of 0.9990 (just under one pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/AdjacentGeometry_0.9990.png" alt="Test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.9990" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/AdjacentGeometry_0.9990.png" alt="No alpha test result for Vertex_shader_rounding_tests::AdjacentGeometry_0.9990" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AdjacentGeometry_1.0000">
+    AdjacentGeometry_1.0000
+    <a href="#AdjacentGeometry_1.0000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As AdjacentGeometry_0.0000 with a bias of 1.0000 (exactly one pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/AdjacentGeometry_1.0000.png" alt="Test result for Vertex_shader_rounding_tests::AdjacentGeometry_1.0000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/AdjacentGeometry_1.0000.png" alt="No alpha test result for Vertex_shader_rounding_tests::AdjacentGeometry_1.0000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Compositing_-2">
+    Compositing_-2
+    <a href="#Compositing_-2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Compositing_-4, but the final full screen quad is drawn at z = -2.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Compositing_-2.png" alt="Test result for Vertex_shader_rounding_tests::Compositing_-2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/Compositing_-2.png" alt="No alpha test result for Vertex_shader_rounding_tests::Compositing_-2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Compositing_-4">
+    Compositing_-4
+    <a href="#Compositing_-4" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Fills a framebuffer sized texture with a centered 256x256 checkerboard, points the color surface at that texture and draws the left half of the texture onto itself four times through a passthrough vertex shader, with the combiner outputting the texture&#39;s color and half its alpha. The texture is then drawn to the screen with a fixed function full screen quad at z = -4. Any offset or blurring in the left half shows texel misalignment that accumulates over the repeated self compositing.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Compositing_-4.png" alt="Test result for Vertex_shader_rounding_tests::Compositing_-4" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/Compositing_-4.png" alt="No alpha test result for Vertex_shader_rounding_tests::Compositing_-4" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Compositing_2">
+    Compositing_2
+    <a href="#Compositing_2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Compositing_-4, but the final full screen quad is drawn at z = 2.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Compositing_2.png" alt="Test result for Vertex_shader_rounding_tests::Compositing_2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/Compositing_2.png" alt="No alpha test result for Vertex_shader_rounding_tests::Compositing_2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Geometry_0.0000">
+    Geometry_0.0000
+    <a href="#Geometry_0.0000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Draws a 240x240 magenta quad centered on the screen, then a green quad over it whose top and left edges are offset by the bias (the right and bottom edges are unchanged), both through a passthrough vertex shader. Any magenta left visible along the top or left edge shows how the offset edge was snapped to the 1/16 subpixel grid and rasterized. This case uses no offset.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Geometry_0.0000.png" alt="Test result for Vertex_shader_rounding_tests::Geometry_0.0000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/Geometry_0.0000.png" alt="No alpha test result for Vertex_shader_rounding_tests::Geometry_0.0000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Geometry_0.0010">
+    Geometry_0.0010
+    <a href="#Geometry_0.0010" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Geometry_0.0000 with a bias of 0.0010 (a tiny offset).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Geometry_0.0010.png" alt="Test result for Vertex_shader_rounding_tests::Geometry_0.0010" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/Geometry_0.0010.png" alt="No alpha test result for Vertex_shader_rounding_tests::Geometry_0.0010" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Geometry_0.4999">
+    Geometry_0.4999
+    <a href="#Geometry_0.4999" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Geometry_0.0000 with a bias of 0.4999 (just under half a pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Geometry_0.4999.png" alt="Test result for Vertex_shader_rounding_tests::Geometry_0.4999" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/Geometry_0.4999.png" alt="No alpha test result for Vertex_shader_rounding_tests::Geometry_0.4999" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Geometry_0.5000">
+    Geometry_0.5000
+    <a href="#Geometry_0.5000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Geometry_0.0000 with a bias of 0.5000 (exactly half a pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Geometry_0.5000.png" alt="Test result for Vertex_shader_rounding_tests::Geometry_0.5000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/Geometry_0.5000.png" alt="No alpha test result for Vertex_shader_rounding_tests::Geometry_0.5000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Geometry_0.5624">
+    Geometry_0.5624
+    <a href="#Geometry_0.5624" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Geometry_0.0000 with a bias of 0.5624 (just under the 9/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Geometry_0.5624.png" alt="Test result for Vertex_shader_rounding_tests::Geometry_0.5624" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/Geometry_0.5624.png" alt="No alpha test result for Vertex_shader_rounding_tests::Geometry_0.5624" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Geometry_0.5625">
+    Geometry_0.5625
+    <a href="#Geometry_0.5625" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Geometry_0.0000 with a bias of 0.5625 (exactly 9/16 of a pixel, a 1/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Geometry_0.5625.png" alt="Test result for Vertex_shader_rounding_tests::Geometry_0.5625" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/Geometry_0.5625.png" alt="No alpha test result for Vertex_shader_rounding_tests::Geometry_0.5625" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Geometry_0.5626">
+    Geometry_0.5626
+    <a href="#Geometry_0.5626" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Geometry_0.0000 with a bias of 0.5626 (just over the 9/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Geometry_0.5626.png" alt="Test result for Vertex_shader_rounding_tests::Geometry_0.5626" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/Geometry_0.5626.png" alt="No alpha test result for Vertex_shader_rounding_tests::Geometry_0.5626" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Geometry_0.9990">
+    Geometry_0.9990
+    <a href="#Geometry_0.9990" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Geometry_0.0000 with a bias of 0.9990 (just under one pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Geometry_0.9990.png" alt="Test result for Vertex_shader_rounding_tests::Geometry_0.9990" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/Geometry_0.9990.png" alt="No alpha test result for Vertex_shader_rounding_tests::Geometry_0.9990" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Geometry_1.0000">
+    Geometry_1.0000
+    <a href="#Geometry_1.0000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Geometry_0.0000 with a bias of 1.0000 (exactly one pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/Geometry_1.0000.png" alt="Test result for Vertex_shader_rounding_tests::Geometry_1.0000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/Geometry_1.0000.png" alt="No alpha test result for Vertex_shader_rounding_tests::Geometry_1.0000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySubscreen_0.0000">
+    GeometrySubscreen_0.0000
+    <a href="#GeometrySubscreen_0.0000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>For each of four sizes (128x128, 128x32, 32x128 and 16x64), points the color surface at texture memory sized exactly to the quad, fills it with magenta on the CPU and draws a green quad covering the whole surface offset by the bias in x and y through a passthrough vertex shader. Each result is then drawn to the screen as a texture in a 2x2 grid. Magenta shows texels the offset quad did not cover. This case uses no offset.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.0000.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.0000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySubscreen_0.0000.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.0000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySubscreen_0.0010">
+    GeometrySubscreen_0.0010
+    <a href="#GeometrySubscreen_0.0010" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySubscreen_0.0000 with a bias of 0.0010 (a tiny offset).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.0010.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.0010" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySubscreen_0.0010.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.0010" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySubscreen_0.4999">
+    GeometrySubscreen_0.4999
+    <a href="#GeometrySubscreen_0.4999" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySubscreen_0.0000 with a bias of 0.4999 (just under half a pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.4999.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.4999" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySubscreen_0.4999.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.4999" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySubscreen_0.5000">
+    GeometrySubscreen_0.5000
+    <a href="#GeometrySubscreen_0.5000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySubscreen_0.0000 with a bias of 0.5000 (exactly half a pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.5000.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.5000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySubscreen_0.5000.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.5000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySubscreen_0.5624">
+    GeometrySubscreen_0.5624
+    <a href="#GeometrySubscreen_0.5624" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySubscreen_0.0000 with a bias of 0.5624 (just under the 9/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.5624.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.5624" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySubscreen_0.5624.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.5624" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySubscreen_0.5625">
+    GeometrySubscreen_0.5625
+    <a href="#GeometrySubscreen_0.5625" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySubscreen_0.0000 with a bias of 0.5625 (exactly 9/16 of a pixel, a 1/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.5625.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.5625" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySubscreen_0.5625.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.5625" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySubscreen_0.5626">
+    GeometrySubscreen_0.5626
+    <a href="#GeometrySubscreen_0.5626" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySubscreen_0.0000 with a bias of 0.5626 (just over the 9/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.5626.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.5626" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySubscreen_0.5626.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.5626" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySubscreen_0.9990">
+    GeometrySubscreen_0.9990
+    <a href="#GeometrySubscreen_0.9990" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySubscreen_0.0000 with a bias of 0.9990 (just under one pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_0.9990.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.9990" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySubscreen_0.9990.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySubscreen_0.9990" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySubscreen_1.0000">
+    GeometrySubscreen_1.0000
+    <a href="#GeometrySubscreen_1.0000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySubscreen_0.0000 with a bias of 1.0000 (exactly one pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySubscreen_1.0000.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySubscreen_1.0000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySubscreen_1.0000.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySubscreen_1.0000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySuperscreen_0.0000">
+    GeometrySuperscreen_0.0000
+    <a href="#GeometrySuperscreen_0.0000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySubscreen, but the color surface is always 1024x1024 and only the first width * height texels of it (contiguously, not as a rectangle) are filled with magenta before drawing the offset green quad of each size. The top left width x height region of the surface is drawn to the screen for each size. This case uses no offset.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySuperscreen_0.0000.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.0000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySuperscreen_0.0000.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.0000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySuperscreen_0.0010">
+    GeometrySuperscreen_0.0010
+    <a href="#GeometrySuperscreen_0.0010" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySuperscreen_0.0000 with a bias of 0.0010 (a tiny offset).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySuperscreen_0.0010.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.0010" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySuperscreen_0.0010.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.0010" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySuperscreen_0.4999">
+    GeometrySuperscreen_0.4999
+    <a href="#GeometrySuperscreen_0.4999" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySuperscreen_0.0000 with a bias of 0.4999 (just under half a pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySuperscreen_0.4999.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.4999" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySuperscreen_0.4999.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.4999" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySuperscreen_0.5000">
+    GeometrySuperscreen_0.5000
+    <a href="#GeometrySuperscreen_0.5000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySuperscreen_0.0000 with a bias of 0.5000 (exactly half a pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySuperscreen_0.5000.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.5000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySuperscreen_0.5000.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.5000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySuperscreen_0.5624">
+    GeometrySuperscreen_0.5624
+    <a href="#GeometrySuperscreen_0.5624" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySuperscreen_0.0000 with a bias of 0.5624 (just under the 9/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySuperscreen_0.5624.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.5624" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySuperscreen_0.5624.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.5624" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySuperscreen_0.5625">
+    GeometrySuperscreen_0.5625
+    <a href="#GeometrySuperscreen_0.5625" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySuperscreen_0.0000 with a bias of 0.5625 (exactly 9/16 of a pixel, a 1/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySuperscreen_0.5625.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.5625" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySuperscreen_0.5625.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.5625" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySuperscreen_0.5626">
+    GeometrySuperscreen_0.5626
+    <a href="#GeometrySuperscreen_0.5626" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySuperscreen_0.0000 with a bias of 0.5626 (just over the 9/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySuperscreen_0.5626.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.5626" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySuperscreen_0.5626.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.5626" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySuperscreen_0.9990">
+    GeometrySuperscreen_0.9990
+    <a href="#GeometrySuperscreen_0.9990" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySuperscreen_0.0000 with a bias of 0.9990 (just under one pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySuperscreen_0.9990.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.9990" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySuperscreen_0.9990.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySuperscreen_0.9990" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="GeometrySuperscreen_1.0000">
+    GeometrySuperscreen_1.0000
+    <a href="#GeometrySuperscreen_1.0000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As GeometrySuperscreen_0.0000 with a bias of 1.0000 (exactly one pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/GeometrySuperscreen_1.0000.png" alt="Test result for Vertex_shader_rounding_tests::GeometrySuperscreen_1.0000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/GeometrySuperscreen_1.0000.png" alt="No alpha test result for Vertex_shader_rounding_tests::GeometrySuperscreen_1.0000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="OpRounding_ADD">
+    OpRounding_ADD
+    <a href="#OpRounding_ADD" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As OpRounding_MUL, but measures the rounding of ADD. Each case uses operands a and b whose exact sum lies 0.25 or 0.75 ulp beyond a representable float (for positive and negative sums), or exactly 0.5 ulp above an odd one so that round-to-nearest-even rounds up (&#34;Tie&#34;), with c the IEEE round-to-nearest-even sum. The shader computes d = ADD(a, b) - c. IEEE round to nearest would give d = 0 for every case. Hardware truncates the sum toward zero, giving d = 0, -1, 0, 1 and -1 ulp.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_ADD.png" alt="Test result for Vertex_shader_rounding_tests::OpRounding_ADD" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/OpRounding_ADD.png" alt="No alpha test result for Vertex_shader_rounding_tests::OpRounding_ADD" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="OpRounding_ADDWindow">
+    OpRounding_ADDWindow
+    <a href="#OpRounding_ADDWindow" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As OpRounding_ADD, but with operands that probe the alignment window of the nv2a adder. Hardware aligns the smaller operand to the larger one and truncates it to a multiple of 2^-28 relative to the larger operand&#39;s leading bit (24 bits of mantissa plus 5 more, with no sticky bit) before summing exactly and truncating the sum toward zero. The cases compute 1 - 2^-28 (&#34;Kept&#34;, inside the window), 1 - 2^-29 (&#34;Lost&#34;, outside it) and 1 - (2^-24 + 2^-29) (&#34;Strad&#34;, whose 2^-29 bit is outside it). Hardware gives depth - offset = -16, 0 and 0 (d = -0.5, 0 and 0 ulp). Round to nearest gives 0, 0 and 0; truncating the exact sum gives -16, -16 and -16.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_ADDWindow.png" alt="Test result for Vertex_shader_rounding_tests::OpRounding_ADDWindow" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/OpRounding_ADDWindow.png" alt="No alpha test result for Vertex_shader_rounding_tests::OpRounding_ADDWindow" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="OpRounding_DP4">
+    OpRounding_DP4
+    <a href="#OpRounding_DP4" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As OpRounding_MUL, but d is computed by a single DP4 of (a, c, 0, 0) and (b, -1, 0, 2^23). On hardware the product is truncated before it is summed, giving the same results as OpRounding_MUL.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_DP4.png" alt="Test result for Vertex_shader_rounding_tests::OpRounding_DP4" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/OpRounding_DP4.png" alt="No alpha test result for Vertex_shader_rounding_tests::OpRounding_DP4" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="OpRounding_DP4Sum3">
+    OpRounding_DP4Sum3
+    <a href="#OpRounding_DP4Sum3" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Computes d = DP4((a, b, t2, 0), (1, 1, 1, 0)) - c with c, the IEEE round-to-nearest-even value of a + b + t2, subtracted by a separate ADD so that it does not take part in the DP4&#39;s accumulation. Hardware truncates each product, aligns all of them to the largest one in the same 2^-28 window as ADD (see OpRounding_ADDWindow), sums the aligned terms exactly and truncates the result toward zero. &#34;+0.75&#34; and &#34;-0.75&#34; sum to 0.75 ulp beyond +1 and -1, &#34;Kept&#34; is 1 + 2^-28 - 1 (scaled by 2^32), &#34;Strad&#34; is 1 - (2^-24 + 2^-29) and &#34;Order&#34; is 2^32 - 2^32 + 2^-32 (scaled by 2^36), whose small term is outside the window anchored to the largest term even though the large terms cancel first. Hardware gives depth - offset = -32, 32, 0, 0 and -16 (d = -1, 1, 0 and 0 ulp, and d = -c for &#34;Order&#34;). Round to nearest gives 0, 0, 0, 0 and 0; truncating the exact sum gives -32, 32, 0, -16 and 0; truncating every partial sum in order gives -32, 32, -16, -16 and 0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_DP4Sum3.png" alt="Test result for Vertex_shader_rounding_tests::OpRounding_DP4Sum3" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/OpRounding_DP4Sum3.png" alt="No alpha test result for Vertex_shader_rounding_tests::OpRounding_DP4Sum3" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="OpRounding_DP4SumAB">
+    OpRounding_DP4SumAB
+    <a href="#OpRounding_DP4SumAB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As OpRounding_ADD, but d is computed by a single DP4 of (a, b, c, 0) and (1, 1, -1, 0), so all products are exact and only the accumulation can round. Summing left to right or pairwise adds a + b first, which would give the OpRounding_ADD results if intermediate sums were rounded. Hardware gives the exact distance between a + b and c, d = 0.25, -0.25, -0.25, 0.25 and -0.5 ulp, so DP4 does not round intermediate sums. The accumulation is only exact within the adder&#39;s alignment window (see OpRounding_DP4Sum3).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_DP4SumAB.png" alt="Test result for Vertex_shader_rounding_tests::OpRounding_DP4SumAB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/OpRounding_DP4SumAB.png" alt="No alpha test result for Vertex_shader_rounding_tests::OpRounding_DP4SumAB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="OpRounding_DP4SumAC">
+    OpRounding_DP4SumAC
+    <a href="#OpRounding_DP4SumAC" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As OpRounding_DP4SumAB, but with (a, c, b, 0) and (1, -1, 1, 0). Left to right or pairwise summation computes a - c first, which is exact, and then adds b exactly, so d is 0.25, -0.25, -0.25, 0.25 and -0.5 ulp regardless of how additions round; any other result would mean the accumulation adds b before subtracting c. Hardware gives these values.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_DP4SumAC.png" alt="Test result for Vertex_shader_rounding_tests::OpRounding_DP4SumAC" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/OpRounding_DP4SumAC.png" alt="No alpha test result for Vertex_shader_rounding_tests::OpRounding_DP4SumAC" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="OpRounding_MAD">
+    OpRounding_MAD
+    <a href="#OpRounding_MAD" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As OpRounding_MUL, but d is computed by a single MAD (a * b - c). On hardware the product is truncated before the addition (the operation is not fused), giving the same results as OpRounding_MUL.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MAD.png" alt="Test result for Vertex_shader_rounding_tests::OpRounding_MAD" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/OpRounding_MAD.png" alt="No alpha test result for Vertex_shader_rounding_tests::OpRounding_MAD" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="OpRounding_MADExactProduct">
+    OpRounding_MADExactProduct
+    <a href="#OpRounding_MADExactProduct" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As OpRounding_ADD, but d is computed by a single MAD of a * 1 + b, so the product is exact and only MAD&#39;s addition can round. Hardware gives the same results as OpRounding_ADD: MAD&#39;s addition truncates toward zero like ADD.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MADExactProduct.png" alt="Test result for Vertex_shader_rounding_tests::OpRounding_MADExactProduct" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/OpRounding_MADExactProduct.png" alt="No alpha test result for Vertex_shader_rounding_tests::OpRounding_MADExactProduct" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="OpRounding_MADExactProductWindow">
+    OpRounding_MADExactProductWindow
+    <a href="#OpRounding_MADExactProductWindow" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As OpRounding_MADExactProduct, with the OpRounding_ADDWindow operands. MAD&#39;s addition uses the same alignment window as ADD, so hardware gives the OpRounding_ADDWindow results: depth - offset = -16, 0 and 0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MADExactProductWindow.png" alt="Test result for Vertex_shader_rounding_tests::OpRounding_MADExactProductWindow" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/OpRounding_MADExactProductWindow.png" alt="No alpha test result for Vertex_shader_rounding_tests::OpRounding_MADExactProductWindow" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="OpRounding_MADInexactBoth">
+    OpRounding_MADInexactBoth
+    <a href="#OpRounding_MADInexactBoth" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As OpRounding_MADExactProduct, but with a multiplier m so that both the product and the sum of MAD(a, m, b) are inexact: 0x3F800800 * 0x3F800C00 + 2^-24 (&#34;+both&#34;) and its negation (&#34;-both&#34;), with c the IEEE round-to-nearest-even value of the exact a * m + b. Hardware truncates the product and then the sum, giving depth - offset = -32 and 32 (d = -1 and 1 ulp). A fused MAD rounded to nearest gives 0 and 0, and rounding both steps to nearest gives 32 and -32.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MADInexactBoth.png" alt="Test result for Vertex_shader_rounding_tests::OpRounding_MADInexactBoth" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/OpRounding_MADInexactBoth.png" alt="No alpha test result for Vertex_shader_rounding_tests::OpRounding_MADInexactBoth" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="OpRounding_MUL">
+    OpRounding_MUL
+    <a href="#OpRounding_MUL" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Measures the rounding behavior of the MUL vertex shader instruction. Each case uses operands a and b whose exact product lies 0.25 or 0.75 ulp above a representable float (for positive and negative products), or exactly 0.5 ulp above one (the -1.0014837 * -40 product from Rugby 2005, xemu-project/xemu#2388), along with c, the IEEE round-to-nearest-even value of the product, all passed as shader constants. The shader computes d = MUL(a, b) - c (the subtraction is exact) and writes z = d * 2^28 + 2^23 to a Z24S8 surface, which is read back on the CPU. The screen lists, per case, the depth minus 2^23 and d in ulps of c. IEEE round to nearest would give d = 0 for every case. Hardware truncates the product toward zero, giving d = 0, -1, 0, 1 and -1 ulp.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/OpRounding_MUL.png" alt="Test result for Vertex_shader_rounding_tests::OpRounding_MUL" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/OpRounding_MUL.png" alt="No alpha test result for Vertex_shader_rounding_tests::OpRounding_MUL" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProjAdjacentGeometry_0.0000">
+    ProjAdjacentGeometry_0.0000
+    <a href="#ProjAdjacentGeometry_0.0000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As AdjacentGeometry, but positions are unprojected through a D3D style perspective projection with z varying from the top to the bottom of each quad. Quads alternate in a checkerboard between the programmable pipeline (dark green, 0xFF009900) and the fixed function pipeline (light green, 0xFF00BB00), so seams between them show differences in how the two pipelines round projected vertices. This case uses no offset.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.0000.png" alt="Test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.0000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.0000.png" alt="No alpha test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.0000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProjAdjacentGeometry_0.0010">
+    ProjAdjacentGeometry_0.0010
+    <a href="#ProjAdjacentGeometry_0.0010" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As ProjAdjacentGeometry_0.0000 with a bias of 0.0010 (a tiny offset).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.0010.png" alt="Test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.0010" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.0010.png" alt="No alpha test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.0010" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProjAdjacentGeometry_0.4999">
+    ProjAdjacentGeometry_0.4999
+    <a href="#ProjAdjacentGeometry_0.4999" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As ProjAdjacentGeometry_0.0000 with a bias of 0.4999 (just under half a pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.4999.png" alt="Test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.4999" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.4999.png" alt="No alpha test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.4999" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProjAdjacentGeometry_0.5000">
+    ProjAdjacentGeometry_0.5000
+    <a href="#ProjAdjacentGeometry_0.5000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As ProjAdjacentGeometry_0.0000 with a bias of 0.5000 (exactly half a pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.5000.png" alt="Test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.5000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.5000.png" alt="No alpha test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.5000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProjAdjacentGeometry_0.5624">
+    ProjAdjacentGeometry_0.5624
+    <a href="#ProjAdjacentGeometry_0.5624" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As ProjAdjacentGeometry_0.0000 with a bias of 0.5624 (just under the 9/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.5624.png" alt="Test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.5624" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.5624.png" alt="No alpha test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.5624" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProjAdjacentGeometry_0.5625">
+    ProjAdjacentGeometry_0.5625
+    <a href="#ProjAdjacentGeometry_0.5625" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As ProjAdjacentGeometry_0.0000 with a bias of 0.5625 (exactly 9/16 of a pixel, a 1/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.5625.png" alt="Test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.5625" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.5625.png" alt="No alpha test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.5625" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProjAdjacentGeometry_0.5626">
+    ProjAdjacentGeometry_0.5626
+    <a href="#ProjAdjacentGeometry_0.5626" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As ProjAdjacentGeometry_0.0000 with a bias of 0.5626 (just over the 9/16 subpixel boundary).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.5626.png" alt="Test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.5626" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.5626.png" alt="No alpha test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.5626" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProjAdjacentGeometry_0.9990">
+    ProjAdjacentGeometry_0.9990
+    <a href="#ProjAdjacentGeometry_0.9990" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As ProjAdjacentGeometry_0.0000 with a bias of 0.9990 (just under one pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.9990.png" alt="Test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.9990" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/ProjAdjacentGeometry_0.9990.png" alt="No alpha test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_0.9990" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ProjAdjacentGeometry_1.0000">
+    ProjAdjacentGeometry_1.0000
+    <a href="#ProjAdjacentGeometry_1.0000" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As ProjAdjacentGeometry_0.0000 with a bias of 1.0000 (exactly one pixel).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/ProjAdjacentGeometry_1.0000.png" alt="Test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_1.0000" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/ProjAdjacentGeometry_1.0000.png" alt="No alpha test result for Vertex_shader_rounding_tests::ProjAdjacentGeometry_1.0000" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="RenderTarget">
+    RenderTarget
+    <a href="#RenderTarget" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Points the color surface at a 128x128 render target that is prefilled with translucent magenta, sets the viewport offset to (320.53125, 240.53125) and the viewport scale to (320, -240, 16777215), and draws a quad from (-1, 1) to (1, -1) with a manually loaded vertex program ending in the XDK screen space epilogue (MUL by c[58], RCC of w, MAD with c[59]). The render target is then drawn to the screen with the fixed function pipeline. Magenta shows texels the quad did not cover.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/RenderTarget.png" alt="Test result for Vertex_shader_rounding_tests::RenderTarget" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/RenderTarget.png" alt="No alpha test result for Vertex_shader_rounding_tests::RenderTarget" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TopLeftRaster">
+    TopLeftRaster
+    <a href="#TopLeftRaster" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Tests the rasterizer&#39;s top-left fill rule and 1/16 subpixel snapping through a passthrough vertex shader. Draws thin vertical quads and triangles whose left edges sit at x + 0.5 (or the next float below it) and step by 1/16 pixel, a 0.2 pixel wide quad that should be invisible without multisampling, quads stacked to share edges at x + 0.5625, black to white horizontal gradient quads whose expected interpolated colors are 0x808080, 0x808080 and 0x000000 from top to bottom, and the same edge patterns rotated to horizontal on the right side of the screen.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/TopLeftRaster.png" alt="Test result for Vertex_shader_rounding_tests::TopLeftRaster" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/TopLeftRaster.png" alt="No alpha test result for Vertex_shader_rounding_tests::TopLeftRaster" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="TopLeftRaster_Fixed">
+    TopLeftRaster_Fixed
+    <a href="#TopLeftRaster_Fixed" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As TopLeftRaster, but the geometry is drawn through the fixed function pipeline with identity model view and projection matrices and a zero viewport scale and offset. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_rounding_tests/TopLeftRaster_Fixed.png" alt="Test result for Vertex_shader_rounding_tests::TopLeftRaster_Fixed" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_rounding_tests/TopLeftRaster_Fixed.png" alt="No alpha test result for Vertex_shader_rounding_tests::TopLeftRaster_Fixed" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
