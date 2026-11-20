@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Fog_eye_space_W</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Fog_eye_space_W</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests fixed function fog generation when the eye-space position has a w component other than 1.0.</div>
+    
+        <div class="test-description-line">A model view matrix whose w column is not (0, 0, 0, 1) (e.g., a planar projected shadow matrix folded into the world transform) or a vertex position with w != 1 produces a homogeneous eye-space position. The screen position is unaffected since the composite matrix and perspective divide cancel the scale, but the fog distance may or may not be computed from the dehomogenized position.</div>
+    
+        <div class="test-description-line">Reproduces</div>
+    
+        <div class="test-description-line">https://github.com/xemu-project/xemu/issues/3135</div>
+    
+        <div class="test-description-line"> (Hunter: The Reckoning - Redeemer shadows rendered in the fog color).</div>
+    
+        <div class="test-description-line">Each test draws a series of horizontal strips. Every strip covers the same screen area at the same eye-space depths (3.0 at the left edge to 40.0 at the right) and the composite matrix is never altered, so only the eye-space position used for fog generation differs between strips. The first strip is the w = 1 reference. Strips blend from a dark diffuse color toward a yellow fog color.</div>
+    
+        <div class="test-description-line">Observations from HW:</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">The eye-space position is divided by its w component before fog generation in planar, absolute planar, and radial modes. Uniformly scaling the model view matrix or the vertex position (including by a negative value) has no effect on fog, while altering only the eye-space w changes the fog distance to (eye.xyz / eye.w).</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">Eye-space w of +0 and -0 behave identically. For planar and absolute planar generation the result matches a very large negative distance (no fog in linear and exp modes, full fog in exp2). For radial generation the result matches a distance of 0 (no fog in every mode).</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">An eye-space position of (0, 0, 0, 0) produces no fog in every mode.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">Absolute planar generation does not discard the sign of a tiny negative w (-1e-6 matches planar, not radial).</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">The eye-space position is divided by its w component before fog generation in planar, absolute planar, and radial modes. Uniformly scaling the model view matrix or the vertex position (including by a negative value) has no effect on fog, while altering only the eye-space w changes the fog distance to (eye.xyz / eye.w).</div>
+    
+        <div class="test-description-line">Eye-space w of +0 and -0 behave identically. For planar and absolute planar generation the result matches a very large negative distance (no fog in linear and exp modes, full fog in exp2). For radial generation the result matches a distance of 0 (no fog in every mode).</div>
+    
+        <div class="test-description-line">An eye-space position of (0, 0, 0, 0) produces no fog in every mode.</div>
+    
+        <div class="test-description-line">Absolute planar generation does not discard the sign of a tiny negative w (-1e-6 matches planar, not radial).</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/fog_eye_space_w_tests.h#L36">src/tests/fog_eye_space_w_tests.h</a></div>
+</div>
+
+<h2 id="MVProjective-abs_planar-exp">
+    MVProjective-abs_planar-exp
+    <a href="#MVProjective-abs_planar-exp" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential absolute planar fog. The model view w column is modified so eye w = 1 + a * eye_x while eye xyz are unchanged; a = 0 is the reference. The fog distance is divided by eye w, so positive a reduces fog right of the screen center (where eye_x &gt; 0) and slightly increases it left of center; negative a does the opposite.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVProjective-abs_planar-exp.png" alt="Test result for Fog_eye_space_W::MVProjective-abs_planar-exp" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVProjective-abs_planar-exp.png" alt="No alpha test result for Fog_eye_space_W::MVProjective-abs_planar-exp" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVProjective-abs_planar-exp2">
+    MVProjective-abs_planar-exp2
+    <a href="#MVProjective-abs_planar-exp2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential squared absolute planar fog. The model view w column is modified so eye w = 1 + a * eye_x while eye xyz are unchanged; a = 0 is the reference. The fog distance is divided by eye w, so positive a reduces fog right of the screen center (where eye_x &gt; 0) and slightly increases it left of center; negative a does the opposite.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVProjective-abs_planar-exp2.png" alt="Test result for Fog_eye_space_W::MVProjective-abs_planar-exp2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVProjective-abs_planar-exp2.png" alt="No alpha test result for Fog_eye_space_W::MVProjective-abs_planar-exp2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVProjective-abs_planar-lin">
+    MVProjective-abs_planar-lin
+    <a href="#MVProjective-abs_planar-lin" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Linear absolute planar fog. The model view w column is modified so eye w = 1 + a * eye_x while eye xyz are unchanged; a = 0 is the reference. The fog distance is divided by eye w, so positive a reduces fog right of the screen center (where eye_x &gt; 0) and slightly increases it left of center; negative a does the opposite.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVProjective-abs_planar-lin.png" alt="Test result for Fog_eye_space_W::MVProjective-abs_planar-lin" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVProjective-abs_planar-lin.png" alt="No alpha test result for Fog_eye_space_W::MVProjective-abs_planar-lin" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVProjective-planar-exp">
+    MVProjective-planar-exp
+    <a href="#MVProjective-planar-exp" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential planar fog. The model view w column is modified so eye w = 1 + a * eye_x while eye xyz are unchanged; a = 0 is the reference. The fog distance is divided by eye w, so positive a reduces fog right of the screen center (where eye_x &gt; 0) and slightly increases it left of center; negative a does the opposite.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVProjective-planar-exp.png" alt="Test result for Fog_eye_space_W::MVProjective-planar-exp" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVProjective-planar-exp.png" alt="No alpha test result for Fog_eye_space_W::MVProjective-planar-exp" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVProjective-planar-exp2">
+    MVProjective-planar-exp2
+    <a href="#MVProjective-planar-exp2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential squared planar fog. The model view w column is modified so eye w = 1 + a * eye_x while eye xyz are unchanged; a = 0 is the reference. The fog distance is divided by eye w, so positive a reduces fog right of the screen center (where eye_x &gt; 0) and slightly increases it left of center; negative a does the opposite.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVProjective-planar-exp2.png" alt="Test result for Fog_eye_space_W::MVProjective-planar-exp2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVProjective-planar-exp2.png" alt="No alpha test result for Fog_eye_space_W::MVProjective-planar-exp2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVProjective-planar-lin">
+    MVProjective-planar-lin
+    <a href="#MVProjective-planar-lin" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Linear planar fog. The model view w column is modified so eye w = 1 + a * eye_x while eye xyz are unchanged; a = 0 is the reference. The fog distance is divided by eye w, so positive a reduces fog right of the screen center (where eye_x &gt; 0) and slightly increases it left of center; negative a does the opposite.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVProjective-planar-lin.png" alt="Test result for Fog_eye_space_W::MVProjective-planar-lin" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVProjective-planar-lin.png" alt="No alpha test result for Fog_eye_space_W::MVProjective-planar-lin" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVProjective-radial-exp">
+    MVProjective-radial-exp
+    <a href="#MVProjective-radial-exp" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential radial fog. The model view w column is modified so eye w = 1 + a * eye_x while eye xyz are unchanged; a = 0 is the reference. The fog distance is divided by eye w, so positive a reduces fog right of the screen center (where eye_x &gt; 0) and slightly increases it left of center; negative a does the opposite.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVProjective-radial-exp.png" alt="Test result for Fog_eye_space_W::MVProjective-radial-exp" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVProjective-radial-exp.png" alt="No alpha test result for Fog_eye_space_W::MVProjective-radial-exp" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVProjective-radial-exp2">
+    MVProjective-radial-exp2
+    <a href="#MVProjective-radial-exp2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential squared radial fog. The model view w column is modified so eye w = 1 + a * eye_x while eye xyz are unchanged; a = 0 is the reference. The fog distance is divided by eye w, so positive a reduces fog right of the screen center (where eye_x &gt; 0) and slightly increases it left of center; negative a does the opposite.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVProjective-radial-exp2.png" alt="Test result for Fog_eye_space_W::MVProjective-radial-exp2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVProjective-radial-exp2.png" alt="No alpha test result for Fog_eye_space_W::MVProjective-radial-exp2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVProjective-radial-lin">
+    MVProjective-radial-lin
+    <a href="#MVProjective-radial-lin" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Linear radial fog. The model view w column is modified so eye w = 1 + a * eye_x while eye xyz are unchanged; a = 0 is the reference. The fog distance is divided by eye w, so positive a reduces fog right of the screen center (where eye_x &gt; 0) and slightly increases it left of center; negative a does the opposite.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVProjective-radial-lin.png" alt="Test result for Fog_eye_space_W::MVProjective-radial-lin" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVProjective-radial-lin.png" alt="No alpha test result for Fog_eye_space_W::MVProjective-radial-lin" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVScale-abs_planar-exp">
+    MVScale-abs_planar-exp
+    <a href="#MVScale-abs_planar-exp" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential absolute planar fog. The model view matrix is scaled by k (eye w = k) for each strip; k = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVScale-abs_planar-exp.png" alt="Test result for Fog_eye_space_W::MVScale-abs_planar-exp" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVScale-abs_planar-exp.png" alt="No alpha test result for Fog_eye_space_W::MVScale-abs_planar-exp" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVScale-abs_planar-exp2">
+    MVScale-abs_planar-exp2
+    <a href="#MVScale-abs_planar-exp2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential squared absolute planar fog. The model view matrix is scaled by k (eye w = k) for each strip; k = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVScale-abs_planar-exp2.png" alt="Test result for Fog_eye_space_W::MVScale-abs_planar-exp2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVScale-abs_planar-exp2.png" alt="No alpha test result for Fog_eye_space_W::MVScale-abs_planar-exp2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVScale-abs_planar-lin">
+    MVScale-abs_planar-lin
+    <a href="#MVScale-abs_planar-lin" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Linear absolute planar fog. The model view matrix is scaled by k (eye w = k) for each strip; k = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVScale-abs_planar-lin.png" alt="Test result for Fog_eye_space_W::MVScale-abs_planar-lin" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVScale-abs_planar-lin.png" alt="No alpha test result for Fog_eye_space_W::MVScale-abs_planar-lin" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVScale-planar-exp">
+    MVScale-planar-exp
+    <a href="#MVScale-planar-exp" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential planar fog. The model view matrix is scaled by k (eye w = k) for each strip; k = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVScale-planar-exp.png" alt="Test result for Fog_eye_space_W::MVScale-planar-exp" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVScale-planar-exp.png" alt="No alpha test result for Fog_eye_space_W::MVScale-planar-exp" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVScale-planar-exp2">
+    MVScale-planar-exp2
+    <a href="#MVScale-planar-exp2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential squared planar fog. The model view matrix is scaled by k (eye w = k) for each strip; k = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVScale-planar-exp2.png" alt="Test result for Fog_eye_space_W::MVScale-planar-exp2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVScale-planar-exp2.png" alt="No alpha test result for Fog_eye_space_W::MVScale-planar-exp2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVScale-planar-lin">
+    MVScale-planar-lin
+    <a href="#MVScale-planar-lin" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Linear planar fog. The model view matrix is scaled by k (eye w = k) for each strip; k = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVScale-planar-lin.png" alt="Test result for Fog_eye_space_W::MVScale-planar-lin" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVScale-planar-lin.png" alt="No alpha test result for Fog_eye_space_W::MVScale-planar-lin" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVScale-radial-exp">
+    MVScale-radial-exp
+    <a href="#MVScale-radial-exp" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential radial fog. The model view matrix is scaled by k (eye w = k) for each strip; k = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVScale-radial-exp.png" alt="Test result for Fog_eye_space_W::MVScale-radial-exp" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVScale-radial-exp.png" alt="No alpha test result for Fog_eye_space_W::MVScale-radial-exp" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVScale-radial-exp2">
+    MVScale-radial-exp2
+    <a href="#MVScale-radial-exp2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential squared radial fog. The model view matrix is scaled by k (eye w = k) for each strip; k = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVScale-radial-exp2.png" alt="Test result for Fog_eye_space_W::MVScale-radial-exp2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVScale-radial-exp2.png" alt="No alpha test result for Fog_eye_space_W::MVScale-radial-exp2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVScale-radial-lin">
+    MVScale-radial-lin
+    <a href="#MVScale-radial-lin" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Linear radial fog. The model view matrix is scaled by k (eye w = k) for each strip; k = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVScale-radial-lin.png" alt="Test result for Fog_eye_space_W::MVScale-radial-lin" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVScale-radial-lin.png" alt="No alpha test result for Fog_eye_space_W::MVScale-radial-lin" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVZeroW-abs_planar-exp">
+    MVZeroW-abs_planar-exp
+    <a href="#MVZeroW-abs_planar-exp" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential absolute planar fog. The model view w column is replaced with (0, 0, 0, w) so eye xyz are unchanged and eye w is 1 (reference), +0, -0, 1e-6, or -1e-6. The final strip zeroes the entire matrix so eye position is (0, 0, 0, 0). The w 1e-6 strip is entirely fogged. The w 0, w -0, w -1e-6, and w 0 xyz 0 strips are entirely unfogged (w 0 behaves like a large negative distance). Despite the absolute value gen mode, the sign of w is not discarded.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVZeroW-abs_planar-exp.png" alt="Test result for Fog_eye_space_W::MVZeroW-abs_planar-exp" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVZeroW-abs_planar-exp.png" alt="No alpha test result for Fog_eye_space_W::MVZeroW-abs_planar-exp" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVZeroW-abs_planar-exp2">
+    MVZeroW-abs_planar-exp2
+    <a href="#MVZeroW-abs_planar-exp2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential squared absolute planar fog. The model view w column is replaced with (0, 0, 0, w) so eye xyz are unchanged and eye w is 1 (reference), +0, -0, 1e-6, or -1e-6. The final strip zeroes the entire matrix so eye position is (0, 0, 0, 0). The w 0, w -0, w 1e-6, and w -1e-6 strips are entirely fogged. The w 0 xyz 0 strip is entirely unfogged.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVZeroW-abs_planar-exp2.png" alt="Test result for Fog_eye_space_W::MVZeroW-abs_planar-exp2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVZeroW-abs_planar-exp2.png" alt="No alpha test result for Fog_eye_space_W::MVZeroW-abs_planar-exp2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVZeroW-abs_planar-lin">
+    MVZeroW-abs_planar-lin
+    <a href="#MVZeroW-abs_planar-lin" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Linear absolute planar fog. The model view w column is replaced with (0, 0, 0, w) so eye xyz are unchanged and eye w is 1 (reference), +0, -0, 1e-6, or -1e-6. The final strip zeroes the entire matrix so eye position is (0, 0, 0, 0). The w 1e-6 strip is entirely fogged. The w 0, w -0, w -1e-6, and w 0 xyz 0 strips are entirely unfogged (w 0 behaves like a large negative distance). Despite the absolute value gen mode, the sign of w is not discarded.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVZeroW-abs_planar-lin.png" alt="Test result for Fog_eye_space_W::MVZeroW-abs_planar-lin" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVZeroW-abs_planar-lin.png" alt="No alpha test result for Fog_eye_space_W::MVZeroW-abs_planar-lin" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVZeroW-planar-exp">
+    MVZeroW-planar-exp
+    <a href="#MVZeroW-planar-exp" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential planar fog. The model view w column is replaced with (0, 0, 0, w) so eye xyz are unchanged and eye w is 1 (reference), +0, -0, 1e-6, or -1e-6. The final strip zeroes the entire matrix so eye position is (0, 0, 0, 0). The w 1e-6 strip is entirely fogged. The w 0, w -0, w -1e-6, and w 0 xyz 0 strips are entirely unfogged (w 0 behaves like a large negative distance).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVZeroW-planar-exp.png" alt="Test result for Fog_eye_space_W::MVZeroW-planar-exp" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVZeroW-planar-exp.png" alt="No alpha test result for Fog_eye_space_W::MVZeroW-planar-exp" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVZeroW-planar-exp2">
+    MVZeroW-planar-exp2
+    <a href="#MVZeroW-planar-exp2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential squared planar fog. The model view w column is replaced with (0, 0, 0, w) so eye xyz are unchanged and eye w is 1 (reference), +0, -0, 1e-6, or -1e-6. The final strip zeroes the entire matrix so eye position is (0, 0, 0, 0). The w 0, w -0, w 1e-6, and w -1e-6 strips are entirely fogged. The w 0 xyz 0 strip is entirely unfogged.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVZeroW-planar-exp2.png" alt="Test result for Fog_eye_space_W::MVZeroW-planar-exp2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVZeroW-planar-exp2.png" alt="No alpha test result for Fog_eye_space_W::MVZeroW-planar-exp2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVZeroW-planar-lin">
+    MVZeroW-planar-lin
+    <a href="#MVZeroW-planar-lin" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Linear planar fog. The model view w column is replaced with (0, 0, 0, w) so eye xyz are unchanged and eye w is 1 (reference), +0, -0, 1e-6, or -1e-6. The final strip zeroes the entire matrix so eye position is (0, 0, 0, 0). The w 1e-6 strip is entirely fogged. The w 0, w -0, w -1e-6, and w 0 xyz 0 strips are entirely unfogged (w 0 behaves like a large negative distance).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVZeroW-planar-lin.png" alt="Test result for Fog_eye_space_W::MVZeroW-planar-lin" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVZeroW-planar-lin.png" alt="No alpha test result for Fog_eye_space_W::MVZeroW-planar-lin" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVZeroW-radial-exp">
+    MVZeroW-radial-exp
+    <a href="#MVZeroW-radial-exp" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential radial fog. The model view w column is replaced with (0, 0, 0, w) so eye xyz are unchanged and eye w is 1 (reference), +0, -0, 1e-6, or -1e-6. The final strip zeroes the entire matrix so eye position is (0, 0, 0, 0). The w 0, w -0, and w 0 xyz 0 strips are entirely unfogged. The w 1e-6 and w -1e-6 strips are entirely fogged (the radial distance is positive regardless of the sign of w).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVZeroW-radial-exp.png" alt="Test result for Fog_eye_space_W::MVZeroW-radial-exp" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVZeroW-radial-exp.png" alt="No alpha test result for Fog_eye_space_W::MVZeroW-radial-exp" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVZeroW-radial-exp2">
+    MVZeroW-radial-exp2
+    <a href="#MVZeroW-radial-exp2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential squared radial fog. The model view w column is replaced with (0, 0, 0, w) so eye xyz are unchanged and eye w is 1 (reference), +0, -0, 1e-6, or -1e-6. The final strip zeroes the entire matrix so eye position is (0, 0, 0, 0). The w 0, w -0, and w 0 xyz 0 strips are entirely unfogged. The w 1e-6 and w -1e-6 strips are entirely fogged (the radial distance is positive regardless of the sign of w). </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVZeroW-radial-exp2.png" alt="Test result for Fog_eye_space_W::MVZeroW-radial-exp2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVZeroW-radial-exp2.png" alt="No alpha test result for Fog_eye_space_W::MVZeroW-radial-exp2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="MVZeroW-radial-lin">
+    MVZeroW-radial-lin
+    <a href="#MVZeroW-radial-lin" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Linear radial fog. The model view w column is replaced with (0, 0, 0, w) so eye xyz are unchanged and eye w is 1 (reference), +0, -0, 1e-6, or -1e-6. The final strip zeroes the entire matrix so eye position is (0, 0, 0, 0). The w 0, w -0, and w 0 xyz 0 strips are entirely unfogged. The w 1e-6 and w -1e-6 strips are entirely fogged (the radial distance is positive regardless of the sign of w).</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/MVZeroW-radial-lin.png" alt="Test result for Fog_eye_space_W::MVZeroW-radial-lin" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/MVZeroW-radial-lin.png" alt="No alpha test result for Fog_eye_space_W::MVZeroW-radial-lin" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VertexW-abs_planar-exp">
+    VertexW-abs_planar-exp
+    <a href="#VertexW-abs_planar-exp" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential absolute planar fog. Vertices are submitted as w * (x, y, z, 1) with default matrices; w = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/VertexW-abs_planar-exp.png" alt="Test result for Fog_eye_space_W::VertexW-abs_planar-exp" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/VertexW-abs_planar-exp.png" alt="No alpha test result for Fog_eye_space_W::VertexW-abs_planar-exp" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VertexW-abs_planar-exp2">
+    VertexW-abs_planar-exp2
+    <a href="#VertexW-abs_planar-exp2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential squared absolute planar fog. Vertices are submitted as w * (x, y, z, 1) with default matrices; w = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/VertexW-abs_planar-exp2.png" alt="Test result for Fog_eye_space_W::VertexW-abs_planar-exp2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/VertexW-abs_planar-exp2.png" alt="No alpha test result for Fog_eye_space_W::VertexW-abs_planar-exp2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VertexW-abs_planar-lin">
+    VertexW-abs_planar-lin
+    <a href="#VertexW-abs_planar-lin" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Linear absolute planar fog. Vertices are submitted as w * (x, y, z, 1) with default matrices; w = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/VertexW-abs_planar-lin.png" alt="Test result for Fog_eye_space_W::VertexW-abs_planar-lin" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/VertexW-abs_planar-lin.png" alt="No alpha test result for Fog_eye_space_W::VertexW-abs_planar-lin" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VertexW-planar-exp">
+    VertexW-planar-exp
+    <a href="#VertexW-planar-exp" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential planar fog. Vertices are submitted as w * (x, y, z, 1) with default matrices; w = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/VertexW-planar-exp.png" alt="Test result for Fog_eye_space_W::VertexW-planar-exp" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/VertexW-planar-exp.png" alt="No alpha test result for Fog_eye_space_W::VertexW-planar-exp" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VertexW-planar-exp2">
+    VertexW-planar-exp2
+    <a href="#VertexW-planar-exp2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential squared planar fog. Vertices are submitted as w * (x, y, z, 1) with default matrices; w = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/VertexW-planar-exp2.png" alt="Test result for Fog_eye_space_W::VertexW-planar-exp2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/VertexW-planar-exp2.png" alt="No alpha test result for Fog_eye_space_W::VertexW-planar-exp2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VertexW-planar-lin">
+    VertexW-planar-lin
+    <a href="#VertexW-planar-lin" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Linear planar fog. Vertices are submitted as w * (x, y, z, 1) with default matrices; w = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/VertexW-planar-lin.png" alt="Test result for Fog_eye_space_W::VertexW-planar-lin" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/VertexW-planar-lin.png" alt="No alpha test result for Fog_eye_space_W::VertexW-planar-lin" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VertexW-radial-exp">
+    VertexW-radial-exp
+    <a href="#VertexW-radial-exp" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential radial fog. Vertices are submitted as w * (x, y, z, 1) with default matrices; w = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/VertexW-radial-exp.png" alt="Test result for Fog_eye_space_W::VertexW-radial-exp" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/VertexW-radial-exp.png" alt="No alpha test result for Fog_eye_space_W::VertexW-radial-exp" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VertexW-radial-exp2">
+    VertexW-radial-exp2
+    <a href="#VertexW-radial-exp2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Exponential squared radial fog. Vertices are submitted as w * (x, y, z, 1) with default matrices; w = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/VertexW-radial-exp2.png" alt="Test result for Fog_eye_space_W::VertexW-radial-exp2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/VertexW-radial-exp2.png" alt="No alpha test result for Fog_eye_space_W::VertexW-radial-exp2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="VertexW-radial-lin">
+    VertexW-radial-lin
+    <a href="#VertexW-radial-lin" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Linear radial fog. Vertices are submitted as w * (x, y, z, 1) with default matrices; w = 1 is the reference. All strips are identical to the reference.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Fog_eye_space_W/VertexW-radial-lin.png" alt="Test result for Fog_eye_space_W::VertexW-radial-lin" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Fog_eye_space_W/VertexW-radial-lin.png" alt="No alpha test result for Fog_eye_space_W::VertexW-radial-lin" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
