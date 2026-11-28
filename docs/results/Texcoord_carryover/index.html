@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Texcoord_carryover</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Texcoord_carryover</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests the behavior when a texture stage consumes a texture coordinate that the vertex shader never wrote.</div>
+    
+        <div class="test-description-line">This test investigates behavior observed in "Driv3r"</div>
+    
+        <div class="test-description-line">https://github.com/xemu-project/xemu/issues/1614</div>
+    
+        <div class="test-description-line"> The game draws with texture stage 3 in cube map mode, but its vertex shader never writes oT3.</div>
+    
+        <div class="test-description-line">These tests check whether an unwritten texture coordinate output keeps a stale value from previously processed vertices (as is the case for the fog coordinate, see</div>
+    
+        <div class="test-description-line">FogCarryoverTests</div>
+    
+        <div class="test-description-line">) or uses a fixed default. The behavior of a cube map lookup with a zero length direction is covered separately by TextureCubemapTests::CubemapZeroVector.</div>
+    
+        <div class="test-description-line">The "Stage<N>*" tests render the texture coordinate directly as a color (texture shader mode PASS_THROUGH, with the combiner outputting TEX<N>), so any carried value is visible without any texture lookup. Each row uses a different submission mode: IB (inline buffer), IE (inline elements), IA (inline array), DA (draw arrays). Quads are used except by PerVertex, which uses points so that no interpolation occurs. <N> is 3 (the Driv3r case) or 0 (to see whether oT0 behaves like oT3).</div>
+    
+        <div class="test-description-line">Observations from HW:</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">Unwritten texture coordinate outputs do not carry over. In every test, every quad and point drawn with a shader that does not write oT0 or oT3 renders black, regardless of the values written by the preceding draws. Not writing a texture coordinate from the vertex shader results in (0, 0, 0) for that coordinate.</div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line"></div>
+    
+        <div class="test-description-line">Unwritten texture coordinate outputs do not carry over. In every test, every quad and point drawn with a shader that does not write oT0 or oT3 renders black, regardless of the values written by the preceding draws. Not writing a texture coordinate from the vertex shader results in (0, 0, 0) for that coordinate.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/texcoord_carryover_tests.h#L33">src/tests/texcoord_carryover_tests.h</a></div>
+</div>
+
+<h2 id="Stage0Constant">
+    Stage0Constant
+    <a href="#Stage0Constant" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Stage3Constant, for oT0 using texture stage 0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texcoord_carryover/Stage0Constant.png" alt="Test result for Texcoord_carryover::Stage0Constant" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texcoord_carryover/Stage0Constant.png" alt="No alpha test result for Texcoord_carryover::Stage0Constant" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Stage0PerVertex">
+    Stage0PerVertex
+    <a href="#Stage0PerVertex" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Stage3PerVertex, for oT0 using texture stage 0. </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texcoord_carryover/Stage0PerVertex.png" alt="Test result for Texcoord_carryover::Stage0PerVertex" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texcoord_carryover/Stage0PerVertex.png" alt="No alpha test result for Texcoord_carryover::Stage0PerVertex" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Stage0Reprime">
+    Stage0Reprime
+    <a href="#Stage0Reprime" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>As Stage3Reprime, for oT0 using texture stage 0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texcoord_carryover/Stage0Reprime.png" alt="Test result for Texcoord_carryover::Stage0Reprime" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texcoord_carryover/Stage0Reprime.png" alt="No alpha test result for Texcoord_carryover::Stage0Reprime" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Stage3Constant">
+    Stage3Constant
+    <a href="#Stage3Constant" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>For each draw mode, the left quad is drawn twice (so that every vertex output buffer is covered) with a shader that writes oT3 = (0.25, 0.5, 0.75, 1.0) for every vertex. The right quad is then drawn with a shader that does not write oT3. Texture stage 3 is in PASS_THROUGH mode and the combiner outputs TEX3, so each quad shows its texture coordinate as a color. The right quad matches the left if oT3 carries over from the previous draw.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texcoord_carryover/Stage3Constant.png" alt="Test result for Texcoord_carryover::Stage3Constant" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texcoord_carryover/Stage3Constant.png" alt="No alpha test result for Texcoord_carryover::Stage3Constant" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Stage3PerVertex">
+    Stage3PerVertex
+    <a href="#Stage3PerVertex" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>For each draw mode, draws 12 points on the top row with oT3 taken from a per-vertex attribute (12 distinct colors), then 12 points in the same columns on the bottom row with a shader that does not write oT3. Each point shows its texture coordinate as a color, so the color of a bottom point identifies the primed vertex it inherited from, if any (e.g., the six vertex round robin pattern observed for fog in </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texcoord_carryover/Stage3PerVertex.png" alt="Test result for Texcoord_carryover::Stage3PerVertex" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texcoord_carryover/Stage3PerVertex.png" alt="No alpha test result for Texcoord_carryover::Stage3PerVertex" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Stage3Reprime">
+    Stage3Reprime
+    <a href="#Stage3Reprime" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>For each draw mode, the left quad is drawn twice with oT3 = (1.0, 0.25, 0.0, 1.0), the middle quad twice with oT3 = (0.25, 0.5, 0.75, 1.0), then the right quad is drawn with a shader that does not write oT3. Each quad shows its texture coordinate as a color. The right quad matches the middle quad if oT3 carries over from the most recent draw.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Texcoord_carryover/Stage3Reprime.png" alt="Test result for Texcoord_carryover::Stage3Reprime" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Texcoord_carryover/Stage3Reprime.png" alt="No alpha test result for Texcoord_carryover::Stage3Reprime" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

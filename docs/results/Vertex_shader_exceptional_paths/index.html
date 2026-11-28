@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Vertex_shader_exceptional_paths</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Vertex_shader_exceptional_paths</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Renders MAC results with operand A from the v1 attribute (Attr_ tests) or a constant (Const_ tests), and the fog distance chain rcp(P.w), P * rcp(P.w), d2 = DP3, rsq(d2), d2 * rsq(d2) with P from v1 or a constant. Hardware gives identical results on both paths. The layout is described in</div>
+    
+        <div class="test-description-line">VertexShaderExceptionalMACTests</div>
+    
+        <div class="test-description-line">.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/vertex_shader_exceptional_value_tests.h#L142">src/tests/vertex_shader_exceptional_value_tests.h</a></div>
+</div>
+
+<h2 id="Attr_ADD_AB">
+    Attr_ADD_AB
+    <a href="#Attr_ADD_AB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>attr ADD_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): 0+inf.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf -0+inf.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf 0+qNaN.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw NaN den+inf.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf inf+0.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw inf -inf+-0.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw -inf qNaN+0.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw NaN 1.5+0.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 1.5+2.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3.5 2+0.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2.5 -1.5+2.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 0.5 3+1.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_ADD_AB.png" alt="Test result for Vertex_shader_exceptional_paths::Attr_ADD_AB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Attr_ADD_AB.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Attr_ADD_AB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Attr_Dot">
+    Attr_Dot
+    <a href="#Attr_Dot" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>attr Dot (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): DP4 case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 DP4 case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 DP4 case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4 DP3 case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 DP3 case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 DP3 case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1 DPH case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf DPH case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 DPH case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 DPHba case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 DPHba case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 DPHba case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Dot.png" alt="Test result for Vertex_shader_exceptional_paths::Attr_Dot" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Attr_Dot.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Attr_Dot" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Attr_Fog_P_1">
+    Attr_Fog_P_1
+    <a href="#Attr_Fog_P_1" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>fog chain attr P. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): p 1,2,3,1.x [P = (1, 2, 3, 1)]: hw 1 p 1,2,3,1.y [P = (1, 2, 3, 1)]: hw 2 p 1,2,3,1.z [P = (1, 2, 3, 1)]: hw 3 p 1,2,3,1.w [P = (1, 2, 3, 1)]: hw 1 p 1,2,3,0.x [P = (1, 2, 3, +0)]: hw inf p 1,2,3,0.y [P = (1, 2, 3, +0)]: hw inf p 1,2,3,0.z [P = (1, 2, 3, +0)]: hw inf p 1,2,3,0.w [P = (1, 2, 3, +0)]: hw 0 p 1,2,3,-0.x [P = (1, 2, 3, -0)]: hw -inf p 1,2,3,-0.y [P = (1, 2, 3, -0)]: hw -inf p 1,2,3,-0.z [P = (1, 2, 3, -0)]: hw -inf p 1,2,3,-0.w [P = (1, 2, 3, -0)]: hw 0 p -1,2,-3,0.x [P = (-1, 2, -3, +0)]: hw -inf p -1,2,-3,0.y [P = (-1, 2, -3, +0)]: hw inf</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Fog_P_1.png" alt="Test result for Vertex_shader_exceptional_paths::Attr_Fog_P_1" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Attr_Fog_P_1.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Attr_Fog_P_1" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Attr_Fog_P_2">
+    Attr_Fog_P_2
+    <a href="#Attr_Fog_P_2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>fog chain attr P. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): p -1,2,-3,0.z [P = (-1, 2, -3, +0)]: hw -inf p -1,2,-3,0.w [P = (-1, 2, -3, +0)]: hw 0 p 0,0,3,0.x [P = (0, 0, 3, +0)]: hw 0 p 0,0,3,0.y [P = (0, 0, 3, +0)]: hw 0 p 0,0,3,0.z [P = (0, 0, 3, +0)]: hw inf p 0,0,3,0.w [P = (0, 0, 3, +0)]: hw 0 p 0,0,0,0.x [P = (0, 0, 0, +0)]: hw 0 p 0,0,0,0.y [P = (0, 0, 0, +0)]: hw 0 p 0,0,0,0.z [P = (0, 0, 0, +0)]: hw 0 p 0,0,0,0.w [P = (0, 0, 0, +0)]: hw 0 p -0,-0,-0,-0.x [P = (-0, -0, -0, -0)]: hw 0 p -0,-0,-0,-0.y [P = (-0, -0, -0, -0)]: hw 0 p -0,-0,-0,-0.z [P = (-0, -0, -0, -0)]: hw 0 p -0,-0,-0,-0.w [P = (-0, -0, -0, -0)]: hw 0 </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Fog_P_2.png" alt="Test result for Vertex_shader_exceptional_paths::Attr_Fog_P_2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Attr_Fog_P_2.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Attr_Fog_P_2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Attr_Fog_Scalars_1">
+    Attr_Fog_Scalars_1
+    <a href="#Attr_Fog_Scalars_1" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>fog chain attr Scalars. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): rcp 1,2,3,1 [P = (1, 2, 3, 1)]: hw 1 rcp 1,2,3,0 [P = (1, 2, 3, +0)]: hw inf rcp 1,2,3,-0 [P = (1, 2, 3, -0)]: hw -inf rcp -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw inf rcp 0,0,3,0 [P = (0, 0, 3, +0)]: hw inf rcp 0,0,0,0 [P = (0, 0, 0, +0)]: hw inf rcp -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw -inf d2 1,2,3,1 [P = (1, 2, 3, 1)]: hw 14 d2 1,2,3,0 [P = (1, 2, 3, +0)]: hw inf d2 1,2,3,-0 [P = (1, 2, 3, -0)]: hw inf d2 -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw inf d2 0,0,3,0 [P = (0, 0, 3, +0)]: hw inf d2 0,0,0,0 [P = (0, 0, 0, +0)]: hw 0 d2 -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw 0</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_1.png" alt="Test result for Vertex_shader_exceptional_paths::Attr_Fog_Scalars_1" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_1.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Attr_Fog_Scalars_1" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Attr_Fog_Scalars_2">
+    Attr_Fog_Scalars_2
+    <a href="#Attr_Fog_Scalars_2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>fog chain attr Scalars. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): rsq 1,2,3,1 [P = (1, 2, 3, 1)]: hw 0x3E88D676 rsq 1,2,3,0 [P = (1, 2, 3, +0)]: hw 0 rsq 1,2,3,-0 [P = (1, 2, 3, -0)]: hw 0 rsq -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw 0 rsq 0,0,3,0 [P = (0, 0, 3, +0)]: hw 0 rsq 0,0,0,0 [P = (0, 0, 0, +0)]: hw inf rsq -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw inf d 1,2,3,1 [P = (1, 2, 3, 1)]: hw 0x406F774E d 1,2,3,0 [P = (1, 2, 3, +0)]: hw 0 d 1,2,3,-0 [P = (1, 2, 3, -0)]: hw 0 d -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw 0 d 0,0,3,0 [P = (0, 0, 3, +0)]: hw 0 d 0,0,0,0 [P = (0, 0, 0, +0)]: hw 0 d -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw 0</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_2.png" alt="Test result for Vertex_shader_exceptional_paths::Attr_Fog_Scalars_2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Attr_Fog_Scalars_2.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Attr_Fog_Scalars_2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Attr_MAD_AB">
+    Attr_MAD_AB
+    <a href="#Attr_MAD_AB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>attr MAD_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): 0*inf+1.5.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 -0*inf+1.5.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 0*qNaN+1.5.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 den*inf+1.5.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 inf*0+1.5.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 -inf*-0+1.5.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 qNaN*0+1.5.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 1.5*0+1.5.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 1.5*2+1.5.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5 2*0.5+1.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2.5 -1.5*2+1.5.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -1.5 3*1+1.5.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MAD_AB.png" alt="Test result for Vertex_shader_exceptional_paths::Attr_MAD_AB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Attr_MAD_AB.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Attr_MAD_AB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Attr_MAD_BA">
+    Attr_MAD_BA
+    <a href="#Attr_MAD_BA" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>attr MAD_BA (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): inf*0+1.5.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 inf*-0+1.5.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 qNaN*0+1.5.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 inf*den+1.5.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 0*inf+1.5.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 -0*-inf+1.5.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 0*qNaN+1.5.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 0*1.5+1.5.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 2*1.5+1.5.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5 0.5*2+1.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2.5 2*-1.5+1.5.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -1.5 1*3+1.5.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MAD_BA.png" alt="Test result for Vertex_shader_exceptional_paths::Attr_MAD_BA" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Attr_MAD_BA.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Attr_MAD_BA" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Attr_MAX_AB">
+    Attr_MAX_AB
+    <a href="#Attr_MAX_AB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>attr MAX_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): MAX(0,inf).x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf MAX(-0,inf).y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf MAX(0,qNaN).z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw qNaN MAX(den,inf).w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf MAX(inf,0).x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw inf MAX(-inf,-0).y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw -0 MAX(qNaN,0).z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw qNaN MAX(1.5,0).w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 MAX(1.5,2).x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 MAX(2,0.5).y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 MAX(-1.5,2).z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 MAX(3,1).w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MAX_AB.png" alt="Test result for Vertex_shader_exceptional_paths::Attr_MAX_AB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Attr_MAX_AB.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Attr_MAX_AB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Attr_MIN_AB">
+    Attr_MIN_AB
+    <a href="#Attr_MIN_AB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>attr MIN_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): MIN(0,inf).x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 MIN(-0,inf).y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw -0 MIN(0,qNaN).z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 MIN(den,inf).w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw den MIN(inf,0).x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 MIN(-inf,-0).y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw -inf MIN(qNaN,0).z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 MIN(1.5,0).w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 MIN(1.5,2).x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1.5 MIN(2,0.5).y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 0.5 MIN(-1.5,2).z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -1.5 MIN(3,1).w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MIN_AB.png" alt="Test result for Vertex_shader_exceptional_paths::Attr_MIN_AB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Attr_MIN_AB.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Attr_MIN_AB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Attr_MUL_AB">
+    Attr_MUL_AB
+    <a href="#Attr_MUL_AB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>attr MUL_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): 0*inf.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 -0*inf.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 0*qNaN.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 den*inf.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 inf*0.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 -inf*-0.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 qNaN*0.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 1.5*0.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 1.5*2.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3 2*0.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1 -1.5*2.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -3 3*1.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MUL_AB.png" alt="Test result for Vertex_shader_exceptional_paths::Attr_MUL_AB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Attr_MUL_AB.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Attr_MUL_AB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Attr_MUL_BA">
+    Attr_MUL_BA
+    <a href="#Attr_MUL_BA" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>attr MUL_BA (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): inf*0.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 inf*-0.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 qNaN*0.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 inf*den.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 0*inf.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 -0*-inf.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 0*qNaN.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 0*1.5.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 2*1.5.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3 0.5*2.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1 2*-1.5.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -3 1*3.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Attr_MUL_BA.png" alt="Test result for Vertex_shader_exceptional_paths::Attr_MUL_BA" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Attr_MUL_BA.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Attr_MUL_BA" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Const_ADD_AB">
+    Const_ADD_AB
+    <a href="#Const_ADD_AB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>const ADD_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): 0+inf.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf -0+inf.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf 0+qNaN.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw NaN den+inf.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf inf+0.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw inf -inf+-0.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw -inf qNaN+0.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw NaN 1.5+0.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 1.5+2.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3.5 2+0.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2.5 -1.5+2.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 0.5 3+1.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_ADD_AB.png" alt="Test result for Vertex_shader_exceptional_paths::Const_ADD_AB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Const_ADD_AB.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Const_ADD_AB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Const_Dot">
+    Const_Dot
+    <a href="#Const_Dot" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>const Dot (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): DP4 case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 DP4 case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 DP4 case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4 DP3 case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 DP3 case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 DP3 case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1 DPH case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf DPH case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 DPH case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 DPHba case1 [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 DPHba case2 [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 DPHba case3 [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Dot.png" alt="Test result for Vertex_shader_exceptional_paths::Const_Dot" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Const_Dot.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Const_Dot" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Const_Fog_P_1">
+    Const_Fog_P_1
+    <a href="#Const_Fog_P_1" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>fog chain const P. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): p 1,2,3,1.x [P = (1, 2, 3, 1)]: hw 1 p 1,2,3,1.y [P = (1, 2, 3, 1)]: hw 2 p 1,2,3,1.z [P = (1, 2, 3, 1)]: hw 3 p 1,2,3,1.w [P = (1, 2, 3, 1)]: hw 1 p 1,2,3,0.x [P = (1, 2, 3, +0)]: hw inf p 1,2,3,0.y [P = (1, 2, 3, +0)]: hw inf p 1,2,3,0.z [P = (1, 2, 3, +0)]: hw inf p 1,2,3,0.w [P = (1, 2, 3, +0)]: hw 0 p 1,2,3,-0.x [P = (1, 2, 3, -0)]: hw -inf p 1,2,3,-0.y [P = (1, 2, 3, -0)]: hw -inf p 1,2,3,-0.z [P = (1, 2, 3, -0)]: hw -inf p 1,2,3,-0.w [P = (1, 2, 3, -0)]: hw 0 p -1,2,-3,0.x [P = (-1, 2, -3, +0)]: hw -inf p -1,2,-3,0.y [P = (-1, 2, -3, +0)]: hw inf</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Fog_P_1.png" alt="Test result for Vertex_shader_exceptional_paths::Const_Fog_P_1" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Const_Fog_P_1.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Const_Fog_P_1" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Const_Fog_P_2">
+    Const_Fog_P_2
+    <a href="#Const_Fog_P_2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>fog chain const P. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): p -1,2,-3,0.z [P = (-1, 2, -3, +0)]: hw -inf p -1,2,-3,0.w [P = (-1, 2, -3, +0)]: hw 0 p 0,0,3,0.x [P = (0, 0, 3, +0)]: hw 0 p 0,0,3,0.y [P = (0, 0, 3, +0)]: hw 0 p 0,0,3,0.z [P = (0, 0, 3, +0)]: hw inf p 0,0,3,0.w [P = (0, 0, 3, +0)]: hw 0 p 0,0,0,0.x [P = (0, 0, 0, +0)]: hw 0 p 0,0,0,0.y [P = (0, 0, 0, +0)]: hw 0 p 0,0,0,0.z [P = (0, 0, 0, +0)]: hw 0 p 0,0,0,0.w [P = (0, 0, 0, +0)]: hw 0 p -0,-0,-0,-0.x [P = (-0, -0, -0, -0)]: hw 0 p -0,-0,-0,-0.y [P = (-0, -0, -0, -0)]: hw 0 p -0,-0,-0,-0.z [P = (-0, -0, -0, -0)]: hw 0 p -0,-0,-0,-0.w [P = (-0, -0, -0, -0)]: hw 0</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Fog_P_2.png" alt="Test result for Vertex_shader_exceptional_paths::Const_Fog_P_2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Const_Fog_P_2.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Const_Fog_P_2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Const_Fog_Scalars_1">
+    Const_Fog_Scalars_1
+    <a href="#Const_Fog_Scalars_1" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>fog chain const Scalars. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): rcp 1,2,3,1 [P = (1, 2, 3, 1)]: hw 1 rcp 1,2,3,0 [P = (1, 2, 3, +0)]: hw inf rcp 1,2,3,-0 [P = (1, 2, 3, -0)]: hw -inf rcp -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw inf rcp 0,0,3,0 [P = (0, 0, 3, +0)]: hw inf rcp 0,0,0,0 [P = (0, 0, 0, +0)]: hw inf rcp -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw -inf d2 1,2,3,1 [P = (1, 2, 3, 1)]: hw 14 d2 1,2,3,0 [P = (1, 2, 3, +0)]: hw inf d2 1,2,3,-0 [P = (1, 2, 3, -0)]: hw inf d2 -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw inf d2 0,0,3,0 [P = (0, 0, 3, +0)]: hw inf d2 0,0,0,0 [P = (0, 0, 0, +0)]: hw 0 d2 -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw 0</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Fog_Scalars_1.png" alt="Test result for Vertex_shader_exceptional_paths::Const_Fog_Scalars_1" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Const_Fog_Scalars_1.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Const_Fog_Scalars_1" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Const_Fog_Scalars_2">
+    Const_Fog_Scalars_2
+    <a href="#Const_Fog_Scalars_2" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>fog chain const Scalars. On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): rsq 1,2,3,1 [P = (1, 2, 3, 1)]: hw 0x3E88D676 rsq 1,2,3,0 [P = (1, 2, 3, +0)]: hw 0 rsq 1,2,3,-0 [P = (1, 2, 3, -0)]: hw 0 rsq -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw 0 rsq 0,0,3,0 [P = (0, 0, 3, +0)]: hw 0 rsq 0,0,0,0 [P = (0, 0, 0, +0)]: hw inf rsq -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw inf d 1,2,3,1 [P = (1, 2, 3, 1)]: hw 0x406F774E d 1,2,3,0 [P = (1, 2, 3, +0)]: hw 0 d 1,2,3,-0 [P = (1, 2, 3, -0)]: hw 0 d -1,2,-3,0 [P = (-1, 2, -3, +0)]: hw 0 d 0,0,3,0 [P = (0, 0, 3, +0)]: hw 0 d 0,0,0,0 [P = (0, 0, 0, +0)]: hw 0 d -0,-0,-0,-0 [P = (-0, -0, -0, -0)]: hw 0</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_Fog_Scalars_2.png" alt="Test result for Vertex_shader_exceptional_paths::Const_Fog_Scalars_2" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Const_Fog_Scalars_2.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Const_Fog_Scalars_2" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Const_MAD_AB">
+    Const_MAD_AB
+    <a href="#Const_MAD_AB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>const MAD_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): 0*inf+1.5.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 -0*inf+1.5.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 0*qNaN+1.5.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 den*inf+1.5.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 inf*0+1.5.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 -inf*-0+1.5.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 qNaN*0+1.5.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 1.5*0+1.5.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 1.5*2+1.5.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5 2*0.5+1.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2.5 -1.5*2+1.5.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -1.5 3*1+1.5.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MAD_AB.png" alt="Test result for Vertex_shader_exceptional_paths::Const_MAD_AB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Const_MAD_AB.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Const_MAD_AB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Const_MAD_BA">
+    Const_MAD_BA
+    <a href="#Const_MAD_BA" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>const MAD_BA (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): inf*0+1.5.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 inf*-0+1.5.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 qNaN*0+1.5.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 inf*den+1.5.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 1.5 0*inf+1.5.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 -0*-inf+1.5.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 0*qNaN+1.5.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 0*1.5+1.5.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 2*1.5+1.5.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5 0.5*2+1.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2.5 2*-1.5+1.5.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -1.5 1*3+1.5.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 4.5</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MAD_BA.png" alt="Test result for Vertex_shader_exceptional_paths::Const_MAD_BA" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Const_MAD_BA.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Const_MAD_BA" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Const_MAX_AB">
+    Const_MAX_AB
+    <a href="#Const_MAX_AB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>const MAX_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): MAX(0,inf).x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf MAX(-0,inf).y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf MAX(0,qNaN).z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw qNaN MAX(den,inf).w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw inf MAX(inf,0).x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw inf MAX(-inf,-0).y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw -0 MAX(qNaN,0).z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw qNaN MAX(1.5,0).w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 1.5 MAX(1.5,2).x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 MAX(2,0.5).y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 MAX(-1.5,2).z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 2 MAX(3,1).w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MAX_AB.png" alt="Test result for Vertex_shader_exceptional_paths::Const_MAX_AB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Const_MAX_AB.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Const_MAX_AB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Const_MIN_AB">
+    Const_MIN_AB
+    <a href="#Const_MIN_AB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>const MIN_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): MIN(0,inf).x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 MIN(-0,inf).y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw -0 MIN(0,qNaN).z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 MIN(den,inf).w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw den MIN(inf,0).x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 MIN(-inf,-0).y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw -inf MIN(qNaN,0).z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 MIN(1.5,0).w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 MIN(1.5,2).x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1.5 MIN(2,0.5).y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 0.5 MIN(-1.5,2).z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -1.5 MIN(3,1).w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MIN_AB.png" alt="Test result for Vertex_shader_exceptional_paths::Const_MIN_AB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Const_MIN_AB.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Const_MIN_AB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Const_MUL_AB">
+    Const_MUL_AB
+    <a href="#Const_MUL_AB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>const MUL_AB (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): 0*inf.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 -0*inf.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 0*qNaN.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 den*inf.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 inf*0.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 -inf*-0.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 qNaN*0.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 1.5*0.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 1.5*2.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3 2*0.5.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1 -1.5*2.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -3 3*1.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MUL_AB.png" alt="Test result for Vertex_shader_exceptional_paths::Const_MUL_AB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Const_MUL_AB.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Const_MUL_AB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Const_MUL_BA">
+    Const_MUL_BA
+    <a href="#Const_MUL_BA" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>const MUL_BA (12 values). On hardware the hw and rf cells are green and the SGE row green, red, red. Rows (label: hardware result): inf*0.x [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 inf*-0.y [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 qNaN*0.z [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 inf*den.w [(0, -0, 0, denormal) . (+inf, +inf, 0x7FC00000, +inf)]: hw 0 0*inf.x [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 -0*-inf.y [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 0*qNaN.z [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 0*1.5.w [(+inf, -inf, 0x7FC00000, 1.5) . (0, -0, 0, 0)]: hw 0 2*1.5.x [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3 0.5*2.y [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 1 2*-1.5.z [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw -3 1*3.w [(1.5, 2, -1.5, 3) . (2, 0.5, 2, 1)]: hw 3</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Vertex_shader_exceptional_paths/Const_MUL_BA.png" alt="Test result for Vertex_shader_exceptional_paths::Const_MUL_BA" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Vertex_shader_exceptional_paths/Const_MUL_BA.png" alt="No alpha test result for Vertex_shader_exceptional_paths::Const_MUL_BA" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

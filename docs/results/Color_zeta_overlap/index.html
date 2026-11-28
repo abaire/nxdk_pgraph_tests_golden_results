@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Color_zeta_overlap</title>
+    <link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+
+    <div class="sidenav">
+    <a href="../../index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Home_%2885249%29_-_The_Noun_Project.svg" width="32" alt="Navigate to the top level" /></a>
+    </div>
+
+    <div class="page-content"><h1>Color_zeta_overlap</h1>
+<div class="label-value-grid">
+    <div class="label">Description</div>
+    <div class="value">
+        <div class="test-description-line">Tests behavior when the color buffer and z/stencil buffers overlap in RAM.</div>
+    
+        <div class="test-description-line">WARNING: These tests are non-deterministic on Xbox hardware. The primary intent of these tests is to verify that emulators do not crash.</div>
+    </div>
+    
+    <div class="label">Suite class def</div>
+    <div class="value"><a href="https://github.com/abaire/nxdk_pgraph_tests/blob/pages_doxygen/src/tests/color_zeta_overlap_tests.h#L16">src/tests/color_zeta_overlap_tests.h</a></div>
+</div>
+
+<h2 id="AdjacentWithAA">
+    AdjacentWithAA
+    <a href="#AdjacentWithAA" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Points a 64x64 A8R8G8B8 color surface at texture memory with 4x square-offset antialiasing enabled, with the Z24S8 zeta surface placed immediately after the end of the color surface (based on the non-antialiased size). A quad with diffuse 0x00A8BF00 is drawn into them with depth writes enabled and the surfaces are then restored to the framebuffer. Nothing is drawn to the framebuffer, so the capture shows only the label text on a dark gray background.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/AdjacentWithAA.png" alt="Test result for Color_zeta_overlap::AdjacentWithAA" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/AdjacentWithAA.png" alt="No alpha test result for Color_zeta_overlap::AdjacentWithAA" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AdjacentWithClipOffset_l">
+    AdjacentWithClipOffset_l
+    <a href="#AdjacentWithClipOffset_l" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Points a 128x128 linear A8R8G8B8 color surface at texture memory, with the Z24S8 zeta surface placed immediately after the end of the color surface. The surfaces are cleared, the surface clip is set to (1, 1) with a size of 126x126, and a quad with diffuse 0x00A8BF00 is drawn into them with depth writes enabled. The surfaces are then restored to the framebuffer. Nothing is drawn to the framebuffer, so the capture shows only the label text on a dark gray background.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/AdjacentWithClipOffset_l.png" alt="Test result for Color_zeta_overlap::AdjacentWithClipOffset_l" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/AdjacentWithClipOffset_l.png" alt="No alpha test result for Color_zeta_overlap::AdjacentWithClipOffset_l" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="AdjacentWithClipOffset_sz">
+    AdjacentWithClipOffset_sz
+    <a href="#AdjacentWithClipOffset_sz" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Identical to AdjacentWithClipOffset_l, except that the surfaces are swizzled when the clip offset is applied. The capture shows only the label text on a dark gray background.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/AdjacentWithClipOffset_sz.png" alt="Test result for Color_zeta_overlap::AdjacentWithClipOffset_sz" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/AdjacentWithClipOffset_sz.png" alt="No alpha test result for Color_zeta_overlap::AdjacentWithClipOffset_sz" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ColorIntoZeta">
+    ColorIntoZeta
+    <a href="#ColorIntoZeta" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Clears the framebuffer color to 0xFE242424 and zeta to 0, then sets the color context DMA to the zeta DMA object so that both targets share the zeta buffer. A quad with diffuse 0x00BFFF00 at Z=0 is drawn with depth test ALWAYS and depth writes enabled. The color DMA is restored and the color buffer is cleared again, so the color capture shows only the label text on the dark gray background. The result is non-deterministic: within the quad, the zeta capture mostly holds the drawn color (labeled ZB~=0x00BFFF00), with a speckled stair-stepped band of other values that varies between runs. The zeta buffer outside the quad remains 0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/ColorIntoZeta.png" alt="Test result for Color_zeta_overlap::ColorIntoZeta" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/ColorIntoZeta.png" alt="No alpha test result for Color_zeta_overlap::ColorIntoZeta" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ColorIntoZeta_ZB">
+    ColorIntoZeta_ZB
+    <a href="#ColorIntoZeta_ZB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/ColorIntoZeta_ZB.png" alt="Test result for Color_zeta_overlap::ColorIntoZeta_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/ColorIntoZeta_ZB.png" alt="No alpha test result for Color_zeta_overlap::ColorIntoZeta_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ColorMaskedZetaOntoColor">
+    ColorMaskedZetaOntoColor
+    <a href="#ColorMaskedZetaOntoColor" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Uses a 128x128 A8R8G8B8 color surface (C) and a Z24S8 zeta surface (Z), both linear and located in texture memory. C is filled with a red backdrop with color writes, depth test (ALWAYS) and depth writes enabled. The zeta target is then moved onto C&#39;s address without modifying the color target, color writes are disabled, and a quad covering the left half of the surface is drawn with depth test ALWAYS and depth writes enabled. C is rendered to the framebuffer at 2x scale, and the CPU-read values of one pixel from the middle of the left half and one from the middle of the right half are printed below it. The left half is yellow-green and reads 0xDC87FC33: the upper 24 bits hold the written depth and the low byte (stencil in Z24S8) retains the backdrop&#39;s 0x33. The right half retains the red backdrop and reads 0xFFAA3333.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/ColorMaskedZetaOntoColor.png" alt="Test result for Color_zeta_overlap::ColorMaskedZetaOntoColor" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/ColorMaskedZetaOntoColor.png" alt="No alpha test result for Color_zeta_overlap::ColorMaskedZetaOntoColor" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ColorOntoZetaRebind">
+    ColorOntoZetaRebind
+    <a href="#ColorOntoZetaRebind" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Identical to ZetaOntoColorRebind, except that the zeta target remains at Z&#39;s address throughout and the color target is moved onto Z&#39;s address directly (a single zero-area draw is issued while both targets share it). The left (near) half shows the red backdrop and the right (far) half is green.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/ColorOntoZetaRebind.png" alt="Test result for Color_zeta_overlap::ColorOntoZetaRebind" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/ColorOntoZetaRebind.png" alt="No alpha test result for Color_zeta_overlap::ColorOntoZetaRebind" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ReadOnlyZetaOntoColor">
+    ReadOnlyZetaOntoColor
+    <a href="#ReadOnlyZetaOntoColor" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Uses the same surfaces as ColorMaskedZetaOntoColor. The left half of C is filled with 0x00000000 and the right half with 0xFFFFFFFF (the minimum and maximum Z24S8 depth values when the memory is interpreted as zeta). The zeta target is then moved onto C&#39;s address, depth writes are disabled, and a green quad covering the whole surface is drawn at a depth between near and far with depth test LESS and color writes enabled. C is rendered to the framebuffer at 2x scale, and the CPU-read values of one pixel from the middle of each half are printed below it. The depth test reads the shared memory: the left half fails the test and remains black (0x00000000) and the right half passes and is green (0xFF33FF33). </p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/ReadOnlyZetaOntoColor.png" alt="Test result for Color_zeta_overlap::ReadOnlyZetaOntoColor" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/ReadOnlyZetaOntoColor.png" alt="No alpha test result for Color_zeta_overlap::ReadOnlyZetaOntoColor" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Swap">
+    Swap
+    <a href="#Swap" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Clears the framebuffer color to 0xFE242424 and zeta to 0, then swaps the color and zeta context DMA objects and draws a large quad with diffuse 0x00A8BF00 at Z=180 with depth test ALWAYS and depth writes enabled. Both DMA objects are then restored. The color capture shows a solid red quad (labeled C=0xFF2416E9) and the zeta capture holds the drawn color (labeled ZB=0x00A8BF00) within the quad and 0 elsewhere.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/Swap.png" alt="Test result for Color_zeta_overlap::Swap" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/Swap.png" alt="No alpha test result for Color_zeta_overlap::Swap" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="Swap_ZB">
+    Swap_ZB
+    <a href="#Swap_ZB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/Swap_ZB.png" alt="Test result for Color_zeta_overlap::Swap_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/Swap_ZB.png" alt="No alpha test result for Color_zeta_overlap::Swap_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ZetaIntoColor">
+    ZetaIntoColor
+    <a href="#ZetaIntoColor" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Clears the framebuffer color to 0xFE242424 and zeta to 0, then sets the zeta context DMA to the color DMA object so that both targets share the color buffer. A large quad with diffuse 0xFFFF00FF at Z=192 is drawn with depth test ALWAYS and depth writes enabled. The result is non-deterministic: the quad area is mostly light magenta (labeled C~=0xFF2454FE) with speckled and striped regions of the pure magenta diffuse color that vary between runs. The zeta capture is entirely 0.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/ZetaIntoColor.png" alt="Test result for Color_zeta_overlap::ZetaIntoColor" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/ZetaIntoColor.png" alt="No alpha test result for Color_zeta_overlap::ZetaIntoColor" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ZetaIntoColor_ZB">
+    ZetaIntoColor_ZB
+    <a href="#ZetaIntoColor_ZB" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/ZetaIntoColor_ZB.png" alt="Test result for Color_zeta_overlap::ZetaIntoColor_ZB" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/ZetaIntoColor_ZB.png" alt="No alpha test result for Color_zeta_overlap::ZetaIntoColor_ZB" class="inline-image">
+        </div>
+    </div>
+    </div>
+<h2 id="ZetaOntoColorRebind">
+    ZetaOntoColorRebind
+    <a href="#ZetaOntoColorRebind" class="test-link" title="Copy link to test">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-link">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+        </svg>
+    </a>
+</h2>
+        <div class="test-case-description">
+            <p>Uses a 128x128 A8R8G8B8 color surface (C) and a Z24S8 zeta surface (Z), both linear and located in texture memory. C is filled with a red backdrop at far depth, then the left half of Z is set to near depth with color writes disabled. The color target is moved to Z&#39;s address while the zeta target is moved to an unused address, then the zeta target is moved back to Z&#39;s address so that both targets share it. Each of these steps issues a zero-area draw with color writes, depth test and depth writes enabled, so the surface bindings are evaluated without any pixels being written. The color target is then moved back to C without modifying the zeta target and a green quad covering the whole surface is drawn at a depth between near and far with depth func LESS. C is rendered to the framebuffer at 2x scale. The left (near) half shows the red backdrop and the right (far) half is green.</p>
+        </div>
+    
+<div class="comparison-image-set">
+    <div class="titled-image-container">
+        <div class="image-title">Image with alpha</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/main/results/Color_zeta_overlap/ZetaOntoColorRebind.png" alt="Test result for Color_zeta_overlap::ZetaOntoColorRebind" class="inline-image">
+        </div>
+    </div>
+    
+    <div class="titled-image-container">
+        <div class="image-title">Image as seen on display</div>
+        <div class="image-container">
+                <img src="https://raw.githubusercontent.com/abaire/nxdk_pgraph_tests_golden_results/pages_deploy/results-noalpha/Color_zeta_overlap/ZetaOntoColorRebind.png" alt="No alpha test result for Color_zeta_overlap::ZetaOntoColorRebind" class="inline-image">
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
